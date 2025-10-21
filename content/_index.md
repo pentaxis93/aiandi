@@ -1,0 +1,5 @@
++++
+title = "AI and I"
+sort_by = "date"
+paginate_by = 10
++++
