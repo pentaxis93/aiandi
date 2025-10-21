@@ -1,0 +1,6 @@
+/* Custom branding overrides for zola-hacker theme */
+
+/* Change title prefix from "./" to "$" */
+header h1:before {
+  content: "$ ";
+}
