@@ -8,6 +8,8 @@ Not because I want to become a fintech entrepreneur. Not because I think I can c
 
 Zenvestor is my learning vehicle. But it's also solving real problems I face every day as a trader.
 
+<!-- more -->
+
 ## The Problem I'm Actually Solving
 
 I trade using CAN SLIM methodology—a disciplined, systematic approach focused on concentrated portfolios of high-growth stocks. My typical portfolio has 4-8 stocks. Sometimes up to 15-20 before I cull it back. Each position matters. Each decision carries weight.

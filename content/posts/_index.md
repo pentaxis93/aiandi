@@ -1,4 +1,5 @@
 +++
-title = "List of blog posts"
+render = false
+transparent = true
 sort_by = "date"
 +++

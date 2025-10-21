@@ -10,6 +10,8 @@ This might seem like an odd confession to lead with. Why tell you I'm a beginner
 
 But here's the thing: I *don't* know what I'm talking about. Not yet. And that's exactly why I'm writing.
 
+<!-- more -->
+
 ## Writing Clarifies Thinking
 
 The primary reason for this blog isn't to teach you anything. It's to teach *me*.
