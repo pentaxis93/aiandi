@@ -3,7 +3,7 @@ base_url = "https://aiandi.dev"
 
 # The site title and description; used in feeds by default.
 title = "AI and I"
-description = "I'm learning to build software at 55, collaborating with AI on real projects. Documenting the messy journey from zero to shipping, one architectural decision at a time."
+description = "Learning to build software at 55, collaborating with AI on real projects. Documenting the messy journey from zero to shipping, one architectural decision at a time."
 
 # The default language; used in feeds.
 default_language = "en"
