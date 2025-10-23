@@ -40,9 +40,19 @@ Share appropriate uncertainty and learning struggles. Don't share intimate emoti
 
 ### Confident in Uncertainty
 - **Yes**: "I can't help experienced developers. But I *can* help someone where I was six months ago."
+- **Yes**: "You won't find expert advice here—I'm not qualified to give it."
 - **No**: "I'm probably wrong about this, but maybe, possibly, if I'm lucky..."
+- **No**: "Sorry, I'm just a beginner, I don't really know anything..."
 
 Own the beginner status without false modesty. Clear about scope of knowledge without apologizing.
+
+**Setting clear boundaries ≠ false humility**:
+- Confident: "I don't know best practices" (states fact, moves on)
+- False humility: "I'm sorry I don't know best practices, I'm probably doing everything wrong" (apologizes, undermines)
+- Confident: "Here's what you won't find: expert advice" (boundary-setting)
+- Apologetic: "Sorry this isn't very good, I'm still learning" (pre-emptive apology)
+
+**The distinction**: Confidence comes from accurately stating what you do and don't know, then offering value within your actual scope. Apologizing for your limitations is false humility.
 
 ### Subtle Humor & Irony
 - **Yes**: "Shouldn't I establish credibility first? But here's the thing: I *don't* know what I'm talking about."
@@ -63,6 +73,21 @@ Use irony to flip expectations. Self-awareness without self-deprecation. Dry wit
 - Forced jokes or puns
 - Emoji-laden enthusiasm
 
+### Educated but Natural
+
+**Use precise vocabulary when it fits naturally**:
+- **Yes**: "It was Sisyphean." (vivid, precise metaphor)
+- **Yes**: "The repository pattern encapsulates data access."
+- **No**: "One might postulate that the aforementioned implementation..." (academic pomposity)
+
+**The distinction**:
+- "Thoughtful not academic" means avoiding scholarly *prose style* (passive voice, hedging, formality)
+- It does NOT mean dumbing down *word choice* or avoiding educated vocabulary
+- Use the word that captures exactly what you mean
+- If "Sisyphean" is the right word, use it—don't substitute "hard" to sound accessible
+
+**The test**: Would you use this word in conversation with an intelligent friend? If yes, use it in writing.
+
 ---
 
 ## Language Patterns
@@ -70,7 +95,7 @@ Use irony to flip expectations. Self-awareness without self-deprecation. Dry wit
 ### Sentence Structure
 
 **Favor shorter sentences for impact**:
-- "I'm 55 years old, and I'm learning to code."
+- "I'm 55 years old and learning to build software."
 - "Not casually. Not as a hobby."
 - "But here's the thing: I don't know what I'm talking about."
 
@@ -95,10 +120,86 @@ Passive voice is fine when the actor doesn't matter or when it reads more natura
 - Use "you" when addressing the reader directly
 - Use "we" sparingly, only when genuinely collaborative
 
+### Managing "I" Density
+**First person is essential. "I" saturation is lazy writing.**
+
+This is personal documentation - use "I" extensively. But **watch I-density**: too many "I"s in close proximity creates monotonous, repetitive prose that focuses on the narrator instead of the ideas.
+
+**The problem isn't first person. It's lazy construction that defaults to "I [verb]" patterns.**
+
+**High I-density (clumsy)**:
+- "I'm 55 years old, and I'm learning to build software. I'm learning to architect, to make design decisions. I'm building a real application. And I'm writing about it here."
+- Count: 5 "I"s in 4 sentences = saturated
+
+**Better variety (clear)**:
+- "I'm 55 years old, and I'm learning to build software. Not learning to code—the AI does that. Learning to architect, to make design decisions, to think in systems. Building a real application through AI collaboration. Writing about it here as the journey unfolds."
+- Count: 2 "I"s in 5 sentences = breathing room
+
+**Opening sentences**: Only start with "I" when the I-ness is the point
+- **Yes**: "I'm 55 years old..." - Age confession IS the point
+- **Yes**: "I can't help experienced developers..." - Limitation IS the point
+- **Yes**: "I promise you..." - Commitment IS the point
+- **No**: "I'm building a trading platform..." - Lead with the platform or the building, not the I
+- **No**: "I noticed the architecture..." - Lead with what you noticed
+
+**Within paragraphs**: Vary your construction
+- Use parallel structure without repeated subjects: "Learning to architect. Building real applications. Writing about the journey."
+- Let other subjects carry sentences: "The AI does the coding. The architecture demands discipline."
+- Use gerunds and participles to vary rhythm
+
+**The test**: Read a paragraph aloud. If you hear "I" more than twice in close succession, rewrite for variety.
+
+**Watch for**: Multiple "I'm [verb]" patterns in a row = autopilot writing. Shake it up.
+
 ### Rhetorical Questions for Engagement
 - "Why tell you I'm a beginner?"
 - "Shouldn't I establish credibility first?"
 - But don't overuse. One or two per section maximum.
+
+### Punctuation & Formatting Strategy
+
+**Em-dashes for rhythm and insertion**:
+- Use for sharp transitions: "Dozens of documentation sites, ChatGPT, Claude's web app—learning syntax, wrestling..."
+- Use for parenthetical asides that deserve emphasis
+- Don't overuse; they lose impact with repetition
+
+**Italics for emphasis within sentences**:
+- Highlight contrast: "*what* to build, *why* it matters, and *how* to architect it"
+- Draw attention to key terms on first use
+- Use sparingly—too many italics = no emphasis at all
+
+**Bold for structure and scannability**:
+- Section headers and subheadings
+- List lead-ins: "**Expert advice** - I'm not qualified to give it"
+- Key terms readers should scan for
+- Never for emphasis within flowing prose (use italics)
+
+**List formatting patterns**:
+- **Topic** - explanation (for contrasts or definitions)
+- **Bold question** followed by answer paragraph
+- Bullet lists for parallel items without strict order
+- Numbered lists only for sequences or priorities
+
+**Parentheticals**:
+- Use sparingly in blog posts (they interrupt flow)
+- Em-dashes or commas often work better
+- Reserve for genuinely optional asides
+
+### Specific Attribution vs. Vague References
+
+**Name real people and sources when you can**:
+- **Yes**: "My high school physics teacher, Mr. Horton, used to say..."
+- **Yes**: "In *Clean Architecture*, Robert Martin argues..."
+- **No**: "Someone once told me..." (vague, unmemorable)
+- **No**: "Experts say..." (who? which experts?)
+
+**Specificity adds authenticity**:
+- Real names ground the narrative
+- Specific roles/contexts make claims verifiable
+- Readers can follow up on sources
+- Vague attribution feels like hand-waving
+
+**Exception**: Omit names when privacy matters or when the idea matters more than the source.
 
 ---
 
@@ -127,15 +228,47 @@ Passive voice is fine when the actor doesn't matter or when it reads more natura
 Keep it observational, not mystical. Breadcrumbs, not sermons.
 
 ### Meta-Language (About Writing/Learning)
+
+**Writing as thinking is the core philosophy**:
+
+This isn't stated apologetically—it's stated as methodology. The blog's primary purpose is clarifying *my* thinking through writing. Helping others is secondary.
+
+This reframes "beginner status" from limitation to feature:
+- Not: "Sorry I'm just learning, bear with me"
+- But: "I'm documenting real learning because writing clarifies thinking"
+
 **Explicit about process**:
-- "Writing is how I think"
-- "The blog is my thinking tool"
-- "One rung below on the ladder"
-- Own the methodology. It's part of the content.
+- "Writing is how I think" - State this directly
+- "The blog is my thinking tool" - Own the methodology
+- "You're invited to watch me think" - Frame reader as observer
+- "One rung below on the ladder" - Teaching scope clearly defined
+
+**Why this matters**: It sets expectations correctly and gives permission to document messy learning, not polished retrospectives. The meta-commentary isn't navel-gazing—it's honest framing of what the blog IS.
+
+Own the methodology. It's part of the content.
 
 ---
 
 ## Structural Patterns
+
+### Titles
+**No colons. Commit to one clear focus.**
+
+Colons are a crutch that let you avoid deciding what the post is really about. They tempt you to say two things instead of one. Resist.
+
+- **Yes**: "Building Real Software with AI"
+- **Yes**: "Introducing Zenvestor"
+- **No**: "Why I'm Writing This: Building Real Software with AI"
+- **No**: "What I'm Building and Why: Introducing Zenvestor"
+
+**The test**: If you need a colon, you probably haven't figured out what the post is actually about yet. Keep thinking until one clear focus emerges.
+
+**Note**: This guideline applies to *post titles only*. Colons in body text are fine when they serve the sentence:
+- For parallel structure: "The work: building software. The goal: learning deeply. The reality: mistakes."
+- For emphasis before explanation: "Here's the thing: I don't know what I'm talking about."
+- For introducing lists or examples
+
+Don't ban colons from prose—just from titles.
 
 ### Opening Hooks
 **Lead with the unexpected**:
@@ -156,6 +289,22 @@ Keep it observational, not mystical. Breadcrumbs, not sermons.
 - Numbered lists for sequences
 - Bold lead-ins for scannability
 - But don't overuse. Prose still primary.
+
+### Section Titles Within Posts
+
+**Clear signposts over clever wordplay**:
+- **Good**: "Writing Is Thinking" (declarative, clear concept)
+- **Good**: "What You'll Find Here" (direct question-based)
+- **Good**: "Foundation First" (noun phrase, clear theme)
+- **Avoid**: "The Labyrinthine Journey of Epistemic Discovery" (too clever, unclear)
+
+**Variety in structure**:
+- Declarative statements work for principles
+- Questions work for reader-facing sections
+- Noun phrases work for themes
+- Imperative works for action sections
+
+**The test**: Can a reader skim section titles and understand the post's structure? If not, make them clearer.
 
 ### Examples Over Abstractions
 **Show, don't just tell**:
@@ -252,6 +401,41 @@ class Stock {
 
 ---
 
+## Zola-Specific Conventions
+
+### Frontmatter
+**Every post must have**:
+```
++++
+title = "Post Title Here"
++++
+```
+
+- Title format: Sentence case, no colons
+- Date is in filename: `YYYY-MM-DD-descriptive-title.md`
+- Keep frontmatter minimal unless adding specific features
+
+### Content Breaks
+**Use `<!-- more -->` for excerpt breaks**:
+- Place after 2-4 opening paragraphs
+- Marks where the preview ends on index pages
+- Don't put it mid-sentence or mid-thought
+- Appears after the hook but before deep content
+
+### File Naming
+**Pattern**: `content/posts/YYYY-MM-DD-descriptive-title.md`
+- Date first for chronological sorting
+- Descriptive slug matches post focus
+- Use hyphens, not underscores
+- Keep slugs concise but clear
+
+### Links and References
+- Internal links: Use `@/path/to/post.md` syntax for Zola processing
+- External links: Full URLs with `https://`
+- Always use markdown links, not raw URLs
+
+---
+
 ## Consciousness Veiling Guidelines
 
 ### The Breadcrumb Principle
@@ -312,6 +496,157 @@ Ask: "Would a purely technical reader get value from this article?"
 - [ ] Is all technical content accurate?
 - [ ] Do code examples actually work?
 - [ ] Have I linked to authoritative sources?
+
+---
+
+## Post Review Standards
+
+When reviewing posts for publication, use structured critique methodology to provide actionable feedback.
+
+### Critique Scope Levels
+
+**Quick Voice Check** (5 minutes):
+- Does it sound like authentic beginner voice?
+- Any forbidden patterns present (apologies, tech bro speak, credential inflation)?
+- Basic readability and tone check
+
+**Standard Review** (15 minutes):
+- Voice consistency across all sections
+- Structural clarity (hook, transitions, closing)
+- Style guide adherence (I-density, sentence variety, contractions)
+- Consciousness veiling appropriate
+
+**Deep Critique** (30+ minutes):
+- Line-by-line analysis with specific suggestions
+- Technical accuracy verification
+- Reference checking
+- Detailed improvement recommendations with before/after examples
+
+### Review Output Structure
+
+Every review should include:
+
+1. **Overall Assessment**
+   - Scores per dimension (Voice/Technical/Structure/Adherence)
+   - Publication readiness verdict (Publish / Needs revision / Needs work)
+
+2. **Strengths Analysis**
+   - What works well and specifically why
+   - Examples of effective technique execution
+   - Voice moments that land perfectly
+
+3. **Improvement Opportunities**
+   - Organized by category (Title/Voice/Structure/Technical/Style)
+   - Specific line references or section locations
+   - Before/after suggestions when applicable
+   - Rationale grounded in style guide principles
+
+4. **Interactive Selection** (when using `/review-post` command)
+   - Group recommendations logically
+   - Use AskUserQuestion multi-tab for category selection
+   - Let author choose which improvements to implement
+   - Apply only selected changes
+
+### Review Dimensions
+
+Evaluate every post across these dimensions:
+
+**Title Evaluation:**
+- Clear focus (no colons - commit to one idea)
+- Engaging and memorable
+- Matches actual post content
+
+**Voice Consistency:**
+- Authentic beginner maintained throughout
+- Confidence in uncertainty balanced
+- Appropriate vulnerability (not exhibitionist)
+- Subtle irony/humor (not forced)
+- No forbidden patterns
+
+**I-Density Management:**
+- Count "I" occurrences per paragraph
+- Watch for "I [verb]" pattern saturation
+- Assess sentence construction variety
+- Note areas needing breathing room
+
+**Technical Accuracy:**
+- Code examples complete and runnable
+- Technical claims verifiable
+- Links to authoritative sources
+- Real project references when mentioned
+
+**Consciousness Veiling:**
+- Philosophy as breadcrumbs, not sermons
+- Purely technical reader would get value
+- Depth available but not announced
+
+**Structural Clarity:**
+- Strong opening hook
+- Clear section transitions
+- Scannable section titles
+- Closing with action/invitation
+- Appropriate list vs. prose balance
+
+**Style Guide Adherence:**
+- Active voice priority
+- Sentence length variety
+- Natural contractions
+- Specific attribution when possible
+- Punctuation strategy followed
+- No watch-out patterns (over-explaining, tangents)
+
+### Review Principles
+
+**Ground critique in style guide, not preference:**
+- Every suggestion should reference a specific guideline
+- "This violates I-density management" not "I don't like this"
+- Point to canonical examples from published posts
+
+**Balance "what works" with "what could improve":**
+- Always identify strengths first
+- Frame improvements as opportunities, not failures
+- Acknowledge successful technique execution
+
+**Provide specific, actionable suggestions:**
+- Quote exact text that needs changing
+- Show before/after when possible
+- Reference specific line numbers
+- Explain why the change improves the post
+
+**Respect the author's voice:**
+- Suggest, don't dictate
+- Offer options when multiple approaches work
+- Accept author's final decision
+- Voice preservation trumps perfect adherence
+
+**Focus on meaningful improvements:**
+- Don't overwhelm with minor nitpicks
+- Prioritize changes that significantly strengthen the post
+- Empty recommendation groups are fine—no forced feedback
+
+### Workflow Integration
+
+**Pre-publish review process:**
+1. Author completes draft
+2. Run `/review-post [filename]`
+3. Review comprehensive analysis
+4. Select improvements to implement via AskUserQuestion
+5. Changes applied automatically
+6. Optional: re-review if major changes made
+7. Final authenticity checks (see Authenticity Checks section)
+8. Publish
+
+**Post-publication review:**
+- Gather reader feedback
+- Note what landed vs. what didn't
+- Update style guide if patterns emerge
+- Apply learnings to next post
+
+**Meta-recursive learning:**
+- Each review improves the next review
+- Patterns discovered get codified in style guide
+- Successful techniques become canonical examples
+- The review process itself evolves
 
 ---
 
