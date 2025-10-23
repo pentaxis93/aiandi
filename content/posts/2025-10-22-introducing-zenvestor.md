@@ -1,18 +1,18 @@
 +++
-title = "What I'm Building and Why: Introducing Zenvestor"
+title = "Introducing Zenvestor"
 +++
 
-I'm building a stock trading platform. 
+The tools I need don't exist.
 
-Not because I want to become a fintech entrepreneur. Not because I think I can compete with ThinkorSwim or E*TRADE. I'm building it because the tools I need don't exist, and the problems they'd solve are preventing me from trading the way I know works.
+Not for lack of trading platforms—ThinkorSwim and E*TRADE work fine for most traders. But they can't solve the specific problems preventing me from trading the way I know works. So I'm building Zenvestor, a stock trading platform for disciplined, systematic traders.
 
-Zenvestor is my learning vehicle. But it's also solving real problems I face every day as a trader.
+It's my learning vehicle. But it's also solving real problems I face every day as a trader.
 
 <!-- more -->
 
 ## The Problem I'm Actually Solving
 
-I trade using CAN SLIM methodology—a disciplined, systematic approach focused on concentrated portfolios of high-growth stocks. My typical portfolio has 4-8 stocks. Sometimes up to 15-20 before I cull it back. Each position matters. Each decision carries weight.
+CAN SLIM methodology drives my trading—a disciplined, systematic approach focused on concentrated portfolios of high-growth stocks. My typical portfolio has 4-8 stocks. Sometimes up to 15-20 before I cull it back. Each position matters. Each decision carries weight.
 
 The strategy works. When I follow it. When I execute trades according to plan. When I don't let emotions override systematic thinking.
 
@@ -64,7 +64,7 @@ When I remember. When I have time. When I'm not emotionally drained from a bad t
 
 The entries are scattered across files. Inconsistent in format. Disconnected from the actual trades. Nearly impossible to analyze for patterns.
 
-I know systematic traders improve by learning from their patterns—what setups work, which market conditions suit their style, where emotions derail them. But my journaling is so haphazard that the insights stay locked away, invisible.
+Systematic traders improve by learning from their patterns—what setups work, which market conditions suit their style, where emotions derail them. But my journaling is so haphazard that the insights stay locked away, invisible.
 
 I need integrated journaling that captures context at the moment of decision, structured for analysis, linked to actual trades.
 
