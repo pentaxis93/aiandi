@@ -51,11 +51,3 @@ In code, that means:
 - Iterate a lot
 
 This might seem slow. It is slow. But it's how I build things that don't collapse under their own weight.
-
-## What I'm Actually Building
-
-I'm working with Claude Code to build Zenvestor, a stock trading platform.
-
-Next time: what Zenvestor actually is, and what I'm learning from the first real architectural decisions.
-
-If you're learning with AI too—especially if you're one rung below where I am now—I'd love to hear what's working for you.
