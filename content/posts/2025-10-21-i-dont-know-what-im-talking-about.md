@@ -10,7 +10,7 @@ Claude Code changed what "learning to code" means. Pair programming with AI beca
 
 Why lead with my beginner status? At this point (i.e., writing the opening for the first post in my brand-new blog), shouldn't I establish credibility first, demonstrate expertise, prove I know what I'm talking about?
 
-But I *don't* know what I'm talking about. Not yet. And that's exactly why I'm writing.
+But I *don't* know what I'm talking about. Not yet. I'm learning. And that's exactly why I'm writing.
 
 <!-- more -->
 
