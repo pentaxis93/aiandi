@@ -436,6 +436,89 @@ title = "Post Title Here"
 
 ---
 
+## Formatting Conventions
+
+### Dialogue Between Robbie and Claude
+
+When quoting exchanges from collaboration sessions, use this format:
+
+**Standard dialogue (inline)**:
+> **Robbie:** "Pre-worktree version appears in run window. Investigate."
+>
+> **Claude:** "Found it. The `zen` command was a symlink that resolved back to the main repo."
+
+**Extended exchange (multiple turns)**:
+> **Robbie:** "I kept losing work. Features would vanish."
+>
+> **Claude:** "Let me check the worktree status..."
+>
+> **Robbie:** "There it is. Three commits ahead, never merged."
+
+**Key conventions**:
+- Bold name followed by colon: `**Robbie:**` or `**Claude:**`
+- Dialogue in quotes
+- Blockquote format (>) for visual distinction from body text
+- Blank line between speakers within the blockquote
+- Use "Robbie" not "User" or "Human" - personal, not generic
+
+**When to use dialogue format**:
+- Actual session exchanges that illustrate a point
+- Discovery moments where the back-and-forth matters
+- When showing collaboration process, not just outcome
+
+**When NOT to use**:
+- Paraphrasing or summarizing (just write prose)
+- Single quotes that don't need attribution
+- Technical output (use code blocks instead)
+
+### Terminal Output and Commands
+
+**Commands the reader should run**:
+```bash
+git status --short
+git worktree list
+```
+
+**Output showing what happened** (with context):
+```
+$ zen run linux
+Launching from /home/pentaxis/src/zenvestor...
+```
+
+**Mixed command + output** (showing cause and effect):
+```bash
+$ git worktree list
+/home/pentaxis/src/zenvestor         abc1234 [main]
+/home/pentaxis/src/zenvestor/.worktrees/custom-signin  def5678 [custom-signin]
+```
+
+### Ritual/Skill Output Blocks
+
+When showing formatted output from skills or rituals:
+
+```markdown
+**The Circle is Complete**
+
+Goal (Center): Implement semantic color architecture
+East (Context): ADR-0030 loaded, journal entries on theme patterns
+South (Tasks): 5 tasks planned, TDD approach confirmed
+West (Workspace): .worktrees/theme-refactor created
+North (Environment): postgres, redis, flutter running
+
+All quarters align with center. Ready to begin.
+```
+
+Use markdown formatting within code blocks to show what the output actually looks like.
+
+### File Paths and Technical References
+
+- Inline code for paths: `~/.claude/skills/lbrp/SKILL.md`
+- Full paths when specificity matters: `/home/pentaxis/src/zenvestor/`
+- Tilde shorthand for home directory when appropriate: `~/src/`
+- Repository-relative paths when in context: `docs/adrs/ADR-0030.md`
+
+---
+
 ## Consciousness Veiling Guidelines
 
 ### The Breadcrumb Principle
