@@ -11,3 +11,6 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+# Private journal
+.private-journal/
