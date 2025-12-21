@@ -1,5 +1,6 @@
 +++
 title = "I Don't Know What I'm Talking About (Which Is Why I'm Writing)"
+draft = true
 +++
 
 I'm 55 years old and learning to build software.
