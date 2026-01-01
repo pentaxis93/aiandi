@@ -5,33 +5,31 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #00aa00;
+	--accent-dark: #007700;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%), 0 16px 32px
-		rgba(var(--gray), 33%);
+	--box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
 	--bg: #fff;
 	--header-bg: #fff;
+	--terminal-font: 'Space Mono', monospace;
+	--heading-font: 'VT323', monospace;
 }
 
 :root.dark {
-	--accent: #7b8aff;
-	--accent-dark: #5c6aff;
-	--black: 229, 233, 240;
-	--gray: 159, 170, 200;
-	--gray-light: 40, 44, 52;
-	--gray-dark: 229, 233, 240;
-	--gray-gradient: rgba(var(--gray-light), 50%), #1a1a2e;
-	--box-shadow:
-		0 2px 6px rgba(0, 0, 0, 40%), 0 8px 24px rgba(0, 0, 0, 50%), 0 16px 32px
-		rgba(0, 0, 0, 50%);
-	--bg: #1a1a2e;
-	--header-bg: #16162a;
+	--accent: #20c20e;
+	--accent-dark: #008f00;
+	--black: 32, 194, 14;
+	--gray: 40, 160, 40;
+	--gray-light: 20, 30, 20;
+	--gray-dark: 32, 194, 14;
+	--gray-gradient: rgba(0, 0, 0, 0%), #0c0c0c;
+	--box-shadow: 4px 4px 0px var(--accent);
+	--bg: #0c0c0c;
+	--header-bg: #0c0c0c;
 }
 @font-face {
 	font-family: "Atkinson";
@@ -48,7 +46,7 @@
 	font-display: swap;
 }
 body {
-	font-family: "Atkinson", sans-serif;
+	font-family: var(--terminal-font);
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -60,11 +58,11 @@ body {
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
-	line-height: 1.7;
+	line-height: 1.6;
 	transition: background-color 0.3s ease, color 0.3s ease;
 }
 main {
-	width: 720px;
+	width: 800px;
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
@@ -75,24 +73,27 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
+	margin: 0 0 1rem 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
+	font-family: var(--heading-font);
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 h1 {
-	font-size: 3.052em;
+	font-size: 4em;
 }
 h2 {
-	font-size: 2.441em;
+	font-size: 3em;
 }
 h3 {
-	font-size: 1.953em;
+	font-size: 2.5em;
 }
 h4 {
-	font-size: 1.563em;
+	font-size: 2em;
 }
 h5 {
-	font-size: 1.25em;
+	font-size: 1.8em;
 }
 strong,
 b {
@@ -113,9 +114,17 @@ p {
 textarea {
 	width: 100%;
 	font-size: 16px;
+	border: 1px solid var(--accent);
+	background: transparent;
+	color: inherit;
+	border-radius: 0;
 }
 input {
 	font-size: 16px;
+	border: 1px solid var(--accent);
+	background: transparent;
+	color: inherit;
+	border-radius: 0;
 }
 table {
 	width: 100%;
@@ -123,29 +132,35 @@ table {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 0;
+	border: 1px solid var(--accent);
 }
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	border-radius: 0;
+	border: 1px solid var(--accent);
 }
 pre {
 	padding: 1.5em;
-	border-radius: 8px;
+	border-radius: 0;
+	border: 1px solid var(--accent);
+	background-color: #050505;
 }
 pre > code {
 	all: unset;
+	border: none;
 }
 blockquote {
 	border-left: 4px solid var(--accent);
 	padding: 0 0 0 20px;
 	margin: 0;
 	font-size: 1.333em;
+	background: rgba(var(--gray), 0.1);
 }
 hr {
 	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
+	border-top: 1px dashed var(--accent);
 }
 @media (max-width: 720px) {
 	body {
@@ -172,4 +187,19 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+/* CRT Scanline Effect */
+body::after {
+	content: " ";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+	z-index: 2;
+	background-size: 100% 2px, 3px 100%;
+	pointer-events: none;
 }
