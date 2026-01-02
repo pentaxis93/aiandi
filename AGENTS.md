@@ -22,3 +22,8 @@ Astro blog project.
 - `bun run dev --host 0.0.0.0` - Start dev server (accessible on VPS)
 - `bun run build` - Build for production
 - `bun run preview` - Preview production build
+- `bun run screenshot` - Take a full-page screenshot to `preview.png`
+
+## Skills
+
+- `screenshot-preview` - Capture a full-page homepage screenshot with Puppeteer using `bun run screenshot`. Uses `SCREENSHOT_PORT` (defaults to 4321) and falls back to the next available port if that is busy. Writes `preview.png` at the repo root and auto-starts/stops the dev server.
