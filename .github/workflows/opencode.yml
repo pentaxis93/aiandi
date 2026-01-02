@@ -32,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
+      id-token: write
       contents: write
       pull-requests: write
       issues: write
@@ -52,7 +53,7 @@ jobs:
 
       - name: Run opencode
         if: steps.check.outputs.has_command == 'true'
-        uses: sst/opencode/github@v1.0.0
+        uses: sst/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
@@ -64,6 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
+      id-token: write
       contents: read
       pull-requests: write
     steps:
@@ -72,11 +74,27 @@ jobs:
 
       - name: Run opencode
         id: review
-        uses: sst/opencode/github@v1.0.0
+        uses: sst/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
-          model: opencode/minimax-m2.1-free
+          model: anthropic/claude-opus-4-5
+          prompt: |
+            Review this PR for:
+            - Logic errors and bugs
+            - Missing error handling
+            - Code style consistency with existing codebase
+            
+            DO NOT suggest changes to:
+            - GitHub Actions workflow permissions (these are intentional)
+            - Dependencies or package versions
+            - Architectural decisions already made
+            
+            If you're uncertain whether something is intentional, ask for 
+            clarification rather than suggesting removal.
+            
+            If the code looks good, respond with a brief approval.
+            Only comment if you find concrete, actionable issues.
 
   # Auto-implement review suggestions
   opencode-implement:
@@ -85,6 +103,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
+      id-token: write
       contents: write
       pull-requests: write
     steps:
@@ -95,11 +114,11 @@ jobs:
           fetch-depth: 0
 
       - name: Implement suggestions
-        uses: sst/opencode/github@v1.0.0
+        uses: sst/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
-          model: opencode/minimax-m2.1-free
+          model: anthropic/claude-opus-4-5
           prompt: |
             Review the comments and suggestions left on this PR.
             Implement all actionable suggestions directly in the code.
@@ -117,6 +136,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
+      id-token: write
       contents: read
       issues: write
     steps:
@@ -124,7 +144,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run opencode
-        uses: sst/opencode/github@v1.0.0
+        uses: sst/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
@@ -142,6 +162,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
+      id-token: write
       contents: read
       issues: write
     steps:
@@ -149,7 +170,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run opencode
-        uses: sst/opencode/github@v1.0.0
+        uses: sst/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
