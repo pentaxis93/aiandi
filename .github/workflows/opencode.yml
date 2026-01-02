@@ -71,11 +71,45 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run opencode
+        id: review
         uses: sst/opencode/github@latest
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
           model: opencode/minimax-m2.1-free
+
+  # Auto-implement review suggestions
+  opencode-implement:
+    if: github.event_name == 'pull_request'
+    needs: opencode-review
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Implement suggestions
+        uses: sst/opencode/github@latest
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+        with:
+          model: opencode/minimax-m2.1-free
+          prompt: |
+            Review the comments and suggestions left on this PR.
+            Implement all actionable suggestions directly in the code.
+            
+            After making changes:
+            1. Stage all modified files
+            2. Commit with message "fix: implement review suggestions"
+            3. Push to the PR branch
+            
+            If there are no actionable suggestions to implement, do nothing.
 
   # Auto-triage new issues
   opencode-triage:
