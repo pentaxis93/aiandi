@@ -1,26 +1,28 @@
 ---
 title: "I Don't Know What I'm Talking About (Which Is Why I'm Writing)"
-description: "Learning to build software at 55 with AI collaboration, moving from syntax struggles to architectural thinking."
+description: "I am learning to code at 55 with AI collaboration. I am moving from syntax struggles to architectural thinking."
 pubDate: 2025-10-21
 ---
 
-I'm 55 years old and learning to build software.
+I'm 55 years old. I'm building a stock trading platform in Dart. And I don't know how to code.
 
-Two years of effort before Claude Code existed. Dozens of documentation sites, ChatGPT, Claude's web app—learning syntax, wrestling with package managers, reading endless docs. It was Sisyphean. Each new package or architectural decision required massive relearning. I spent so much time on documentation and syntax fiddling that forward momentum stalled. I could build small things, but anything with real complexity stayed out of reach. The learning curve never flattened; it reset with every new decision.
+For two years, I fought the syntax. It was Sisyphean. Every tutorial was a trap; every package manager a labyrinth. I could build the "Hello World," but the moment I tried to connect a database to a UI, the complexity crushed me. The learning curve didn't flatten; it just reset.
 
-Claude Code changed what "learning to code" means. Pair programming with AI became practical, which shifted the center of gravity of my work from syntax and implementation details toward something higher-level and more engaging: architecture, design decisions, systems thinking. The AI handles the mechanics of implementation. My work—the interesting work—focuses on *what* to build, *why* it matters, and *how* to architect it: structure, maintainability, code quality. This collaboration makes building a real application both possible and productive for a beginner like me. This blog documents that journey as it unfolds.
+Then the tools changed.
 
-Why lead with my beginner status? At this point (i.e., writing the opening for the first post in my brand-new blog), shouldn't I establish credibility first, demonstrate expertise, prove I know what I'm talking about?
+Claude Code didn't just speed things up. It changed what "learning to code" means. Suddenly, the syntax wasn't the job anymore. The job was the *structure*.
 
-But I *don't* know what I'm talking about. Not yet. I'm learning. And that's exactly why I'm writing.
+The AI handles the implementation—the mechanics, the boilerplate, the "how." I handle the architecture—the design decisions, the systems thinking, the "what" and the "why."
 
-<!-- more -->
+I'm not writing loops. I'm designing systems. And it turns out, I know how to design systems. I've been doing it my whole life, just not in code.
 
 ## Writing Is Thinking
 
 This website isn't here to teach you anything. It's to teach *me*.
 
-My high school physics teacher, Mr. Horton, used to say: "If you're not writing, you're not thinking." That impressed me a lot. And it's proven true for me. When I explain something, I start to see the gaps in my understanding. My fuzzy thinking gets exposed. Then I can try to fix it.
+My high school physics teacher, Mr. Horton, used to say: "If you're not writing, you're not thinking."
+
+He was right. When I explain something, I start to see the gaps in my understanding. My fuzzy thinking gets exposed. Then I can try to fix it.
 
 This blog isn't documenting stuff I've already figured out—it's *figuring stuff out through writing*. When I try to explain why an architectural choice makes sense or how a particular method works, the patterns become clearer to me.
 
@@ -28,28 +30,30 @@ The blog is my thinking tool. You're invited to watch me think.
 
 ## What You'll Find Here
 
-This blog documents real building, not (only) theoretical discussions.
+This is the log of a 55-year-old beginner building production software with an alien intelligence.
 
 You'll see:
-- **Actual code and architecture decisions** - Why I chose specific patterns, what worked, what failed
-- **AI collaboration experiments** - How I work with AI, what I've learned about effective collaboration, where AI is working for me and where human mentation matters
-- **Failed experiments** - The patterns that seemed good but fell apart, the approaches I abandoned and why
-- **Struggles and breakthroughs** - My authentic learning process, including the parts where I'm completely stuck
+- **Actual code** - Zenvestor (150k lines and counting), where the rubber meets the road.
+- **Architecture decisions** - Why I chose specific patterns, what worked, and what failed spectacularly.
+- **AI collaboration** - How I work with the machine. Where it shines, and where human mentation is non-negotiable.
+- **The struggles** - The authentic, messy learning process.
 
 You won't find:
-- **Expert advice** - I'm not qualified to give it
-- **Best practices** - I don't know them
-- **Polished retrospectives** - The messy middle is where the interesting stuff happens
-- **Motivational content** - This isn't about whether you *can* build with AI; it's about how I'm actually doing it
+- **Expert advice** - I'm not qualified to give it.
+- **Best practices** - I don't know them.
+- **Polished retrospectives** - The messy middle is where the interesting stuff happens.
 
 ## Foundation First
 
-I learned to work foundation-first in other contexts. Start with basics, practice them until they feel solid, build up from there.
+I learned to work foundation-first in other contexts. Start with basics, practice them until they feel solid, build up from there. The same laws apply here.
 
 In code, that means:
-- Write tests before features
-- Refactor as I learn better patterns
-- Don't jump to advanced techniques before the fundamentals make sense
-- Iterate a lot
+- Write tests before features.
+- Refactor as understanding deepens.
+- Don't jump to advanced techniques before the fundamentals make sense.
+
+It works because it was never magic to begin with. It's just structure.
 
 This might seem slow. It is slow. But it's how I build things that don't collapse under their own weight.
+
+This is either profound or hilarious. Probably both.

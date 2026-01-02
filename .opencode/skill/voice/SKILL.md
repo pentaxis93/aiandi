@@ -184,8 +184,13 @@ First person is essential. "I" saturation is lazy writing.
 
 The test: Read a paragraph aloud. If you hear "I" more than twice in close succession, rewrite.
 
+### Complete Sentences
+Avoid sentence fragments or subjectless sentences unless strictly for stylistic rhythm (and use sparingly).
+- **Bad**: "Learning to code. Building things." (Subjectless)
+- **Good**: "I'm learning to code. I'm building things."
+
 ### Sentence Structure
-- Short sentences for impact: "I'm 55 years old and learning to build software."
+- Short sentences for impact: "I'm 55 years old and learning to code."
 - Longer sentences for explanation
 - Mix lengths for rhythm
 
