@@ -78,7 +78,7 @@ jobs:
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
-          model: anthropic/claude-opus-4-5
+          model: anthropic/claude-sonnet-4-5-20250929
           prompt: |
             Review this PR for:
             - Logic errors and bugs
@@ -118,7 +118,7 @@ jobs:
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
         with:
-          model: anthropic/claude-opus-4-5
+          model: anthropic/claude-sonnet-4-5-20250929
           prompt: |
             Review the comments and suggestions left on this PR.
             Implement all actionable suggestions directly in the code.
