@@ -62,33 +62,64 @@ export default {
       },
       
       /**
-       * Spacing extensions
-       * Theme-specific spacing can be added via CSS custom properties
+       * Semantic spacing - theme-aware
+       * Each theme defines xs through 2xl and semantic values
        */
       spacing: {
-        '18': 'var(--spacing-18, 4.5rem)',
-        '22': 'var(--spacing-22, 5.5rem)',
-        '26': 'var(--spacing-26, 6.5rem)',
-        '30': 'var(--spacing-30, 7.5rem)',
+        // Theme-aware semantic spacing
+        'xs': 'var(--space-xs)',
+        'sm': 'var(--space-sm)',
+        'md': 'var(--space-md)',
+        'lg': 'var(--space-lg)',
+        'xl': 'var(--space-xl)',
+        '2xl': 'var(--space-2xl)',
+        
+        // Semantic spacing utilities
+        'section': 'var(--space-section)',
+        'card-padding': 'var(--space-card-padding)',
+        'inline': 'var(--space-inline)',
       },
       
       /**
-       * Border radius mapping
+       * Line height - theme-aware
+       */
+      lineHeight: {
+        'tight': 'var(--leading-tight)',
+        'normal': 'var(--leading-normal)',
+        'relaxed': 'var(--leading-relaxed)',
+        'loose': 'var(--leading-loose)',
+        'body': 'var(--leading-body)',
+        'heading': 'var(--leading-heading)',
+      },
+      
+      /**
+       * Letter spacing - theme-aware
+       */
+      letterSpacing: {
+        'tight': 'var(--tracking-tight)',
+        'normal': 'var(--tracking-normal)',
+        'wide': 'var(--tracking-wide)',
+        'body': 'var(--tracking-body)',
+        'heading': 'var(--tracking-heading)',
+      },
+      
+      /**
+       * Border radius - theme-aware
        */
       borderRadius: {
+        'none': 'var(--radius-none)',
         'sm': 'var(--radius-sm)',
         'DEFAULT': 'var(--radius-md)',
         'md': 'var(--radius-md)',
         'lg': 'var(--radius-lg)',
-        // Keep gentle/soft as aliases for migration
-        'soft': 'var(--radius-sm)',
-        'gentle': 'var(--radius-md)',
+        'full': 'var(--radius-full)',
       },
       
       /**
-       * Box shadow mapping
+       * Box shadow - theme-aware
        */
       boxShadow: {
+        'none': 'var(--shadow-none)',
         'sm': 'var(--shadow-sm)',
         'DEFAULT': 'var(--shadow-md)',
         'md': 'var(--shadow-md)',
@@ -96,12 +127,28 @@ export default {
       },
       
       /**
-       * Transition duration mapping
+       * Transition duration - theme-aware
        */
       transitionDuration: {
-        'fast': 'var(--transition-fast)',
-        'DEFAULT': 'var(--transition-normal)',
-        'slow': 'var(--transition-slow)',
+        'fast': 'var(--duration-fast)',
+        'DEFAULT': 'var(--duration-normal)',
+        'normal': 'var(--duration-normal)',
+        'slow': 'var(--duration-slow)',
+      },
+      
+      /**
+       * Transition timing function - theme-aware
+       */
+      transitionTimingFunction: {
+        'theme': 'var(--easing)',
+      },
+      
+      /**
+       * Border width - theme-aware
+       */
+      borderWidth: {
+        DEFAULT: 'var(--border-width)',
+        'thick': 'var(--border-width-thick)',
       },
     },
   },

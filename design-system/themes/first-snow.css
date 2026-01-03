@@ -66,27 +66,64 @@
 	--font-size-5xl: 3rem;         /* 48px */
 	--font-size-6xl: 3.75rem;      /* 60px */
 	
-	/* Line heights - efficient, not generous */
-	--leading-tight: 1.25;
-	--leading-normal: 1.5;
-	--leading-relaxed: 1.625;
-	--leading-loose: 1.75;
+	/* Line heights - EFFICIENT, compact but readable */
+	--leading-tight: 1.25;          /* Tight for headings */
+	--leading-normal: 1.5;          /* Standard body */
+	--leading-relaxed: 1.625;       /* Slightly open */
+	--leading-loose: 1.75;          /* Maximum for this theme */
 	
-	/* No custom spacing - use Tailwind defaults */
+	/* Semantic line heights */
+	--leading-body: var(--leading-normal);      /* Body text 1.5 - efficient */
+	--leading-heading: var(--leading-tight);    /* Headings 1.25 - compact */
+	
+	/* Letter spacing - TIGHT, dense, information-dense */
+	--tracking-tight: -0.02em;
+	--tracking-normal: 0;
+	--tracking-wide: 0.01em;        /* Even "wide" is restrained */
+	
+	/* Semantic letter spacing */
+	--tracking-body: var(--tracking-normal);    /* Body text neutral */
+	--tracking-heading: var(--tracking-tight);  /* Headings condensed */
+	
+	/* ===== SPACING ===== */
+	/* EFFICIENT spacing - no waste, tight, crisp */
+	--space-xs: 0.25rem;     /* 4px - minimal */
+	--space-sm: 0.5rem;      /* 8px */
+	--space-md: 1rem;        /* 16px - efficient base unit */
+	--space-lg: 1.5rem;      /* 24px */
+	--space-xl: 2.5rem;      /* 40px */
+	--space-2xl: 4rem;       /* 64px - even dramatic spacing is controlled */
+	
+	/* Semantic spacing */
+	--space-section: var(--space-xl);           /* Sections get moderate spacing */
+	--space-card-padding: var(--space-md);      /* Cards are compact */
+	--space-inline: var(--space-xs);            /* Inline elements tight */
 	
 	/* ===== EFFECTS ===== */
-	--radius-sm: 0.125rem;   /* Minimal rounding */
-	--radius-md: 0.25rem;    /* Subtle corners */
-	--radius-lg: 0.375rem;   /* Still restrained */
+	/* Border radius - SHARP to MINIMAL, crisp precision */
+	--radius-none: 0;
+	--radius-sm: 0.125rem;   /* 2px - barely perceptible */
+	--radius-md: 0.25rem;    /* 4px - subtle */
+	--radius-lg: 0.375rem;   /* 6px - restrained */
+	--radius-full: 9999px;   /* Pills only */
 	
-	/* Shadows - subtle, not dramatic */
+	/* Shadows - SHARP or MINIMAL, flat aesthetic */
+	--shadow-color: rgb(0 0 0);     /* Neutral shadow */
+	--shadow-none: none;
 	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-	--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-	--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+	--shadow-md: 0 2px 4px 0 rgb(0 0 0 / 0.08);        /* Sharp, minimal blur */
+	--shadow-lg: 0 4px 8px 0 rgb(0 0 0 / 0.1);         /* Still sharp, not diffuse */
+	/* Note: Short blur distances (2px, 4px, 8px), sharp definition */
 	
-	--transition-fast: 150ms;
-	--transition-normal: 200ms;
-	--transition-slow: 300ms;
+	/* Transitions - FAST, snappy, responsive */
+	--duration-fast: 100ms;          /* Very quick */
+	--duration-normal: 150ms;        /* Still snappy */
+	--duration-slow: 200ms;          /* Even "slow" is fast */
+	--easing: ease-out;              /* Quick deceleration */
+	
+	/* Borders - CLEAN, defined */
+	--border-width: 1px;             /* Clean lines */
+	--border-width-thick: 2px;       /* Strong definition */
 }
 
 /* Dark mode overrides */
@@ -108,6 +145,12 @@
 		--color-accent: #4da6ff;                    /* Brighter blue for contrast */
 		--color-accent-hover: #66b3ff;              /* Even lighter */
 		--color-accent-subtle: rgb(77 166 255 / 0.1);
+		
+		/* ===== EFFECTS (Dark Mode) ===== */
+		/* Shadows stay sharp in dark mode */
+		--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+		--shadow-md: 0 2px 4px 0 rgb(0 0 0 / 0.4);
+		--shadow-lg: 0 4px 8px 0 rgb(0 0 0 / 0.5);
 	}
 }
 

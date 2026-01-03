@@ -74,53 +74,134 @@ Standard scale (theme can extend):
 - `--font-size-xs` through `--font-size-2xl`
 - Each size SHOULD have a corresponding line-height
 
-#### Line Heights
-| Token | Purpose |
-|-------|---------|
-| `--leading-tight` | Headings, compact text |
-| `--leading-normal` | Default body text |
-| `--leading-relaxed` | Reading-optimized text |
-| `--leading-loose` | Maximum readability |
+#### Line Heights (Vertical Rhythm)
 
-#### Letter Spacing
+Line height profoundly affects reading comfort and visual density.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--leading-tight` | Headings, compact text (1.25-1.4) | Dense, efficient |
+| `--leading-normal` | Default body text (1.5-1.6) | Balanced |
+| `--leading-relaxed` | Reading-optimized text (1.7-1.8) | Generous, comfortable |
+| `--leading-loose` | Maximum readability (1.9-2.0) | Luxurious, unhurried |
+
+**Semantic Line Heights:**
 | Token | Purpose |
 |-------|---------|
-| `--tracking-tight` | Large headings |
-| `--tracking-normal` | Default |
-| `--tracking-wide` | Small caps, labels |
+| `--leading-body` | Default for body text |
+| `--leading-heading` | Default for headings |
+
+**Design Expression:**
+- **Generous themes** (Afternoon Letter): Relaxed/loose body leading (1.8+)
+- **Efficient themes** (First Snow): Normal body leading (1.5-1.6)
+- **Night-reading themes** (Lamp Oil): Relaxed leading for low-contrast legibility
+
+#### Letter Spacing (Horizontal Rhythm)
+
+Letter spacing affects density, legibility, and character.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--tracking-tight` | Large headings (-0.025em to 0) | Dense, efficient |
+| `--tracking-normal` | Default (0) | Neutral |
+| `--tracking-wide` | Small caps, labels (0.025-0.1em) | Open, legible |
+
+**Semantic Letter Spacing:**
+| Token | Purpose |
+|-------|---------|
+| `--tracking-body` | Default for body text |
+| `--tracking-heading` | Default for headings |
+
+**Design Expression:**
+- **Open themes** (Afternoon Letter): Normal to slightly wide
+- **Dense themes** (First Snow): Tight to normal
+- **Legibility themes** (Lamp Oil): Slightly wide for low-contrast clarity
 
 ### Spacing Tokens
 
-**Base Scale:** Tailwind's default (0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64...)
+Spacing tokens control all padding, margin, gap, and layout rhythm. Each theme can express its spatial character across the full scale.
 
-**Theme Extensions:** Themes MAY add intermediate values (e.g., 18, 22) if needed.
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--space-xs` | Minimal spacing (0.25-0.5rem) | Tighter themes compress, generous themes open up |
+| `--space-sm` | Small spacing (0.5-0.75rem) | |
+| `--space-md` | Medium spacing (1-1.5rem) | Base unit for most layouts |
+| `--space-lg` | Large spacing (1.5-2.5rem) | Section padding, card spacing |
+| `--space-xl` | Extra large (2.5-4rem) | Major section breaks |
+| `--space-2xl` | Double extra large (4-6rem) | Hero spacing, dramatic separations |
 
-**Semantic Spacing** (optional, theme-defined):
-- `--spacing-section` — Vertical rhythm between major sections
-- `--spacing-element` — Default element spacing
+**Semantic Spacing Tokens:**
+| Token | Purpose |
+|-------|---------|
+| `--space-section` | Vertical rhythm between major sections |
+| `--space-card-padding` | Default internal padding for cards |
+| `--space-inline` | Horizontal spacing between inline elements |
+
+**Design Expression:**
+- **Generous themes** (Afternoon Letter): Larger values, breathing room, unhurried
+- **Efficient themes** (First Snow): Tighter values, no waste, crisp
+- **Cozy themes** (Lamp Oil): Moderate values, comfortable but enclosed
 
 ### Effect Tokens
 
 #### Shadows
-| Token | Purpose |
-|-------|---------|
-| `--shadow-sm` | Subtle elevation |
-| `--shadow-md` | Standard elevation |
-| `--shadow-lg` | Prominent elevation |
+
+Shadows convey elevation and visual hierarchy. Themes can express depth, warmth, or flatness.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--shadow-color` | Base shadow color | Warm themes use warm shadows, cool themes use cool |
+| `--shadow-sm` | Subtle elevation (cards, dropdowns) | Can be soft/diffuse or sharp/defined |
+| `--shadow-md` | Standard elevation (modals, popovers) | |
+| `--shadow-lg` | Prominent elevation (dialogs, overlays) | |
+| `--shadow-none` | Explicitly no shadow | Flat themes may reject elevation entirely |
+
+**Shadow Values Include:** `x-offset`, `y-offset`, `blur-radius`, `spread`, `color`
+
+**Design Expression:**
+- **Soft themes** (Afternoon Letter): Diffuse blur, warm shadow color, gentle offset
+- **Sharp themes** (First Snow): Minimal blur or none, neutral shadow, precise offset
+- **Deep themes** (Lamp Oil): Pronounced shadows, dramatic depth, pools of light
 
 #### Border Radius
-| Token | Purpose |
-|-------|---------|
-| `--radius-sm` | Subtle rounding |
-| `--radius-md` | Standard rounding |
-| `--radius-lg` | Prominent rounding |
+
+Radii control the sharpness or softness of all corners.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--radius-none` | Sharp corners (0) | Precise, technical themes |
+| `--radius-sm` | Subtle rounding (0.125-0.25rem) | Gentle softening |
+| `--radius-md` | Standard rounding (0.375-0.5rem) | Approachable, friendly |
+| `--radius-lg` | Prominent rounding (0.75-1rem) | Warm, generous |
+| `--radius-full` | Pill/circle (9999px) | For badges, avatars |
+
+**Design Expression:**
+- **Rounded themes** (Afternoon Letter): Generous curves, soft corners
+- **Sharp themes** (First Snow): Zero or minimal radius, crisp precision
+- **Balanced themes** (Lamp Oil): Medium radius, soft but not playful
 
 #### Transitions
-| Token | Purpose |
-|-------|---------|
-| `--transition-fast` | Quick interactions (hover) |
-| `--transition-normal` | Standard animations |
-| `--transition-slow` | Dramatic transitions |
+
+Transitions control the temporal character—how fast things move and feel.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--duration-fast` | Quick interactions (100-150ms) | Snappy, responsive themes |
+| `--duration-normal` | Standard transitions (200-250ms) | Balanced, natural |
+| `--duration-slow` | Deliberate transitions (300-400ms) | Contemplative, unhurried |
+| `--easing` | Timing function | ease-out, ease-in-out, cubic-bezier |
+
+**Design Expression:**
+- **Unhurried themes** (Afternoon Letter): Slow durations, gentle easing
+- **Efficient themes** (First Snow): Fast durations, snappy easing
+- **Contemplative themes** (Lamp Oil): Medium-slow, deliberate easing
+
+#### Borders
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--border-width` | Default border thickness (1-2px) | Delicate vs. bold |
+| `--border-width-thick` | Emphasized borders (2-4px) | For focus states, emphasis |
 
 ## Component Classes
 
@@ -143,15 +224,29 @@ Utility classes use semantic tokens:
 ## Theme Requirements
 
 A valid theme MUST provide values for:
-- All color tokens (surfaces, text, accent)
-- All typography tokens (families, base sizes)
-- All effect tokens (shadows, radii, transitions)
+- **All color tokens** (surfaces, text, accent)
+- **All typography tokens** (families, base sizes, rhythm)
+- **All spacing tokens** (xs through 2xl, semantic spacing)
+- **All effect tokens** (shadows with color, radii, transitions with easing, borders)
 
 A theme MAY:
-- Add optional tokens (e.g., accent-secondary)
-- Extend spacing scale
-- Define semantic colors
+- Add optional tokens (e.g., accent-secondary, accent-tertiary)
+- Add intermediate spacing values
+- Define semantic colors (success, warning, error, info)
 - Add theme-specific utilities (documented as extensions)
+
+**Complete Expression Requirement:**
+
+Each theme should express itself across ALL design dimensions:
+- Colors (what you see)
+- Typography (what you read)
+- Spacing (how it breathes)
+- Shadows (how it floats)
+- Radii (how sharp or soft)
+- Transitions (how it moves)
+- Rhythm (how dense or open)
+
+A theme is not just a color scheme—it's a complete environment.
 
 ## Dark Mode
 
@@ -173,3 +268,11 @@ A properly structured design system:
 ## Version History
 
 - **1.0** (2026-01-03): Initial schema definition after warmth remediation
+- **1.1** (2026-01-03): Expanded to full design space
+  - Added detailed spacing tokens (xs through 2xl, semantic)
+  - Expanded shadow tokens with color and expression guidance
+  - Detailed radius tokens from none to full
+  - Added transition duration and easing tokens
+  - Expanded typography rhythm (leading, tracking, semantic)
+  - Added border width tokens
+  - Documented theme expression requirements across all dimensions

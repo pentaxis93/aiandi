@@ -34,6 +34,14 @@ This theme invites lingering. It's for deep reading, for thinking, for the kind 
 **Typography:**  
 Georgia serif - the font of correspondence
 
+**Full Expression:**
+- **Spacing:** GENEROUS - breathing room, extra padding (1.5rem base)
+- **Shadows:** SOFT - diffuse blur, warm-tinted, gentle elevation
+- **Radii:** ROUNDED - 0.625rem base, soft approachable corners
+- **Transitions:** SLOW - 300ms standard, gentle ease-out
+- **Rhythm:** RELAXED - 1.8 line-height, room to breathe
+- **Character:** Everything invites lingering
+
 **Intended Mood:**  
 Contemplative. Unhurried. Human-scale. The opposite of optimization.
 
@@ -64,6 +72,14 @@ Clarity through reduction. Not cold—crystalline. Every element that doesn't se
 
 **Typography:**  
 System fonts - whatever your OS chose, we trust it
+
+**Full Expression:**
+- **Spacing:** EFFICIENT - tight, no waste (1rem base)
+- **Shadows:** SHARP - minimal blur, crisp definition
+- **Radii:** SMALL - 0.25rem base, subtle precision
+- **Transitions:** FAST - 150ms standard, snappy response
+- **Rhythm:** NORMAL - 1.5 line-height, information density
+- **Character:** Everything serves clarity and speed
 
 **Intended Mood:**  
 Focused. Crisp. Respectful of your time. The opposite of cozy.
@@ -96,6 +112,14 @@ This theme is for night owls and deep workers. It's not the cold blue-gray of mo
 
 **Typography:**  
 Georgia serif - still bookish, now glowing
+
+**Full Expression:**
+- **Spacing:** COZY - comfortable but enclosed (1.25rem base)
+- **Shadows:** DEEP - pronounced pools of light, warm amber glow
+- **Radii:** MEDIUM - 0.5rem base, soft but not playful
+- **Transitions:** MEDIUM-SLOW - 250ms, deliberate ease-in-out
+- **Rhythm:** RELAXED - 1.75 line-height, night legibility
+- **Character:** Intimate protection, focused warmth
 
 **Intended Mood:**  
 Intimate. Focused. Protected. The feeling of being awake when everyone else is asleep. The world has gotten small and that's exactly what you wanted.
@@ -211,6 +235,40 @@ This is craft over convenience.
 
 ---
 
+## Full Design Space Expression
+
+**Version 1.1+**: Themes now express themselves across ALL design dimensions, not just color and typography.
+
+### The Limitation We Fixed
+
+Early themes only varied colors and fonts—perhaps 20% of Tailwind's design space. They LOOKED different but didn't FEEL as different as they could. "Afternoon Letter" and "First Snow" used the same spacing, shadows, radii, and transition speeds. Same room, different paint.
+
+### The Full Dimensional Approach
+
+Each theme now has a complete dimensional personality:
+
+| Dimension | Afternoon Letter | First Snow | Lamp Oil |
+|-----------|-----------------|------------|----------|
+| **Spacing** | Generous (1.5rem) | Efficient (1rem) | Cozy (1.25rem) |
+| **Shadows** | Soft diffuse | Sharp minimal | Deep glowing |
+| **Radii** | Rounded (0.625rem) | Sharp (0.25rem) | Medium (0.5rem) |
+| **Transitions** | Slow (300ms) | Fast (150ms) | Medium (250ms) |
+| **Line Height** | Relaxed (1.8) | Normal (1.5) | Relaxed (1.75) |
+| **Letter Spacing** | Normal to open | Tight | Slightly open |
+| **Easing** | ease-out gentle | ease-out snappy | ease-in-out smooth |
+
+### Why It Matters
+
+Switching themes should feel like entering a different room, not just changing wall color.
+
+- **Afternoon Letter** → Stepping into a warm library. Everything breathes. Time slows.
+- **First Snow** → Entering a bright gallery. Everything is crisp. Focus sharpens.
+- **Lamp Oil** → Settling into a midnight study. The world shrinks. Protection.
+
+The difference is **visceral**, not just visual.
+
+---
+
 ## Version History
 
 - **v1.0** (2026-01-03): Initial collection with three evocatively named themes
@@ -220,3 +278,12 @@ This is craft over convenience.
   - Instant theme switching via `data-theme` attribute
   - localStorage persistence across sessions
   - Interactive theme picker with descriptions
+
+- **v1.1** (2026-01-03): Expanded to full design space
+  - Added spacing tokens (xs through 2xl, semantic)
+  - Added shadow tokens with theme-specific character
+  - Added radius tokens from sharp to rounded
+  - Added transition duration and easing per theme
+  - Added typography rhythm (line-height, letter-spacing)
+  - All themes now express complete dimensional personality
+  - Themes feel dramatically different, not just visually different
