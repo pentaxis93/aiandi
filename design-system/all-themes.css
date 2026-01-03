@@ -1,0 +1,105 @@
+/**
+ * All Themes - Dynamic Switching Support
+ * 
+ * This file loads all available themes and makes them switchable via
+ * data attribute on the <html> element.
+ * 
+ * Usage:
+ * <html data-theme="afternoon-letter">  → Afternoon Letter theme
+ * <html data-theme="first-snow">         → First Snow theme
+ * <html data-theme="lamp-oil">           → Lamp Oil theme
+ * 
+ * Default: afternoon-letter (if no data-theme attribute)
+ */
+
+/* 
+ * Since Tailwind v4 @theme blocks can't be easily scoped with selectors,
+ * we need to use CSS custom properties with attribute selectors.
+ * 
+ * Strategy: Define all theme values as scoped custom properties,
+ * then reference them in the base tokens.css
+ */
+
+/* ===== AFTERNOON LETTER THEME ===== */
+:root[data-theme="afternoon-letter"],
+:root:not([data-theme]) {
+	/* Default theme */
+	--theme-color-background: #FAF7F2;
+	--theme-color-surface: #F5F0E8;
+	--theme-color-surface-alt: #2D2520;
+	--theme-color-border: rgb(45 37 32 / 0.1);
+	
+	--theme-color-text-primary: #2D2520;
+	--theme-color-text-secondary: #5A4A42;
+	--theme-color-text-muted: #8A7A6F;
+	--theme-color-text-inverse: #F5F0E8;
+	
+	--theme-color-accent: #D97757;
+	--theme-color-accent-hover: #B85536;
+	--theme-color-accent-subtle: rgb(217 119 87 / 0.3);
+	
+	--theme-color-accent-secondary: #D4A574;
+	--theme-color-accent-tertiary: #8FA888;
+	
+	--theme-font-body: Georgia, Literata, Charter, 'Iowan Old Style', 'Palatino Linotype', serif;
+	--theme-font-heading: Charter, Georgia, 'Iowan Old Style', Cambria, serif;
+	--theme-font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+	
+	--theme-font-size-base: 1.125rem;
+	--theme-leading-relaxed: 1.8;
+}
+
+/* ===== FIRST SNOW THEME ===== */
+:root[data-theme="first-snow"] {
+	--theme-color-background: #ffffff;
+	--theme-color-surface: #f5f5f5;
+	--theme-color-surface-alt: #1a1a1a;
+	--theme-color-border: #e0e0e0;
+	
+	--theme-color-text-primary: #1a1a1a;
+	--theme-color-text-secondary: #666666;
+	--theme-color-text-muted: #999999;
+	--theme-color-text-inverse: #ffffff;
+	
+	--theme-color-accent: #0066cc;
+	--theme-color-accent-hover: #0052a3;
+	--theme-color-accent-subtle: rgb(0 102 204 / 0.1);
+	
+	/* No secondary/tertiary - fallback to primary */
+	--theme-color-accent-secondary: #0066cc;
+	--theme-color-accent-tertiary: #0066cc;
+	
+	--theme-font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--theme-font-heading: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--theme-font-mono: ui-monospace, 'SF Mono', Monaco, 'Cascadia Mono', 'Roboto Mono', monospace;
+	
+	--theme-font-size-base: 1rem;
+	--theme-leading-relaxed: 1.5;
+}
+
+/* ===== LAMP OIL THEME ===== */
+:root[data-theme="lamp-oil"] {
+	--theme-color-background: #1A1410;
+	--theme-color-surface: #2D2520;
+	--theme-color-surface-alt: #3D3530;
+	--theme-color-border: rgb(245 239 231 / 0.1);
+	
+	--theme-color-text-primary: #F5EFE7;
+	--theme-color-text-secondary: #D4C4B0;
+	--theme-color-text-muted: #A89884;
+	--theme-color-text-inverse: #1A1410;
+	
+	--theme-color-accent: #E8A87C;
+	--theme-color-accent-hover: #F4C299;
+	--theme-color-accent-subtle: rgb(232 168 124 / 0.2);
+	
+	--theme-color-accent-secondary: #C9A36A;
+	--theme-color-accent-tertiary: #E8A87C; /* Same as primary */
+	
+	--theme-font-body: Georgia, Literata, Charter, 'Iowan Old Style', 'Palatino Linotype', serif;
+	--theme-font-heading: Charter, Georgia, 'Iowan Old Style', Cambria, serif;
+	--theme-font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+	
+	--theme-font-size-base: 1.125rem;
+	--theme-leading-relaxed: 1.8;
+}

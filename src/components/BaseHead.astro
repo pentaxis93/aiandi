@@ -30,10 +30,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Font preloads -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+<!-- Using system fonts for performance and warmth -->
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
@@ -58,11 +55,8 @@ const { title, description, image = FallbackImage } = Astro.props;
 <meta property="twitter:image" content={new URL(image.src, Astro.url)} />
 
 <script is:inline>
-	// Default to dark mode if no preference is stored
-	const theme = localStorage.getItem('theme');
-	if (theme === 'light') {
-		document.documentElement.classList.remove('dark');
-	} else {
-		document.documentElement.classList.add('dark');
-	}
+	// Load saved theme immediately to prevent flash
+	// Themes are activated via data-theme attribute on <html>
+	const savedTheme = localStorage.getItem('theme') || 'afternoon-letter';
+	document.documentElement.setAttribute('data-theme', savedTheme);
 </script>

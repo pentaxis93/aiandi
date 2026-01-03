@@ -1,0 +1,157 @@
+/**
+ * LAMP OIL
+ * 
+ * Created: January 2026
+ * 
+ * Late night reading by a warm lamp in a dark room. The world has gone quiet.
+ * The only light is the pool of warmth on your desk. Everything else fades to
+ * rich darkness. This is the hour for deep work, for thoughts that only come
+ * when the day has ended.
+ * 
+ * PHILOSOPHY:
+ * This theme is for night owls and deep workers. It's not the cold blue-gray
+ * of most dark modes—it's warm darkness, the kind you get from turned-off
+ * lights, not from screens. The text glows like it's lit by warm incandescent
+ * bulbs, not harsh LEDs. This is a theme that says: the day is over, you can
+ * think now.
+ * 
+ * DESIGN PRINCIPLES:
+ * - Warm darkness over cold blacks: Rich browns and deep navies, not #000
+ * - Glow over stark contrast: Text feels lit, not painted
+ * - Intimacy over expanse: Pools of light in surrounding dark
+ * - Focus over decoration: The dark removes distractions
+ * 
+ * KEY CHARACTERISTICS:
+ * - Deep warm black (#1A1410) - like a room with lights off
+ * - Warm cream text (#F5EFE7) - like paper in lamplight
+ * - Amber accent (#E8A87C) - the warm glow of lamp oil
+ * - Muted gold highlights (#C9A36A) - edge of the light
+ * - Gentle shadows, not harsh blacks
+ * - Georgia serif - still bookish, now glowing
+ * - Generous spacing - the dark makes room feel infinite
+ * 
+ * INTENDED MOOD:
+ * Intimate. Focused. Protected. The feeling of being awake when everyone else
+ * is asleep. The world has gotten small and that's exactly what you wanted.
+ */
+
+@theme {
+	/* ===== SURFACES ===== */
+	--color-background: #1A1410;        /* Deep warm black - room with lights off */
+	--color-surface: #2D2520;           /* Slightly lighter for elevation */
+	--color-surface-alt: #3D3530;       /* Even lighter for code */
+	--color-border: rgb(245 239 231 / 0.1); /* Subtle warm border */
+	
+	/* ===== TEXT ===== */
+	--color-text-primary: #F5EFE7;      /* Warm cream - like paper in lamplight */
+	--color-text-secondary: #D4C4B0;    /* Muted warm tan */
+	--color-text-muted: #A89884;        /* Soft brown */
+	--color-text-inverse: #1A1410;      /* Dark on light (rare in this theme) */
+	
+	/* ===== ACCENT COLORS ===== */
+	--color-accent: #E8A87C;                    /* Amber - warm lamp glow */
+	--color-accent-hover: #F4C299;              /* Brighter amber */
+	--color-accent-subtle: rgb(232 168 124 / 0.2); /* Amber at 20% */
+	
+	/* Theme extension: warm secondary accent */
+	--color-accent-secondary: #C9A36A;          /* Muted gold - edge of lamplight */
+	--color-accent-secondary-light: #DDB87D;
+	--color-accent-secondary-dark: #A8865A;
+	
+	/* No tertiary - darkness simplifies */
+	
+	/* ===== TYPOGRAPHY ===== */
+	--font-body: Georgia, Literata, Charter, 'Iowan Old Style', 'Palatino Linotype', serif;
+	--font-heading: Charter, Georgia, 'Iowan Old Style', Cambria, serif;
+	--font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', Consolas, monospace;
+	
+	/* Font sizes - same generous scale as Afternoon Letter */
+	--font-size-base: 1.125rem;
+	--font-size-lg: 1.25rem;
+	--font-size-xl: 1.5rem;
+	--font-size-2xl: 1.875rem;
+	--font-size-3xl: 2.25rem;
+	--font-size-4xl: 3rem;
+	--font-size-5xl: 3.75rem;
+	--font-size-6xl: 4.5rem;
+	
+	/* Line heights - generous, for night reading */
+	--leading-tight: 1.2;
+	--leading-normal: 1.6;
+	--leading-relaxed: 1.8;
+	--leading-loose: 2;
+	
+	/* Spacing - generous, the dark makes space feel infinite */
+	--spacing-18: 4.5rem;
+	--spacing-22: 5.5rem;
+	--spacing-26: 6.5rem;
+	--spacing-30: 7.5rem;
+	
+	/* ===== EFFECTS ===== */
+	--radius-sm: 0.25rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	
+	/* Shadows - warm glows instead of cold shadows */
+	--shadow-sm: 0 1px 2px 0 rgb(232 168 124 / 0.05);
+	--shadow-md: 0 4px 6px -1px rgb(232 168 124 / 0.1);
+	--shadow-lg: 0 10px 15px -3px rgb(232 168 124 / 0.15);
+	
+	--transition-fast: 150ms;
+	--transition-normal: 200ms;
+	--transition-slow: 300ms;
+}
+
+/* Light mode (rarely used, but complete for schema compliance) */
+/* When someone switches FROM Lamp Oil, it should degrade gracefully */
+@media (prefers-color-scheme: light) {
+	:root:not(.dark) {
+		@theme {
+			/* Falls back to afternoon letter-ish values */
+			--color-background: #FAF7F2;
+			--color-surface: #F5F0E8;
+			--color-surface-alt: #2D2520;
+			--color-border: rgb(45 37 32 / 0.1);
+			
+			--color-text-primary: #2D2520;
+			--color-text-secondary: #5A4A42;
+			--color-text-muted: #8A7A6F;
+			--color-text-inverse: #F5EFE7;
+			
+			--color-accent: #E8A87C;
+			--color-accent-hover: #D4946A;
+			--color-accent-subtle: rgb(232 168 124 / 0.3);
+		}
+	}
+}
+
+/**
+ * THEME-SPECIFIC CUSTOMIZATIONS
+ */
+
+.prose {
+	font-size: var(--font-size-base);
+	line-height: var(--leading-relaxed);
+}
+
+/* Use secondary accent for blockquotes */
+.prose blockquote {
+	border-left-color: var(--color-accent-secondary);
+}
+
+/**
+ * USAGE NOTES:
+ * 
+ * Lamp Oil is designed for:
+ * - Late night reading (10pm - 2am)
+ * - Deep work sessions
+ * - Reducing eye strain in dark environments
+ * - Creating a sense of intimacy and focus
+ * 
+ * The key difference from standard dark modes: everything is WARM.
+ * The darkness is rich and brown, not cold and blue. The text glows
+ * like it's lit by an incandescent bulb, not a screen.
+ * 
+ * This creates the psychological effect of being in a small, protected
+ * space rather than staring into an abyss.
+ */
