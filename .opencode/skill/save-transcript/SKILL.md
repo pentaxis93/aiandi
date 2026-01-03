@@ -1,6 +1,6 @@
 ---
 name: save-transcript
-description: Save the current chat session as a transcript for the AI and I blog. Includes auto-summary using the voice skill. Usage: /save-transcript <brief-description>
+description: "Save the current chat session as a transcript for the AI and I blog. Includes auto-summary using the voice skill. Usage: /save-transcript <brief-description>"
 ---
 
 # Save Transcript
