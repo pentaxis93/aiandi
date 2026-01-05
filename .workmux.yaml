@@ -1,0 +1,21 @@
+# workmux configuration for aiandi
+# Astro-based AI & I blog
+
+# Place worktrees as siblings to main/ (matching repo structure)
+worktree_dir: "/home/pentaxis93/src/aiandi/feature"
+
+panes:
+  - command: <agent>
+    focus: true
+
+files:
+  # Symlink: share caches across worktrees (saves disk, speeds builds)
+  symlink:
+    - node_modules    # Dependencies (bun install creates these)
+    - .astro          # Astro build cache
+    - dist            # Build output (if you want to share)
+
+  # Copy: per-worktree config that may differ
+  copy:
+    - .env            # Environment variables (may not exist yet)
+    - .env.production # Production env (may not exist yet)
