@@ -1,7 +1,6 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
-import ThemePicker from './ThemePicker.astro';
 ---
 
 <header class="bg-background border-b-2 border-accent/30 px-6 py-4">
@@ -15,21 +14,10 @@ import ThemePicker from './ThemePicker.astro';
 			</a>
 		</h2>
 		
-		<div class="hidden md:flex items-center gap-8">
-			<div class="flex items-center gap-6">
-				<HeaderLink href="/">Home</HeaderLink>
-				<HeaderLink href="/blog">Blog</HeaderLink>
-				<HeaderLink href="/about">About</HeaderLink>
-			</div>
-			
-			<div class="flex items-center">
-				<ThemePicker />
-			</div>
-		</div>
-		
-		<!-- Mobile: Just show theme picker -->
-		<div class="md:hidden">
-			<ThemePicker />
+		<div class="flex items-center gap-6">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
 		</div>
 	</nav>
 </header>

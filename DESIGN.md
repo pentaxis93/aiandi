@@ -97,12 +97,10 @@ Standard Tailwind scale. Themes may extend with additional values.
 design-system/
 ├── SCHEMA.md           # Token schema documentation
 ├── tokens.css          # Semantic token declarations (references theme vars)
-├── all-themes.css      # All themes with data-theme scoping
+├── all-themes.css      # Workbench theme definition
 └── themes/
-    ├── afternoon-letter.css   # Warm, bookish aesthetic
-    ├── first-snow.css         # Crisp, minimal aesthetic
-    ├── lamp-oil.css           # Warm dark aesthetic
-    └── README.md              # Theme philosophy & creation guide
+    ├── workbench.css          # Focused, clear, precise aesthetic
+    └── README.md              # Theme philosophy & documentation
 ```
 
 ### Theme File Format
@@ -138,11 +136,10 @@ Each theme file contains:
 
 ### Switching Themes
 
-**Interactive (User):**
-- Click the palette icon in the site header
-- Choose from available themes with poetic descriptions
-- Theme switches instantly without page reload
-- Choice persists in localStorage across sessions
+**Current Implementation:**
+- The Workbench theme is the only available theme
+- It loads automatically via `data-theme="workbench"` attribute
+- No theme switching UI is needed (single theme)
 
 **Technical Implementation:**
 - All themes loaded via `all-themes.css` with `[data-theme="..."]` scoping
@@ -206,25 +203,13 @@ When reviewing design system changes:
 
 ---
 
-## Current Themes
+## Current Theme
 
-### Afternoon Letter (default)
-- **Philosophy**: Reading a handwritten letter in warm afternoon light. Inviting lingering, contemplative, unhurried.
-- **File**: `design-system/themes/afternoon-letter.css`
-- **Palette**: Cream background, warm brown text, terracotta/ochre/sage accents, Georgia serif
-- **Created**: 2026-01-03
-
-### First Snow
-- **Philosophy**: Fresh snow before dawn—crisp, clear, crystalline. Clarity through reduction. Focused, efficient.
-- **File**: `design-system/themes/first-snow.css`
-- **Palette**: Pure white/black, blue accent, system fonts
-- **Created**: 2026-01-03
-
-### Lamp Oil
-- **Philosophy**: Late night reading by warm lamp in dark room. Intimate, focused, protected. Warm darkness for deep work.
-- **File**: `design-system/themes/lamp-oil.css`
-- **Palette**: Deep warm black, warm cream text, amber/gold accents, Georgia serif
-- **Created**: 2026-01-03
+### Workbench (default)
+- **Philosophy**: A clean desk with a single amber task light. Focused, clear, precise. Clarity without coldness.
+- **File**: `design-system/all-themes.css`
+- **Palette**: Deep charcoal background, near-white text, amber accent, system sans-serif
+- **Created**: 2026-01-04
 
 ---
 

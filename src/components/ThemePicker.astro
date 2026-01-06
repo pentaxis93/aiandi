@@ -8,19 +8,9 @@
 
 const themes = [
 	{
-		id: 'afternoon-letter',
-		name: 'Afternoon Letter',
-		description: 'Warm afternoon light on cream paper',
-	},
-	{
-		id: 'first-snow',
-		name: 'First Snow',
-		description: 'Crisp, still, impossibly clear',
-	},
-	{
-		id: 'lamp-oil',
-		name: 'Lamp Oil',
-		description: 'Late night, warm lamp, deep work',
+		id: 'workbench',
+		name: 'Workbench',
+		description: 'Task light focus, clarity without distraction',
 	},
 ];
 ---
@@ -217,14 +207,12 @@ const themes = [
 		
 		// Theme definitions
 		const themes: Record<string, {name: string}> = {
-			'afternoon-letter': { name: 'Afternoon Letter' },
-			'first-snow': { name: 'First Snow' },
-			'lamp-oil': { name: 'Lamp Oil' },
+			'workbench': { name: 'Workbench' },
 		};
 		
 		// Get current theme from localStorage or default
 		function getCurrentTheme(): string {
-			return localStorage.getItem('theme') || 'afternoon-letter';
+			return localStorage.getItem('theme') || 'workbench';
 		}
 		
 		// Update UI to reflect current theme
