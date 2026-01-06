@@ -6,9 +6,7 @@ const PREFERRED_PORT = Number(process.env.SCREENSHOT_PORT ?? process.env.PORT ??
 const MAX_PORT_ATTEMPTS = 20;
 
 const THEMES = [
-  { name: 'afternoon-letter', file: 'afternoon-letter.png' },
-  { name: 'first-snow', file: 'first-snow.png' },
-  { name: 'lamp-oil', file: 'lamp-oil.png' }
+  { name: 'workbench', file: 'workbench-screenshot.png' }
 ];
 
 async function checkServer(port: number): Promise<boolean> {

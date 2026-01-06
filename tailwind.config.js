@@ -150,6 +150,57 @@ export default {
         DEFAULT: 'var(--border-width)',
         'thick': 'var(--border-width-thick)',
       },
+      
+      /**
+       * Font weight - theme-aware
+       */
+      fontWeight: {
+        'thin': 'var(--font-weight-thin)',
+        'extralight': 'var(--font-weight-extralight)',
+        'light': 'var(--font-weight-light)',
+        'normal': 'var(--font-weight-normal)',
+        'medium': 'var(--font-weight-medium)',
+        'semibold': 'var(--font-weight-semibold)',
+        'bold': 'var(--font-weight-bold)',
+        'extrabold': 'var(--font-weight-extrabold)',
+        'black': 'var(--font-weight-black)',
+      },
+      
+      /**
+       * Max width (containers) - theme-aware
+       */
+      maxWidth: {
+        'prose': 'var(--container-prose)',
+        'narrow': 'var(--container-narrow)',
+        'normal': 'var(--container-normal)',
+        'wide': 'var(--container-wide)',
+        'full': 'var(--container-full)',
+      },
+      
+      /**
+       * Blur - theme-aware
+       */
+      blur: {
+        'xs': 'var(--blur-xs)',
+        'sm': 'var(--blur-sm)',
+        'md': 'var(--blur-md)',
+        'lg': 'var(--blur-lg)',
+        'xl': 'var(--blur-xl)',
+        '2xl': 'var(--blur-2xl)',
+        '3xl': 'var(--blur-3xl)',
+      },
+      
+      /**
+       * Text shadow - theme-aware
+       */
+      textShadow: {
+        '2xs': 'var(--text-shadow-2xs)',
+        'xs': 'var(--text-shadow-xs)',
+        'sm': 'var(--text-shadow-sm)',
+        'md': 'var(--text-shadow-md)',
+        'lg': 'var(--text-shadow-lg)',
+        'none': 'none',
+      },
     },
   },
   
@@ -158,5 +209,17 @@ export default {
    */
   darkMode: 'class',
   
-  plugins: [],
+  plugins: [
+    // Enable text-shadow utility
+    function({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    },
+  ],
 }

@@ -35,19 +35,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				)}
 				
 				<!-- Article Content -->
-				<div class="max-w-prose mx-auto px-6">
+				<div class="max-w-[68ch] mx-auto px-6">
 					<!-- Title and Metadata -->
-					<header class="mb-12 text-center border-b-2 border-border pb-8">
-						<h1 class="font-heading text-4xl md:text-5xl mb-4 leading-tight">
+					<header class="mb-16 text-center border-b border-border pb-10">
+						<h1 class="font-heading text-4xl md:text-6xl mb-6 leading-[1.15] tracking-[-0.02em] balance-text">
 							{title}
 						</h1>
 						
-						<div class="font-mono text-sm text-text-muted">
+						<div class="font-mono text-xs tracking-wide text-text-muted uppercase">
 							<time datetime={pubDate.toISOString()}>
 								<FormattedDate date={pubDate} />
 							</time>
 							{updatedDate && (
-								<div class="italic mt-2">
+								<div class="normal-case mt-3 text-text-muted/80">
 									Last updated on <FormattedDate date={updatedDate} />
 								</div>
 							)}

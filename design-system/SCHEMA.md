@@ -117,6 +117,28 @@ Letter spacing affects density, legibility, and character.
 - **Dense themes** (First Snow): Tight to normal
 - **Legibility themes** (Lamp Oil): Slightly wide for low-contrast clarity
 
+#### Font Weights
+
+Font weight mappings control typographic voice and emphasis style.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--font-weight-thin` | Lightest weight (100) | Delicate, whisper-light themes |
+| `--font-weight-extralight` | Extra light (200) | |
+| `--font-weight-light` | Light weight (300) | Gentle emphasis |
+| `--font-weight-normal` | Body text default (400) | Reading weight |
+| `--font-weight-medium` | Medium emphasis (500) | Subtle strength |
+| `--font-weight-semibold` | Semi-bold (600) | Moderate emphasis |
+| `--font-weight-bold` | Strong emphasis (700) | Default bold |
+| `--font-weight-extrabold` | Extra bold (800) | Very strong |
+| `--font-weight-black` | Maximum weight (900) | Display, impact |
+
+**Design Expression:**
+- **Delicate themes:** May map "bold" to 600 instead of 700 for softer emphasis
+- **Strong themes:** May use 800-900 for headings, 500-600 for body
+- **Contrast themes:** Wide range between body (300) and headings (800)
+- **Monotone themes:** Narrow range (400-600) for subtle hierarchy
+
 ### Spacing Tokens
 
 Spacing tokens control all padding, margin, gap, and layout rhythm. Each theme can express its spatial character across the full scale.
@@ -141,6 +163,24 @@ Spacing tokens control all padding, margin, gap, and layout rhythm. Each theme c
 - **Generous themes** (Afternoon Letter): Larger values, breathing room, unhurried
 - **Efficient themes** (First Snow): Tighter values, no waste, crisp
 - **Cozy themes** (Lamp Oil): Moderate values, comfortable but enclosed
+
+### Container Widths
+
+Container widths control reading measure and content density—profoundly affecting pace and comfort.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--container-prose` | Optimal reading width (45-75ch) | Comfortable reading measure |
+| `--container-narrow` | Constrained content (~40rem) | Intimate, focused |
+| `--container-normal` | Standard content (~48rem) | Balanced |
+| `--container-wide` | Generous content (~64rem) | Spacious, editorial |
+| `--container-full` | Maximum width (~80rem) | Dashboard, data-dense |
+
+**Design Expression:**
+- **Leisurely themes:** Narrow prose width (45-55ch), unhurried reading
+- **Efficient themes:** Wider containers, more information density
+- **Intimate themes:** Constrained widths, cozy enclosure
+- **Editorial themes:** Generous widths, magazine-like openness
 
 ### Effect Tokens
 
@@ -203,6 +243,87 @@ Transitions control the temporal character—how fast things move and feel.
 | `--border-width` | Default border thickness (1-2px) | Delicate vs. bold |
 | `--border-width-thick` | Emphasized borders (2-4px) | For focus states, emphasis |
 
+#### Blur
+
+Blur controls glassmorphism intensity, depth layering, and background treatment.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--blur-xs` | Minimal blur (4px) | Subtle depth |
+| `--blur-sm` | Small blur (8px) | Gentle frosting |
+| `--blur-md` | Medium blur (12px) | Standard glass effect |
+| `--blur-lg` | Large blur (16px) | Pronounced depth |
+| `--blur-xl` | Extra large (24px) | Strong separation |
+| `--blur-2xl` | Double extra (40px) | Dramatic background blur |
+| `--blur-3xl` | Maximum (64px) | Full abstraction |
+
+**Design Expression:**
+- **Glassmorphic themes:** Medium to large blur for layered surfaces
+- **Flat themes:** May not use blur at all (all values = 0)
+- **Depth themes:** Progressive blur for z-axis separation
+- **Focus themes:** Strong blur for modal backgrounds, attention control
+
+#### Text Shadow
+
+Text shadows add dimensionality, legibility, and tactile quality to typography.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--text-shadow-2xs` | Minimal shadow (1px blur) | Subtle letterpress |
+| `--text-shadow-xs` | Small shadow (2px blur) | Gentle emboss |
+| `--text-shadow-sm` | Medium shadow (4px blur) | Clear dimensionality |
+| `--text-shadow-md` | Standard shadow (8px blur) | Pronounced depth |
+| `--text-shadow-lg` | Large shadow (16px blur) | Dramatic, glowing |
+
+**Design Expression:**
+- **Paper themes:** Subtle text shadow for letterpress/embossed effect
+- **Legibility themes:** Light shadow for text on images (readability)
+- **Neon themes:** Glowing text shadow for accent typography
+- **Flat themes:** No text shadow (all values = none)
+
+#### Optional: Inset Shadow
+
+Inset shadows create recessed, pressed, or carved effects. Not all themes need these.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--inset-shadow-xs` | Minimal inset (1px blur) | Subtle recess |
+| `--inset-shadow-sm` | Small inset (2px blur) | Pressed button state |
+| `--inset-shadow-md` | Medium inset (4px blur) | Input field depth |
+
+**When to use:**
+- Themes with tactile, physical interface metaphors
+- Neumorphic or skeuomorphic themes
+- Themes emphasizing pressed/active states
+
+**When to skip:**
+- Flat design themes
+- Minimalist themes
+- Themes without interactive depth metaphors
+
+#### Optional: Drop Shadow (Filter)
+
+Drop shadows for SVG/PNG elements (distinct from box-shadow). Not all themes need these.
+
+| Token | Purpose | Theme Expression |
+|-------|---------|------------------|
+| `--drop-shadow-xs` | Minimal drop shadow | Subtle icon lift |
+| `--drop-shadow-sm` | Small drop shadow | Standard icon depth |
+| `--drop-shadow-md` | Medium drop shadow | Clear separation |
+| `--drop-shadow-lg` | Large drop shadow | Floating elements |
+| `--drop-shadow-xl` | Extra large | Dramatic elevation |
+| `--drop-shadow-2xl` | Maximum depth | Hero illustrations |
+
+**When to use:**
+- Themes with illustrated elements (SVG icons, graphics)
+- Themes emphasizing layered depth
+- Themes with floating UI elements
+
+**When to skip:**
+- Text-only themes
+- Flat design themes
+- Themes using box-shadow exclusively
+
 ## Component Classes
 
 ### Prose Styling
@@ -225,28 +346,32 @@ Utility classes use semantic tokens:
 
 A valid theme MUST provide values for:
 - **All color tokens** (surfaces, text, accent)
-- **All typography tokens** (families, base sizes, rhythm)
-- **All spacing tokens** (xs through 2xl, semantic spacing)
-- **All effect tokens** (shadows with color, radii, transitions with easing, borders)
+- **All typography tokens** (families, sizes, weights, rhythm)
+- **All spacing tokens** (xs through 2xl, semantic spacing, container widths)
+- **All effect tokens** (shadows with color, radii, transitions with easing, borders, blur)
+- **Text shadow tokens** (2xs through lg, or explicitly set to 'none')
 
 A theme MAY:
 - Add optional tokens (e.g., accent-secondary, accent-tertiary)
 - Add intermediate spacing values
 - Define semantic colors (success, warning, error, info)
+- Define inset shadows (for tactile/neumorphic themes)
+- Define drop shadows (for illustrated/layered themes)
 - Add theme-specific utilities (documented as extensions)
 
 **Complete Expression Requirement:**
 
 Each theme should express itself across ALL design dimensions:
-- Colors (what you see)
-- Typography (what you read)
-- Spacing (how it breathes)
-- Shadows (how it floats)
-- Radii (how sharp or soft)
-- Transitions (how it moves)
-- Rhythm (how dense or open)
+- **Colors** (what you see)
+- **Typography** (what you read—family, size, weight, rhythm)
+- **Spacing** (how it breathes—scale, containers, density)
+- **Shadows** (how it floats—box, text, inset, drop)
+- **Radii** (how sharp or soft)
+- **Blur** (how layered or flat)
+- **Transitions** (how it moves—speed, easing)
+- **Weights** (how delicate or bold)
 
-A theme is not just a color scheme—it's a complete environment.
+A theme is not just a color scheme—it's a complete sensory environment.
 
 ## Dark Mode
 
@@ -276,3 +401,12 @@ A properly structured design system:
   - Expanded typography rhythm (leading, tracking, semantic)
   - Added border width tokens
   - Documented theme expression requirements across all dimensions
+- **1.2** (2026-01-04): Completed Tailwind v4 theme variable coverage
+  - Added font-weight tokens (thin through black, 100-900)
+  - Added container width tokens (prose, narrow, normal, wide, full)
+  - Added blur tokens (xs through 3xl) for glassmorphism and depth
+  - Added text-shadow tokens (2xs through lg) for dimensionality
+  - Added optional inset-shadow tokens (for tactile themes)
+  - Added optional drop-shadow tokens (for illustrated themes)
+  - Corrected font-weight from "inherited" to themeable namespace
+  - Documented when to use vs. skip optional token namespaces

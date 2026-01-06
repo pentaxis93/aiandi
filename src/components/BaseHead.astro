@@ -57,6 +57,6 @@ const { title, description, image = FallbackImage } = Astro.props;
 <script is:inline>
 	// Load saved theme immediately to prevent flash
 	// Themes are activated via data-theme attribute on <html>
-	const savedTheme = localStorage.getItem('theme') || 'afternoon-letter';
+	const savedTheme = localStorage.getItem('theme') || 'workbench';
 	document.documentElement.setAttribute('data-theme', savedTheme);
 </script>
