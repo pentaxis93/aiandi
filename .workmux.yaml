@@ -1,8 +1,7 @@
 # workmux configuration for aiandi
 # Astro-based AI & I blog
 
-# Place worktrees as siblings to main/ (matching repo structure)
-worktree_dir: "/home/pentaxis93/src/aiandi/feature"
+# Use canonical workmux structure: aiandi__worktrees/ as sibling
 
 panes:
   - command: <agent>
