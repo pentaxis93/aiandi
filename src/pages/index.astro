@@ -25,9 +25,9 @@ const [featuredPost, ...olderPosts] = posts;
 		
 		<Header />
 		
-		<main class="flex-1 w-full relative z-10">
+		<main class="flex-1 w-full relative z-10 px-6">
 			<!-- Hero Section - Asymmetric, pushed left -->
-			<section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-12 gap-8">
+			<section class="max-w-6xl mx-auto py-16 md:py-24 grid md:grid-cols-12 gap-8">
 				<!-- Main content - left 8 columns -->
 				<div class="md:col-span-8 border-l-4 border-accent pl-8">
 					<div class="font-mono text-xs uppercase tracking-wider text-text-muted mb-6">
@@ -67,7 +67,7 @@ const [featuredPost, ...olderPosts] = posts;
 
 			<!-- Featured Specimen -->
 			{featuredPost && (
-				<section class="max-w-7xl mx-auto px-6 mb-20">
+				<section class="max-w-6xl mx-auto mb-20">
 					<div class="border-t-2 border-accent mb-1"></div>
 					<div class="flex items-baseline gap-4 mb-8 font-mono text-xs uppercase tracking-wider">
 						<span class="text-accent">SPECIMEN_001</span>
@@ -117,7 +117,7 @@ const [featuredPost, ...olderPosts] = posts;
 
 			<!-- Archive Catalog -->
 			{olderPosts.length > 0 && (
-				<section class="max-w-7xl mx-auto px-6 mb-16">
+				<section class="max-w-6xl mx-auto mb-16">
 					<div class="border-t border-border mb-6"></div>
 					<div class="font-mono text-xs uppercase tracking-wider text-text-muted mb-6">
 						ARCHIVE // EARLIER SPECIMENS

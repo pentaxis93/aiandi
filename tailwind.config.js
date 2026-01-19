@@ -168,13 +168,14 @@ export default {
       
       /**
        * Max width (containers) - theme-aware
+       * Note: Using --width-* instead of --container-* to avoid Tailwind v4 collision
        */
       maxWidth: {
-        'prose': 'var(--container-prose)',
-        'narrow': 'var(--container-narrow)',
-        'normal': 'var(--container-normal)',
-        'wide': 'var(--container-wide)',
-        'full': 'var(--container-full)',
+        'prose': 'var(--width-prose)',
+        'narrow': 'var(--width-narrow)',
+        'normal': 'var(--width-normal)',
+        'wide': 'var(--width-wide)',
+        'content': 'var(--width-max)',
       },
       
       /**

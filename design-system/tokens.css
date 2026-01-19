@@ -106,12 +106,12 @@
 	--space-card-padding: var(--theme-space-card-padding, var(--space-lg));
 	--space-inline: var(--theme-space-inline, var(--space-sm));
 	
-	/* Container widths */
-	--container-prose: var(--theme-container-prose, 65ch);
-	--container-narrow: var(--theme-container-narrow, 40rem);
-	--container-normal: var(--theme-container-normal, 48rem);
-	--container-wide: var(--theme-container-wide, 64rem);
-	--container-full: var(--theme-container-full, 80rem);
+	/* Content widths (renamed from --container-* to avoid Tailwind v4 collision) */
+	--width-prose: var(--theme-container-prose, 65ch);
+	--width-narrow: var(--theme-container-narrow, 40rem);
+	--width-normal: var(--theme-container-normal, 48rem);
+	--width-wide: var(--theme-container-wide, 64rem);
+	--width-max: var(--theme-container-full, 80rem);
 	
 	/* ===== EFFECT TOKENS ===== */
 	
