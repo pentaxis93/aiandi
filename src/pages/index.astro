@@ -19,81 +19,132 @@ const [featuredPost, ...olderPosts] = posts;
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body class="min-h-screen flex flex-col bg-background text-text-primary font-body antialiased">
+	<body class="min-h-screen flex flex-col bg-background text-text-primary font-body antialiased relative">
+		<!-- Visible grid structure -->
+		<div class="fixed inset-0 pointer-events-none" style="opacity: var(--theme-grid-opacity, 0.04); background-image: linear-gradient(var(--color-border) 1px, transparent 1px), linear-gradient(90deg, var(--color-border) 1px, transparent 1px); background-size: 32px 32px;"></div>
+		
 		<Header />
 		
-		<main class="flex-1 max-w-4xl mx-auto px-6 py-20 md:py-32 w-full">
-			<!-- Hero Section -->
-			<section class="mb-32 md:mb-40">
-				<h1 class="font-heading text-6xl md:text-8xl leading-[1.05] mb-12 tracking-[-0.025em] balance-text">
-					Ancient patterns in<br />
-					<span class="text-accent">new tools</span>
-				</h1>
-				<p class="text-xl md:text-2xl leading-[1.7] text-text-secondary max-w-[55ch]">
-					{SITE_DESCRIPTION}
-				</p>
+		<main class="flex-1 w-full relative z-10">
+			<!-- Hero Section - Asymmetric, pushed left -->
+			<section class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-12 gap-8">
+				<!-- Main content - left 8 columns -->
+				<div class="md:col-span-8 border-l-4 border-accent pl-8">
+					<div class="font-mono text-xs uppercase tracking-wider text-text-muted mb-6">
+						Field Notes // Human-AI Collaboration
+					</div>
+					<h1 class="font-heading text-4xl md:text-6xl leading-[1.1] mb-8 tracking-[-0.02em]">
+						ANCIENT PATTERNS<br />
+						<span class="text-accent">IN NEW TOOLS</span>
+					</h1>
+					<p class="text-base md:text-lg leading-[1.8] text-text-secondary max-w-[58ch] mb-8">
+						{SITE_DESCRIPTION}
+					</p>
+					<div class="font-mono text-xs text-text-muted border-t border-border pt-4 mt-8">
+						CATALOG // ONGOING RESEARCH // EST. 2026
+					</div>
+				</div>
+				
+				<!-- Metadata sidebar - right 4 columns -->
+				<aside class="md:col-span-4 border-2 border-border border-l-4 border-l-accent bg-surface p-6 font-mono text-xs space-y-4">
+					<div>
+						<div class="text-text-muted uppercase mb-1 tracking-wider">STATUS</div>
+						<div class="text-accent font-bold">Active Research</div>
+					</div>
+					<div>
+						<div class="text-text-muted uppercase mb-1 tracking-wider">DISCIPLINE</div>
+						<div class="text-text-primary font-bold">Comp. Philosophy</div>
+					</div>
+					<div>
+						<div class="text-text-muted uppercase mb-1 tracking-wider">METHOD</div>
+						<div class="text-text-primary font-bold">Collaboration</div>
+					</div>
+					<div class="border-t border-border pt-4 mt-4">
+						<div class="text-text-muted leading-relaxed">56, beginner, figuring it out in public</div>
+					</div>
+				</aside>
 			</section>
 
-			<!-- Featured Post -->
+			<!-- Featured Specimen -->
 			{featuredPost && (
-				<section class="mb-24">
-					<div class="flex items-center gap-4 mb-10">
-						<h2 class="font-heading text-xs uppercase tracking-[0.15em] text-accent font-medium">
-							Latest
-						</h2>
-						<div class="flex-1 h-px bg-gradient-to-r from-accent/30 to-transparent"></div>
+				<section class="max-w-7xl mx-auto px-6 mb-20">
+					<div class="border-t-2 border-accent mb-1"></div>
+					<div class="flex items-baseline gap-4 mb-8 font-mono text-xs uppercase tracking-wider">
+						<span class="text-accent">SPECIMEN_001</span>
+						<span class="text-text-muted flex-1">// LATEST ENTRY</span>
 					</div>
 					
-					<article class="group">
+					<article class="group border-2 border-border bg-surface hover:border-accent transition-colors duration-normal">
 						<a 
 							href={`/blog/${featuredPost.id}/`}
-							class="block bg-surface rounded-lg p-10 md:p-14 border-l-[6px] border-accent hover:border-accent-hover transition-all duration-normal hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-0.5"
+							class="block"
 						>
-							<div class="flex flex-col gap-5 mb-6">
-								<h3 class="font-heading text-3xl md:text-5xl font-bold leading-[1.15] tracking-[-0.02em] group-hover:text-accent transition-colors duration-normal balance-text">
+							<!-- Specimen header -->
+							<div class="border-b-2 border-border bg-surface-alt px-8 py-4 font-mono text-xs">
+								<div class="flex items-baseline justify-between gap-4">
+									<span class="text-text-muted uppercase tracking-wider">CATALOG NO.</span>
+									<time 
+										datetime={featuredPost.data.pubDate.toISOString()}
+										class="text-text-primary uppercase tracking-wide font-bold"
+									>
+										<FormattedDate date={featuredPost.data.pubDate} />
+									</time>
+								</div>
+							</div>
+							
+							<!-- Specimen content -->
+							<div class="p-8 md:p-12">
+								<h3 class="font-heading text-2xl md:text-4xl font-bold leading-[1.3] mb-6 group-hover:text-accent transition-colors duration-normal tracking-tight">
 									{featuredPost.data.title}
 								</h3>
-								<p class="text-lg md:text-xl leading-[1.75] text-text-secondary/90">
+								<p class="text-base md:text-lg leading-[1.8] text-text-secondary border-l-2 border-border pl-6">
 									{featuredPost.data.description}
 								</p>
 							</div>
-							<time 
-								datetime={featuredPost.data.pubDate.toISOString()}
-								class="font-mono text-xs tracking-wide text-text-muted uppercase inline-block"
-							>
-								<FormattedDate date={featuredPost.data.pubDate} />
-							</time>
+							
+							<!-- Specimen footer -->
+							<div class="border-t border-border px-8 py-4 font-mono text-xs text-text-muted bg-surface-alt">
+								<div class="flex items-center gap-6">
+									<span>STATUS: Published</span>
+									<span>TYPE: Essay</span>
+									<span class="text-accent">→ READ_ENTRY</span>
+								</div>
+							</div>
 						</a>
 					</article>
 				</section>
 			)}
 
-			<!-- Archive -->
+			<!-- Archive Catalog -->
 			{olderPosts.length > 0 && (
-				<section>
-					<div class="flex items-center gap-4 mb-12">
-						<h2 class="font-heading text-xs uppercase tracking-[0.15em] text-accent/70 font-medium">
-							Earlier Work
-						</h2>
-						<div class="flex-1 h-px bg-gradient-to-r from-accent/20 to-transparent"></div>
+				<section class="max-w-7xl mx-auto px-6 mb-16">
+					<div class="border-t border-border mb-6"></div>
+					<div class="font-mono text-xs uppercase tracking-wider text-text-muted mb-6">
+						ARCHIVE // EARLIER SPECIMENS
 					</div>
 					
-					<ul class="space-y-1">
-						{olderPosts.map((post) => (
-							<li class="group">
+					<ul class="border-2 border-border divide-y divide-border bg-surface">
+						{olderPosts.map((post, index) => (
+							<li class="group hover:bg-accent-subtle transition-colors duration-normal">
 								<a 
 									href={`/blog/${post.id}/`}
-									class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-6 border-l-[4px] border-transparent hover:border-accent hover:bg-surface/40 pl-6 -ml-6 transition-all duration-normal rounded-r"
+									class="flex flex-col md:flex-row md:items-center gap-3 px-6 py-5"
 								>
-									<h3 class="font-heading text-xl md:text-2xl leading-[1.3] tracking-[-0.01em] group-hover:text-accent transition-colors flex-1 balance-text">
+									<div class="font-mono text-xs text-text-muted md:w-20 tracking-wider">
+										{String(index + 2).padStart(3, '0')}
+									</div>
+									<h3 class="font-heading text-base md:text-lg leading-[1.3] group-hover:text-accent transition-colors flex-1 tracking-tight">
 										{post.data.title}
 									</h3>
 									<time 
 										datetime={post.data.pubDate.toISOString()}
-										class="font-mono text-xs tracking-wide text-text-muted md:min-w-[8rem] md:text-right uppercase"
+										class="font-mono text-xs text-text-muted md:w-28 uppercase tracking-wide"
 									>
 										<FormattedDate date={post.data.pubDate} />
 									</time>
+									<div class="font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity md:w-8 text-right">
+										→
+									</div>
 								</a>
 							</li>
 						))}

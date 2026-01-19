@@ -55,7 +55,7 @@ const { title, description, image } = Astro.props;
 
 <script is:inline>
 	// Load saved theme immediately to prevent flash
-	// Themes are activated via data-theme attribute on <html>
-	const savedTheme = localStorage.getItem('theme') || 'workbench';
+	// Default to 'dark' if no preference saved
+	const savedTheme = localStorage.getItem('theme') || 'dark';
 	document.documentElement.setAttribute('data-theme', savedTheme);
 </script>

@@ -16,13 +16,15 @@ The design should feel like:
 
 ---
 
-## Aesthetic Direction: Editorial Workbench
+## Aesthetic Direction: Digital Lab Notebook
 
 **Not brutalist** (too aggressive). **Not minimal startup** (too cold). **Not cozy craft blog** (too soft).
 
-**Editorial workbench**: The visual language of serious publications meets the honesty of a working space. Typography-forward. Confident negative space. Warmth in the details, not decoration.
+**Digital lab notebook**: Research documentation meets modern interface design. Structured metadata. Catalog thinking. The precision of scientific journals with the warmth of a working space.
 
-Think: The quieter pages of a well-designed magazine. A philosopher's study with good lighting. Code comments written by someone who reads poetry.
+Think: A museum specimen catalog redesigned for screens. Terminal aesthetics with editorial polish. Documentation that treats ideas as artifacts worth studying.
+
+**The metadata is the magic.** Not decoration—actual structural information that frames the content as research, not content marketing.
 
 ---
 
@@ -46,8 +48,10 @@ The content is vulnerable (illness, shame, lost years). The design provides warm
 
 The voice has layers it doesn't enumerate. The design should too. Subtle details that reward attention. Structure that reveals itself on inspection.
 
-- **Yes**: Considered spacing ratios, meaningful color relationships, typographic refinement
-- **No**: Visible complexity, ornamentation that demands attention
+**The metadata layer is key:** Status fields, catalog numbers, classification systems. Not blog post metadata (views, likes, shares) but research metadata (discipline, method, status). This transforms content from "posts" to "specimens."
+
+- **Yes**: Considered spacing ratios, meaningful color relationships, typographic refinement, structured metadata
+- **No**: Visible complexity, ornamentation that demands attention, marketing metrics
 
 ### 4. Foundation-First Solidity
 
@@ -55,6 +59,53 @@ The philosophy is foundation-first. The design should feel built on solid ground
 
 - **Yes**: Clear grid, reliable patterns, consistent tokens
 - **No**: Gimmicks, novelty interactions, design that might "date"
+
+---
+
+## The Metadata System
+
+**The breakthrough insight:** Treat blog posts as **cataloged research specimens**, not content.
+
+### Metadata Architecture
+
+Every entry should have:
+
+| Field | Purpose | Display |
+|-------|---------|---------|
+| **Catalog Number** | Unique identifier (001, 002, etc.) | Monospace, prominent |
+| **Date** | Temporal marker | ISO format, uppercase |
+| **Status** | Research state | Published, Draft, Archive |
+| **Type** | Content classification | Essay, Note, Experiment |
+| **Discipline** | Knowledge domain | Comp. Philosophy, Design, etc. |
+| **Method** | Approach | Collaboration, Solo, Walk-and-talk |
+
+### Metadata Placement
+
+**Hero section sidebar:**
+- Status, Discipline, Method
+- Researcher bio note
+- Framed in 2px border box
+- Background: `surface-alt` for distinction
+
+**Featured specimen card:**
+- Header: Catalog number + date
+- Footer: Status + type + read indicator
+- All in monospace, clinical typography
+
+**Archive list:**
+- Leading catalog number column
+- Trailing date column
+- Center: entry title
+- Hover: action arrow appears
+
+### The Philosophy
+
+**Metadata isn't decoration.** It's the **framing device that transforms the reading experience**:
+- "SPECIMEN_001" ≠ "Latest post"
+- "STATUS: Active Research" ≠ "Published 2 days ago"
+- "METHOD: Collaboration" ≠ generic blog metadata
+
+This reframes the entire site from personal blog → research archive.
 
 ---
 
@@ -83,18 +134,26 @@ Typography is the soul. The voice uses language with precision and playfulness. 
 
 ### The Palette Structure
 
-The current Workbench theme demonstrates the right ratio:
+The 60-30-10 ratio creates hierarchy:
 
 | Role | Character |
 |------|-----------|
-| **Dominant (60%)** | Deep, quiet background. The canvas breathes. |
-| **Secondary (30%)** | Slightly elevated surfaces. Cards, code blocks. |
-| **Accent (10%)** | Warm, earned punctuation. Links, borders, emphasis. |
+| **Dominant (60%)** | Background canvas. Let it breathe. |
+| **Secondary (30%)** | Elevated surfaces. Cards, code blocks. |
+| **Accent (10%)** | Earned punctuation. Links, borders, emphasis. |
 
 ### The Mood
 
-- **Dark mode primary**: This is late-night work. Deep focus. The glow of a terminal.
-- **Warm accent**: Amber/gold, not cold blue. Human warmth in the machine space.
+**Two viable directions** (choose one and commit):
+
+1. **Dark mode**: Late-night research. Deep focus. Terminal glow. Warm amber accent.
+2. **Light mode**: Lab notebook. Paper and ink. Clinical precision. Red accent for attention.
+
+Both work if executed completely. **The key is metadata structure, not the color temperature.**
+
+- **Monospace typography signals precision** (terminal/typewriter aesthetic)
+- **Sharp corners, 2px borders** (clinical, not soft)
+- **Grid visible in background** (structure made explicit)
 - **Muted text hierarchy**: Let the content organize attention, not the colors.
 
 ### Accent Usage
@@ -127,9 +186,25 @@ Generous. The voice doesn't rush. The design shouldn't either.
 
 This isn't empty space. It's thinking space.
 
-### Asymmetry
+### Asymmetry & Metadata Layout
 
-Not everything centered. The accent border on cards. The gradient fade on section dividers. Small moments of asymmetry that create visual interest without chaos.
+Not everything centered. **Embrace the sidebar.**
+
+**Hero layout pattern:**
+- Main content: 8 columns (asymmetric left)
+- Metadata sidebar: 4 columns (structured data)
+- **The sidebar is structural, not decorative**: Status, discipline, method, researcher info
+
+**List layout pattern:**
+- Catalog number: Fixed width column
+- Entry title: Flex grow
+- Date: Fixed width column
+- Action indicator: Minimal
+
+**Grid structure visible:**
+- Subtle background grid (32px × 32px)
+- Makes the underlying structure explicit
+- "Show your work" philosophy
 
 ---
 
@@ -158,13 +233,17 @@ The voice flows between poles without announcing shifts. Motion should be the sa
 
 ## Component Character
 
-### Cards
+### Cards as Specimens
 
-The featured post card is the signature element. It should feel like an invitation to depth:
-- Elevated surface (but subtle)
-- Accent border (the warm welcome)
-- Typography hierarchy within
-- Hover state that acknowledges without demanding
+The featured post card is the signature element. It should feel like a **cataloged specimen**, not a blog post preview:
+- **Catalog metadata header**: Entry number, classification, date
+- **Structured content**: Clear sections (header, body, footer)
+- **Status indicators**: Published, draft, type, discipline
+- **Border treatment**: Clinical precision (2px borders, sharp corners)
+- **Typography**: Monospace for metadata, bold for classifications
+- **Hover state**: Border color shift (subtle acknowledgment)
+
+Think: Museum placard meets modern data table. Every piece of information has a purpose and a place.
 
 ### Navigation
 
@@ -209,9 +288,16 @@ Before any design decision, ask:
 
 ## Summary
 
-**Editorial workbench. Typography-forward. Warm accent on deep ground. Confident restraint. Depth that rewards attention.**
+**Digital lab notebook. Monospace-forward. Metadata-rich. Clinical precision. Structure made visible.**
 
-The design is the frame, not the art. It should disappear into the reading experience while quietly communicating: *this is a serious place where someone is doing real work, figuring things out, and inviting you to watch.*
+The design frames content as **research specimens**, not blog posts:
+- Catalog numbers and classification systems
+- Structured metadata sidebars
+- Clinical typography (monospace, bold status indicators)
+- Grid visible in background
+- Sharp edges, 2px borders
+
+This quietly communicates: *You're not reading a blog. You're examining research artifacts from an ongoing experiment in human-AI collaboration.*
 
 ---
 

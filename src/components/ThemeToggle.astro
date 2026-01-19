@@ -1,0 +1,70 @@
+---
+/**
+ * Theme Toggle Component
+ * 
+ * Switches between dark (default) and light themes.
+ * Persists preference to localStorage.
+ * Uses monospace aesthetic to match the digital lab notebook vibe.
+ */
+---
+
+<button 
+	id="theme-toggle"
+	type="button"
+	class="font-mono text-xs uppercase tracking-wider px-3 py-1.5 border border-border hover:border-accent hover:text-accent transition-colors duration-normal"
+	aria-label="Toggle theme"
+>
+	<span class="dark-label">DARK</span>
+	<span class="light-label hidden">LIGHT</span>
+</button>
+
+<script>
+	function getThemePreference(): 'dark' | 'light' {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme') as 'dark' | 'light';
+		}
+		// Default to dark
+		return 'dark';
+	}
+
+	function setTheme(theme: 'dark' | 'light') {
+		document.documentElement.setAttribute('data-theme', theme);
+		localStorage.setItem('theme', theme);
+		updateToggleLabel(theme);
+	}
+
+	function updateToggleLabel(theme: 'dark' | 'light') {
+		const darkLabel = document.querySelector('.dark-label');
+		const lightLabel = document.querySelector('.light-label');
+		
+		if (darkLabel && lightLabel) {
+			if (theme === 'dark') {
+				darkLabel.classList.remove('hidden');
+				lightLabel.classList.add('hidden');
+			} else {
+				darkLabel.classList.add('hidden');
+				lightLabel.classList.remove('hidden');
+			}
+		}
+	}
+
+	function toggleTheme() {
+		const current = document.documentElement.getAttribute('data-theme') || 'dark';
+		const next = current === 'dark' ? 'light' : 'dark';
+		setTheme(next);
+	}
+
+	// Initialize theme on page load
+	const theme = getThemePreference();
+	setTheme(theme);
+
+	// Set up toggle button
+	document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+
+	// Handle view transitions (Astro)
+	document.addEventListener('astro:after-swap', () => {
+		const theme = getThemePreference();
+		setTheme(theme);
+		document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+	});
+</script>
