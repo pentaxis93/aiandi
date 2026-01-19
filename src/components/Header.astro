@@ -1,7 +1,7 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
-import ThemePicker from './ThemePicker.astro';
+import ThemeToggle from './ThemeToggle.astro';
 ---
 
 <header class="bg-background border-b border-border px-6 py-4">
@@ -17,9 +17,8 @@ import ThemePicker from './ThemePicker.astro';
 		
 		<div class="flex items-center gap-6">
 			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
-			<ThemePicker />
+			<ThemeToggle />
 		</div>
 	</nav>
 </header>
