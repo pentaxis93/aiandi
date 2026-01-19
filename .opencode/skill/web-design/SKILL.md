@@ -23,7 +23,9 @@ Before touching code, understand context and commit to a **BOLD** aesthetic dire
 - **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
 - **Constraints**: Accessibility, performance, our token system
 
-**Aesthetic Palette** (pick one, execute with precision):
+**⚠️ WARNING:** If you're about to make "incremental improvements" to an existing design, STOP. Consider whether this needs a radical departure instead. Safe refinements create forgettable design.
+
+**Aesthetic Palette** (pick one, execute with conviction):
 
 | Direction | Character |
 |-----------|-----------|
@@ -37,6 +39,39 @@ Before touching code, understand context and commit to a **BOLD** aesthetic dire
 | Brutalist/raw | Exposed structure. Aggressive honesty. |
 
 **CRITICAL**: Bold maximalism and refined minimalism both work. The key is **intentionality**, not intensity. Pick a direction and execute it with conviction.
+
+---
+
+### Creative Departure Prompts
+
+When you need to break free from derivative thinking, ask:
+
+**Inversion Questions:**
+- What if the most important thing was SMALL instead of large?
+- What if we used NO color except one?
+- What if there was NO hero section, just immediate content?
+- What if typography was PLAYFUL instead of serious?
+
+**Constraint Forcing:**
+- Design with only 2 font sizes
+- Use only vertical or only horizontal rhythm (not both)
+- Make ONE element absurdly oversized
+- Ban all rounded corners OR ban all sharp corners
+
+**Medium Shifts:**
+- What if this was a printed zine?
+- What if this was a terminal interface?
+- What if this was handwritten notes?
+- What if this was a museum placard?
+
+**Unexpected References:**
+- Scientific journals (data-dense, precise)
+- Art gallery walls (space, curation, labels)
+- Punk zines (raw, urgent, collage)
+- Old programming books (monospace, diagrams)
+- Brutalist architecture (exposed structure, no decoration)
+
+**The test:** If your first idea is what everyone else would do, throw it away and force yourself to come up with 3 more alternatives before implementing.
 
 ---
 
