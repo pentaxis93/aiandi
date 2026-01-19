@@ -1,70 +1,69 @@
 ---
 /**
- * Theme Toggle Component
+ * Dark/Light Mode Toggle
  * 
- * Switches between dark (default) and light themes.
- * Persists preference to localStorage.
- * Uses monospace aesthetic to match the digital lab notebook vibe.
+ * Simple toggle between dark and light modes.
+ * Works with the lab theme system (data-theme="lab-dark" / "lab-light").
+ * Persists mode preference to localStorage.
  */
+import { defaultTheme, defaultMode } from '../themes';
 ---
 
 <button 
 	id="theme-toggle"
 	type="button"
 	class="font-mono text-xs uppercase tracking-wider px-3 py-1.5 border border-border hover:border-accent hover:text-accent transition-colors duration-normal"
-	aria-label="Toggle theme"
+	aria-label="Toggle dark/light mode"
 >
-	<span class="dark-label">DARK</span>
-	<span class="light-label hidden">LIGHT</span>
+	<span id="mode-label">Dark</span>
+	<span id="mode-indicator" class="text-accent ml-1">●</span>
 </button>
 
-<script>
-	function getThemePreference(): 'dark' | 'light' {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme') as 'dark' | 'light';
-		}
-		// Default to dark
-		return 'dark';
+<script define:vars={{ defaultTheme, defaultMode }}>
+	function getStoredTheme() {
+		if (typeof localStorage === 'undefined') return defaultTheme;
+		return localStorage.getItem('themeId') || defaultTheme;
+	}
+	
+	function getStoredMode() {
+		if (typeof localStorage === 'undefined') return defaultMode;
+		return localStorage.getItem('themeMode') || defaultMode;
 	}
 
-	function setTheme(theme: 'dark' | 'light') {
-		document.documentElement.setAttribute('data-theme', theme);
-		localStorage.setItem('theme', theme);
-		updateToggleLabel(theme);
+	function setMode(mode) {
+		const themeId = getStoredTheme();
+		const themeKey = `${themeId}-${mode}`;
+		document.documentElement.setAttribute('data-theme', themeKey);
+		localStorage.setItem('themeMode', mode);
+		updateUI(mode);
 	}
 
-	function updateToggleLabel(theme: 'dark' | 'light') {
-		const darkLabel = document.querySelector('.dark-label');
-		const lightLabel = document.querySelector('.light-label');
+	function updateUI(mode) {
+		const label = document.getElementById('mode-label');
+		const indicator = document.getElementById('mode-indicator');
 		
-		if (darkLabel && lightLabel) {
-			if (theme === 'dark') {
-				darkLabel.classList.remove('hidden');
-				lightLabel.classList.add('hidden');
-			} else {
-				darkLabel.classList.add('hidden');
-				lightLabel.classList.remove('hidden');
-			}
+		if (label) {
+			label.textContent = mode === 'dark' ? 'Dark' : 'Light';
+		}
+		if (indicator) {
+			indicator.textContent = mode === 'dark' ? '●' : '○';
 		}
 	}
 
-	function toggleTheme() {
-		const current = document.documentElement.getAttribute('data-theme') || 'dark';
+	function toggleMode() {
+		const current = getStoredMode();
 		const next = current === 'dark' ? 'light' : 'dark';
-		setTheme(next);
+		setMode(next);
 	}
 
-	// Initialize theme on page load
-	const theme = getThemePreference();
-	setTheme(theme);
+	function init() {
+		const mode = getStoredMode();
+		updateUI(mode);
+		document.getElementById('theme-toggle')?.addEventListener('click', toggleMode);
+	}
 
-	// Set up toggle button
-	document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+	init();
 
-	// Handle view transitions (Astro)
-	document.addEventListener('astro:after-swap', () => {
-		const theme = getThemePreference();
-		setTheme(theme);
-		document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
-	});
+	// Handle Astro view transitions
+	document.addEventListener('astro:after-swap', init);
 </script>
