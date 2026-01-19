@@ -33,12 +33,8 @@ const totalPosts = posts.length;
 			<section class="max-w-6xl mx-auto py-16 md:py-24 grid md:grid-cols-12 gap-8">
 				<!-- Main content - left 8 columns -->
 				<div class="md:col-span-8 border-l-4 border-accent pl-8">
-					<div class="font-mono text-xs uppercase tracking-wider text-text-muted mb-6">
-						{SITE_META.focus}
-					</div>
 					<h1 class="font-heading text-4xl md:text-6xl leading-[1.1] mb-8 tracking-[-0.02em]">
-						{SITE_TITLE.toUpperCase().split(' ').slice(0, -1).join(' ')}<br />
-						<span class="text-accent">{SITE_TITLE.toUpperCase().split(' ').slice(-1)}</span>
+						{SITE_TITLE.toUpperCase()}
 					</h1>
 					<p class="text-base md:text-lg leading-[1.8] text-text-secondary max-w-[58ch] mb-8">
 						{SITE_DESCRIPTION}
@@ -53,10 +49,6 @@ const totalPosts = posts.length;
 					<div>
 						<div class="text-text-muted uppercase mb-1 tracking-wider">Status</div>
 						<div class="text-accent font-bold">{SITE_META.status}</div>
-					</div>
-					<div>
-						<div class="text-text-muted uppercase mb-1 tracking-wider">Focus</div>
-						<div class="text-text-primary font-bold">{SITE_META.focus}</div>
 					</div>
 					<div>
 						<div class="text-text-muted uppercase mb-1 tracking-wider">Posts</div>
@@ -74,7 +66,6 @@ const totalPosts = posts.length;
 					<div class="border-t-2 border-accent mb-1"></div>
 					<div class="flex items-baseline gap-4 mb-8 font-mono text-xs uppercase tracking-wider">
 						<span class="text-accent">Latest</span>
-						<span class="text-text-muted flex-1">// {featuredPost.data.type}</span>
 					</div>
 					
 					<article class="group border-2 border-border bg-surface hover:border-accent transition-colors duration-normal">
@@ -85,7 +76,6 @@ const totalPosts = posts.length;
 							<!-- Post header -->
 							<div class="border-b-2 border-border bg-surface-alt px-8 py-4 font-mono text-xs">
 								<div class="flex items-baseline justify-between gap-4">
-									<span class="text-text-muted uppercase tracking-wider">{featuredPost.data.type}</span>
 									<time 
 										datetime={featuredPost.data.pubDate.toISOString()}
 										class="text-text-primary uppercase tracking-wide font-bold"
@@ -107,11 +97,7 @@ const totalPosts = posts.length;
 							
 							<!-- Post footer -->
 							<div class="border-t border-border px-8 py-4 font-mono text-xs text-text-muted bg-surface-alt">
-								<div class="flex items-center gap-6">
-									<span>{featuredPost.data.status}</span>
-									<span>{featuredPost.data.type}</span>
-									<span class="text-accent">→ Read</span>
-								</div>
+								<span class="text-accent">→ Read</span>
 							</div>
 						</a>
 					</article>
@@ -127,15 +113,12 @@ const totalPosts = posts.length;
 					</div>
 					
 					<ul class="border-2 border-border divide-y divide-border bg-surface">
-						{olderPosts.map((post, index) => (
+						{olderPosts.map((post) => (
 							<li class="group hover:bg-accent-subtle transition-colors duration-normal">
 								<a 
 									href={`/blog/${post.id}/`}
 									class="flex flex-col md:flex-row md:items-center gap-3 px-6 py-5"
 								>
-									<div class="font-mono text-xs text-text-muted md:w-20 tracking-wider">
-										{String(index + 2).padStart(3, '0')}
-									</div>
 									<h3 class="font-heading text-base md:text-lg leading-[1.3] group-hover:text-accent transition-colors flex-1 tracking-tight">
 										{post.data.title}
 									</h3>
