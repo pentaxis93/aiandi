@@ -7,7 +7,7 @@ description: "Create distinctive, production-grade layouts for aiandi.dev. Bold 
 
 **Purpose:** Create distinctive, production-grade interfaces for aiandi.dev that avoid generic "AI slop" aesthetics while leveraging our semantic token architecture.
 
-**Related skills:** Use **design-loop** for iterative refinement with visual verification. Use **screenshot** for one-off captures.
+**Related skills:** Use **design-loop** for iterative fine-tuning (or nuclear redesign) with visual verification. Use **screenshot** for one-off captures.
 
 ---
 
@@ -23,7 +23,7 @@ Before touching code, understand context and commit to a **BOLD** aesthetic dire
 - **Differentiation**: What makes this UNFORGETTABLE? What's the one thing someone will remember?
 - **Constraints**: Accessibility, performance, our token system
 
-**⚠️ WARNING:** If you're about to make "incremental improvements" to an existing design, STOP. Consider whether this needs a radical departure instead. Safe refinements create forgettable design.
+**⚠️ WARNING:** If you're about to make "incremental improvements" to an existing design, STOP. Consider whether this needs a radical departure instead. Safe fine-tuning creates forgettable design when the vision itself is wrong.
 
 **Aesthetic Palette** (pick one, execute with conviction):
 
@@ -373,7 +373,7 @@ Every interactive element needs three states:
 3. **Check existing patterns** - Reuse before creating
 4. **Implement with precision** - Execute the vision completely
 5. **Include all states** - Default, hover, focus, disabled
-6. **Verify visually** - Use **design-loop** skill for iterative refinement
+6. **Verify visually** - Use **design-loop** skill for iterative fine-tuning
 
 ### Component Template
 
@@ -420,7 +420,7 @@ Generic is the enemy. Safe is forgettable. Commit to a direction and execute wit
 
 | Skill | When to Use |
 |-------|-------------|
-| **design-loop** | Iterative refinement with visual verification |
+| **design-loop** | Iterative fine-tuning or nuclear redesign with visual verification |
 | **screenshot** | One-off captures for verification or documentation |
 
 ---
