@@ -163,6 +163,9 @@ If switching themes requires code changes, the schema is contaminated with theme
 
 ## Constraints
 
+### Mode Constraints
+- Dark mode is primary
+
 ### Contrast Requirements
 - `text-primary` on `background`: minimum 7:1 (WCAG AAA)
 - `text-secondary` on `background`: minimum 4.5:1 (WCAG AA)
