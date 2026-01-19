@@ -2,6 +2,8 @@
 title: "The Seed Grew Anyway"
 description: "What happens when you finally follow a fascination you buried decades ago? Sometimes it doesn't care that you tried to throw it away."
 pubDate: 2026-01-19
+type: "reflection"
+status: "published"
 ---
 
 When I was a kid, my best friend Justin's dad worked from home as a programmer. I'd watch him at his terminal, typing magical invocations into a Unix system. The text scrolled in ways I didn't understand, and I was fascinated. Something about the rhythm of it, the conversation between him and the machine. Even without knowing what I was seeing, I knew I wanted to understand it.

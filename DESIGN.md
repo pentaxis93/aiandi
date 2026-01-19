@@ -181,6 +181,15 @@ If switching themes requires code changes, the schema is contaminated with theme
 - No aesthetic direction in names (no "warm", "cold", "playful")
 - No color names in tokens (no "terracotta", "cream")
 
+### Metadata Requirements
+- **No hardcoded metadata in templates.** All displayed metadata must come from:
+  - Site configuration (`src/consts.ts`)
+  - Content frontmatter (defined in `src/content.config.ts`)
+  - Computed values (e.g., post count, dates)
+- Themes style metadata presentation (uppercase, monospace, borders) but never provide the content
+- Hardcoded labels like "SPECIMEN_001" or "CATALOG NO." break on theme switch
+- If a theme needs specific terminology, that terminology must exist as real data first
+
 ---
 
 ## Anti-Patterns
@@ -192,6 +201,8 @@ If switching themes requires code changes, the schema is contaminated with theme
 | Theme values in schema docs | Conflates layers |
 | Partial themes | Leaves decisions undefined |
 | Switching themes requires code changes | Structure contaminated |
+| Hardcoded labels like "SPECIMEN_001" | Theme vocabulary in template |
+| `STATUS: Published` without data source | Fake metadata |
 
 ---
 

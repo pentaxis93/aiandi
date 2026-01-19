@@ -2,6 +2,8 @@
 title: "56, Beginner"
 description: "Started coding at 53. Fought syntax for years. Then AI arrived—and decades of foundation-first thinking finally had somewhere to go."
 pubDate: 2026-01-13
+type: "essay"
+status: "published"
 ---
 
 I'm 56 years old. I'm building investment software, knowledge systems, AI collaboration tools, and whatever I need next. 160,000 lines of production code and counting. I know more than I did three years ago. Most days I still feel like a beginner. That's sometimes a problem, but other times it's the point.

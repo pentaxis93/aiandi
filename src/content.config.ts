@@ -13,6 +13,9 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			updatedDate: z.coerce.date().optional(),
 			heroImage: image().optional(),
+			// Post metadata
+			type: z.enum(['essay', 'note', 'tutorial', 'reflection']).default('essay'),
+			status: z.enum(['draft', 'published']).default('published'),
 		}),
 });
 
