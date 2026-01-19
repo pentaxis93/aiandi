@@ -10,10 +10,6 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-// Feature the most recent post
-const [featuredPost, ...olderPosts] = posts;
-
-// Compute real stats
 const totalPosts = posts.length;
 ---
 
@@ -60,38 +56,34 @@ const totalPosts = posts.length;
 				</aside>
 			</section>
 
-			<!-- Featured Post -->
-			{featuredPost && (
-				<section class="max-w-6xl mx-auto mb-20">
-					<div class="border-t-2 border-accent mb-1"></div>
-					<div class="flex items-baseline gap-4 mb-8 font-mono text-xs uppercase tracking-wider">
-						<span class="text-accent">Latest</span>
-					</div>
-					
+			<!-- Posts -->
+			<section class="max-w-6xl mx-auto mb-16 space-y-8">
+				{posts.map((post, index) => (
 					<article class="group border-2 border-border bg-surface hover:border-accent transition-colors duration-normal">
 						<a 
-							href={`/blog/${featuredPost.id}/`}
+							href={`/blog/${post.id}/`}
 							class="block"
 						>
 							<!-- Post header -->
 							<div class="border-b-2 border-border bg-surface-alt px-8 py-4 font-mono text-xs">
 								<div class="flex items-baseline justify-between gap-4">
 									<time 
-										datetime={featuredPost.data.pubDate.toISOString()}
+										datetime={post.data.pubDate.toISOString()}
 										class="text-text-primary uppercase tracking-wide font-bold"
 									>
-										<FormattedDate date={featuredPost.data.pubDate} />
+										<FormattedDate date={post.data.pubDate} />
 									</time>
+									{index === 0 && <span class="text-accent">Latest</span>}
 								</div>
 							</div>
 							
 							<!-- Post content -->
 							<div class="p-8 md:p-12">
 								<h3 class="font-heading text-2xl md:text-4xl font-bold leading-[1.3] mb-6 group-hover:text-accent transition-colors duration-normal tracking-tight">
-									{featuredPost.data.title}
+									{post.data.title}
 								</h3>
 								<p class="text-base md:text-lg leading-[1.8] text-text-secondary border-l-2 border-border pl-6">
-									{featuredPost.data.description}
+									{post.data.description}
 								</p>
 							</div>
 							
@@ -101,42 +93,8 @@ const totalPosts = posts.length;
 							</div>
 						</a>
 					</article>
-				</section>
-			)}
-
-			<!-- Archive -->
-			{olderPosts.length > 0 && (
-				<section class="max-w-6xl mx-auto mb-16">
-					<div class="border-t border-border mb-6"></div>
-					<div class="font-mono text-xs uppercase tracking-wider text-text-muted mb-6">
-						Archive // {olderPosts.length} earlier {olderPosts.length === 1 ? 'post' : 'posts'}
-					</div>
-					
-					<ul class="border-2 border-border divide-y divide-border bg-surface">
-						{olderPosts.map((post) => (
-							<li class="group hover:bg-accent-subtle transition-colors duration-normal">
-								<a 
-									href={`/blog/${post.id}/`}
-									class="flex flex-col md:flex-row md:items-center gap-3 px-6 py-5"
-								>
-									<h3 class="font-heading text-base md:text-lg leading-[1.3] group-hover:text-accent transition-colors flex-1 tracking-tight">
-										{post.data.title}
-									</h3>
-									<time 
-										datetime={post.data.pubDate.toISOString()}
-										class="font-mono text-xs text-text-muted md:w-28 uppercase tracking-wide"
-									>
-										<FormattedDate date={post.data.pubDate} />
-									</time>
-									<div class="font-mono text-xs text-accent opacity-0 group-hover:opacity-100 transition-opacity md:w-8 text-right">
-										→
-									</div>
-								</a>
-							</li>
-						))}
-					</ul>
-				</section>
-			)}
+				))}
+			</section>
 		</main>
 		
 		<Footer />
