@@ -1,11 +1,15 @@
 ---
 name: design-loop
-description: "Iterative visual design refinement. Implement, capture, see with vision, assess, refine, repeat. The recursive loop where craft meets sight."
+description: "Iterative visual design fine-tuning. Implement, capture, see with vision, assess, refine, repeat. The recursive loop where craft meets sight."
 ---
 
 # Design Loop Skill
 
 **Purpose:** Iteratively refine visual design by implementing changes, capturing screenshots, *using vision to examine them yourself*, and making informed refinements. **The loop continues autonomously until the design achieves the intended vision.** You do not wait for the user between iterations.
+
+**Two modes:**
+- **Fine-tuning (refinement)**: Incremental improvements within existing aesthetic direction
+- **Nuclear**: Radical departure, throw away existing design and start fresh
 
 **CRITICAL: This is a system of three skills used together:**
 - **web-design**: Provides aesthetic vision, token system, layout patterns
@@ -41,7 +45,7 @@ description: "Iterative visual design refinement. Implement, capture, see with v
 | **CAPTURE** | Screenshot the result (see **screenshot** skill) |
 | **SEE** | Actually look at the screenshot with vision capability |
 | **ASSESS** | What works? What doesn't? What's missing? |
-| **REFINE** | Adjust vision or implementation, return to IMPLEMENT |
+| **FINE-TUNE** | Adjust vision or implementation within existing direction, return to IMPLEMENT |
 | **NUCLEAR** | Throw it all away and start fresh if it's derivative |
 
 **Exit when:** The visual matches the intention, or the design achieves a quality that surprises even you.
@@ -52,13 +56,20 @@ description: "Iterative visual design refinement. Implement, capture, see with v
 
 **Trigger the nuclear option when:**
 - The design feels derivative or safe
-- Incremental changes aren't creating distinctiveness
+- Fine-tuning/incremental changes aren't creating distinctiveness
 - You're tweaking instead of reimagining
 - The user explicitly asks for "nuclear" or "from scratch"
+- The user explicitly asks for "nuclear", "from scratch", or "radical departure"
+
+**User synonyms recognized:**
+- "Go nuclear" / "nuclear option"
+- "Start fresh" / "from scratch" / "clean slate"
+- "Radical departure" / "radical redesign"
+- "Fine-tune" / "refine" / "polish" / "tweak" (for incremental mode)
 - You see the design and think "this could be any blog"
 
 **Nuclear procedure:**
-1. **Acknowledge the reset** - "This needs a radical departure, not refinement."
+1. **Acknowledge the reset** - "This needs a radical departure, not fine-tuning."
 2. **Choose a completely different aesthetic** from web-design palette
 3. **Ignore existing layout** - Don't look at current code for "inspiration"
 4. **Implement bold vision** - Typography, layout, color all change
@@ -180,11 +191,12 @@ Based on what you saw:
 
 | Decision | When |
 |----------|------|
-| **Continue iterating** | You see improvements to make - return to step 1 |
+| **Continue fine-tuning** | You see improvements to make within current direction - return to step 1 |
 | **Adjust vision** | Seeing it revealed something new about the intent |
-| **Zoom in** | Focus on refining a specific element |
+| **Zoom in** | Focus on fine-tuning a specific element |
 | **Zoom out** | Reassess overall composition |
 | **Stop iterating** | Visual matches intention or diminishing returns |
+| **Go nuclear** | Design feels derivative, needs radical departure |
 
 **If continuing: Return to step 1 immediately. Do not wait for user.**
 **If stopping: Document final state and clean up screenshots.**
@@ -194,7 +206,7 @@ Based on what you saw:
 **You stop iterating when:**
 - The visual matches the intention (based on what you see)
 - The design achieves unexpected quality (surprises even you)
-- Further refinement yields diminishing returns (changes aren't improving it)
+- Further fine-tuning yields diminishing returns (changes aren't improving it)
 
 **Do not wait for the user to tell you to continue. The loop is autonomous.**
 
@@ -242,7 +254,7 @@ Look for 5 seconds, look away. What do you remember?
 
 ## Example Sessions
 
-### Example 1: Refinement (Incremental)
+### Example 1: Fine-Tuning Mode (Incremental Refinement)
 
 ```
 LOOP 1:
@@ -250,21 +262,21 @@ LOOP 1:
 - Capture: Screenshot home page
 - See: Heading feels lost, not commanding enough
 - Assess: Font weight too light, spacing below too tight
-- Refine: Increase font weight, add more bottom margin
+- Fine-tune: Increase font weight, add more bottom margin
 
 LOOP 2:
 - Implement: Bold heading, generous spacing
 - Capture: Screenshot
 - See: Better hierarchy, but accent color doesn't pop
 - Assess: Amber on dark gray needs more saturation
-- Refine: Adjust accent color in theme
+- Fine-tune: Adjust accent color in theme
 
 LOOP 3:
 - Implement: Brighter accent color
 - Capture: Screenshot
 - See: Accent pops now, but feels disconnected
 - Assess: Need to echo accent elsewhere for cohesion
-- Refine: Add accent border to cards section
+- Fine-tune: Add accent border to cards section
 
 LOOP 4:
 - Implement: Accent border on cards
@@ -296,7 +308,7 @@ LOOP 2:
 - Capture: Screenshot
 - See: Whoa. Aggressive. Memorable. Polarizing?
 - Assess: TOO aggressive. Need some warmth back.
-- Refine: Add subtle warmth to background, soften one edge
+- Fine-tune: Add subtle warmth to background, soften one edge
 
 LOOP 3:
 - Capture: Screenshot
@@ -342,7 +354,7 @@ LOOP 2:
 
 **You are not debugging. You are designing.**
 
-Each loop is refinement toward aesthetic vision, not bug fixing. The screenshot is a canvas for your evaluation, not a test result.
+Each loop is fine-tuning toward aesthetic vision, not bug fixing. The screenshot is a canvas for your evaluation, not a test result.
 
 **Trust your vision.** You can see what code cannot express:
 - Rhythm
@@ -360,11 +372,12 @@ Each loop is refinement toward aesthetic vision, not bug fixing. The screenshot 
 ## When to Use
 
 - Creating new pages or components
-- Refining existing designs
+- Fine-tuning existing designs
 - Implementing theme changes
 - Responsive design verification
 - Before committing visual changes
 - When something "feels off" but you can't articulate why
+- Nuclear option when design feels derivative
 
 ---
 
