@@ -29,6 +29,8 @@ description: "Iterative visual design refinement. Implement, capture, see with v
 │     │                                  ▼                │
 │   REFINE ◄──────────────────────── ASSESS               │
 │                                                         │
+│   NUCLEAR ◄──── Radical departure if derivative         │
+│                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -40,8 +42,32 @@ description: "Iterative visual design refinement. Implement, capture, see with v
 | **SEE** | Actually look at the screenshot with vision capability |
 | **ASSESS** | What works? What doesn't? What's missing? |
 | **REFINE** | Adjust vision or implementation, return to IMPLEMENT |
+| **NUCLEAR** | Throw it all away and start fresh if it's derivative |
 
 **Exit when:** The visual matches the intention, or the design achieves a quality that surprises even you.
+
+---
+
+## Nuclear Option: Starting Fresh
+
+**Trigger the nuclear option when:**
+- The design feels derivative or safe
+- Incremental changes aren't creating distinctiveness
+- You're tweaking instead of reimagining
+- The user explicitly asks for "nuclear" or "from scratch"
+- You see the design and think "this could be any blog"
+
+**Nuclear procedure:**
+1. **Acknowledge the reset** - "This needs a radical departure, not refinement."
+2. **Choose a completely different aesthetic** from web-design palette
+3. **Ignore existing layout** - Don't look at current code for "inspiration"
+4. **Implement bold vision** - Typography, layout, color all change
+5. **Capture and assess** - Did we break free of the derivative trap?
+
+**Example triggers:**
+- User: "This feels too safe, go nuclear"
+- User: "Start fresh, ignore what we have"
+- You assess: "This is incrementally better but still generic"
 
 ---
 
@@ -214,7 +240,9 @@ Look for 5 seconds, look away. What do you remember?
 
 ---
 
-## Example Session
+## Example Sessions
+
+### Example 1: Refinement (Incremental)
 
 ```
 LOOP 1:
@@ -244,6 +272,68 @@ LOOP 4:
 - See: Cohesive! Accent creates visual thread. Cards inviting.
 - Assess: Ready. Clear hierarchy, distinctive color, rhythm.
 - Complete: Clean up, commit changes.
+```
+
+### Example 2: Nuclear Option (Radical Departure)
+
+```
+LOOP 1:
+- Implement: Standard centered hero, card grid below
+- Capture: Screenshot
+- See: This is... fine. Professional. Forgettable.
+- Assess: Every tech blog looks like this. NUCLEAR OPTION.
+
+NUCLEAR RESET:
+- Vision: Punk zine meets scientific journal
+- Implement: 
+  * Asymmetric layout - hero pushed hard left
+  * Massive monospace headline (terminal aesthetic)
+  * Remove all color except single accent on links
+  * Add diagonal borders, angles instead of cards
+  * Make typography uncomfortably large
+
+LOOP 2:
+- Capture: Screenshot
+- See: Whoa. Aggressive. Memorable. Polarizing?
+- Assess: TOO aggressive. Need some warmth back.
+- Refine: Add subtle warmth to background, soften one edge
+
+LOOP 3:
+- Capture: Screenshot
+- See: Yes! Distinctive without being hostile.
+- Assess: Would remember this. Has a point of view.
+- Complete: This breaks the mold while staying accessible.
+```
+
+### Example 3: Recognizing Derivative Work
+
+```
+LOOP 1:
+- Implement: Clean dark mode, amber accents, generous spacing
+- Capture: Screenshot
+- See: Nice! Professional! Like... every other dark mode blog?
+- Assess: STOP. This is derivative. What's the actual vision here?
+
+RETHINK:
+- Not "dark mode blog" - that's a template
+- Not "warm accents" - that's safe
+- What's ACTUALLY distinctive about this content?
+  * Ancient patterns in new tools
+  * Recursive collaboration
+  * Workbench, not portfolio
+
+NEW VISION: Museum placard meets lab notebook
+- White/cream dominant (invert the dark mode expectation)
+- Monochrome except red for "danger/important"
+- Grid system visible as subtle lines
+- Typography: mix of clinical sans + handwritten annotations
+- Cards become "specimens" with catalog numbers
+
+LOOP 2:
+- Implement: Complete visual inversion
+- Capture: Screenshot
+- See: COMPLETELY different. Unexpected. Museum-like precision.
+- Assess: This matches the "workbench" vision better than dark mode ever did.
 ```
 
 ---
