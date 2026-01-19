@@ -47,7 +47,8 @@ await browser.close();
 console.log(path);
 EOF
 
-# 3. View with Read tool
+# 3. IMMEDIATELY read the image with Read tool (don't wait for human)
+# The Read tool can display images - call it right after capturing
 # Read /tmp/aiandi-TIMESTAMP.png
 ```
 
@@ -59,9 +60,12 @@ EOF
 
 | Device | Width | Height | Use Case |
 |--------|-------|--------|----------|
-| Desktop | 1280 | 800 | Default, most common |
+| Monitor | 1920 | 1080 | Realistic desktop (recommended) |
+| Desktop | 1280 | 800 | Smaller screens |
 | Tablet | 768 | 1024 | Responsive testing |
 | Mobile | 375 | 667 | Mobile-first verification |
+
+**Important:** Use 1920x1080 to verify centering and layout on realistic monitors. Smaller viewports may hide centering issues.
 
 ### Screenshot Options
 
@@ -153,6 +157,8 @@ rm /tmp/aiandi-*.png
 - **Never commit screenshots** - They're for verification only
 - **Check the port** - Server may use 4321 or 4322
 - **Kill server when done** - `pkill -f "astro dev"` if needed
+- **Read immediately** - After capturing, call `Read /tmp/path.png` in the same response to avoid human gate
+- **Use 1920x1080** - Realistic monitor size catches centering/layout issues
 
 ---
 
