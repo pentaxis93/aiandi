@@ -67,6 +67,10 @@ Blog-specific skills in `.opencode/skill/`:
 
 See `DESIGN.md` for the semantic token architecture. Key principle: schema (token names) vs. theme (values) separation.
 
+## Privacy
+
+Do not include personal information (age, location, real name, etc.) in site content. The author prefers to remain semi-anonymous.
+
 ---
 
 *May this work serve all beings everywhere, without exception.*
