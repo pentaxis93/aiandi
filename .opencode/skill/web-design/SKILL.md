@@ -1,11 +1,13 @@
 ---
 name: web-design
-description: "Create distinctive, production-grade layouts for aiandi.dev. Combines bold aesthetic vision with our semantic token system. Use when designing pages, components, or visual treatments."
+description: "Create distinctive, production-grade layouts for aiandi.dev. Bold aesthetic vision + semantic token system. Use when designing pages, components, or visual treatments."
 ---
 
 # Web Design Skill
 
 **Purpose:** Create distinctive, production-grade interfaces for aiandi.dev that avoid generic "AI slop" aesthetics while leveraging our semantic token architecture.
+
+**Related skills:** Use **design-loop** for iterative refinement with visual verification. Use **screenshot** for one-off captures.
 
 ---
 
@@ -336,7 +338,7 @@ Every interactive element needs three states:
 3. **Check existing patterns** - Reuse before creating
 4. **Implement with precision** - Execute the vision completely
 5. **Include all states** - Default, hover, focus, disabled
-6. **Verify visually** - Use screenshot skill to capture result
+6. **Verify visually** - Use **design-loop** skill for iterative refinement
 
 ### Component Template
 
@@ -366,17 +368,6 @@ const variants = {
 
 ---
 
-### Visual Verification
-
-Use the screenshot skill after making changes:
-
-```bash
-bun run dev --host 0.0.0.0 &
-# See screenshot skill for capture procedure
-```
-
----
-
 ## The Standard
 
 **Match implementation complexity to aesthetic vision:**
@@ -387,6 +378,15 @@ bun run dev --host 0.0.0.0 &
 **The question to ask:** Is this design **distinctive**? Would someone remember it? Does it have a clear point of view?
 
 Generic is the enemy. Safe is forgettable. Commit to a direction and execute with conviction.
+
+---
+
+## Related Skills
+
+| Skill | When to Use |
+|-------|-------------|
+| **design-loop** | Iterative refinement with visual verification |
+| **screenshot** | One-off captures for verification or documentation |
 
 ---
 

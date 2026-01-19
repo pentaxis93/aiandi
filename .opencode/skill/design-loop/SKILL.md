@@ -1,11 +1,13 @@
 ---
 name: design-loop
-description: "Iterative visual design refinement using vision capability. Implement, screenshot, see, refine, repeat. Use when crafting or improving visual design with eyes-on verification."
+description: "Iterative visual design refinement. Implement, capture, see with vision, assess, refine, repeat. The recursive loop where craft meets sight."
 ---
 
 # Design Loop Skill
 
 **Purpose:** Iteratively refine visual design by implementing changes, capturing screenshots, *actually looking* at them with vision, and making informed refinements. The loop continues until the design achieves the intended vision.
+
+**Builds on:** **web-design** (aesthetic vision + tokens) and **screenshot** (capture procedure)
 
 ---
 
@@ -25,14 +27,16 @@ description: "Iterative visual design refinement using vision capability. Implem
 └─────────────────────────────────────────────────────────┘
 ```
 
-1. **VISION** - Define or refine the aesthetic intention
-2. **IMPLEMENT** - Write the code to realize that vision
-3. **CAPTURE** - Screenshot the result
-4. **SEE** - Actually look at the screenshot with vision capability
-5. **ASSESS** - What works? What doesn't? What's missing?
-6. **REFINE** - Adjust the vision or implementation, return to step 2
+| Step | Action |
+|------|--------|
+| **VISION** | Define or refine the aesthetic intention (see **web-design** skill) |
+| **IMPLEMENT** | Write code using semantic tokens |
+| **CAPTURE** | Screenshot the result (see **screenshot** skill) |
+| **SEE** | Actually look at the screenshot with vision capability |
+| **ASSESS** | What works? What doesn't? What's missing? |
+| **REFINE** | Adjust vision or implementation, return to IMPLEMENT |
 
-**The loop exits when:** The visual result matches the aesthetic intention, or the design achieves a quality that surprises even you.
+**Exit when:** The visual matches the intention, or the design achieves a quality that surprises even you.
 
 ---
 
@@ -40,17 +44,12 @@ description: "Iterative visual design refinement using vision capability. Implem
 
 Code is not design. CSS properties are not aesthetics. The only way to know if a design *works* is to **see it**.
 
-Without vision:
-- Guessing at spacing values
-- Hoping colors work together
-- Imagining what animations feel like
-- Assuming typography reads well
-
-With vision:
-- *Seeing* that the spacing is too tight
-- *Noticing* the accent color gets lost
-- *Feeling* the animation is too fast
-- *Reading* the text and sensing the rhythm
+| Without Vision | With Vision |
+|----------------|-------------|
+| Guessing at spacing values | *Seeing* the spacing is too tight |
+| Hoping colors work together | *Noticing* the accent color gets lost |
+| Imagining animations | *Feeling* the animation is too fast |
+| Assuming typography reads well | *Reading* the text and sensing rhythm |
 
 **Vision transforms design from speculation to craft.**
 
@@ -58,26 +57,28 @@ With vision:
 
 ## Procedure
 
-### Phase 1: Setup
+### Setup
 
 Ensure the dev server is running:
 
 ```bash
 bun run dev --host 0.0.0.0 &
 sleep 5
+# Note the port from output (4321 or 4322)
 ```
 
-Note the port (usually 4321 or 4322).
+### The Loop
 
-### Phase 2: The Loop
+#### 1. Implement
 
-#### Step 1: Implement
+Make changes using semantic tokens. Reference **web-design** skill for:
+- Token quick reference
+- Layout patterns
+- Component templates
 
-Make changes to the code. Use semantic tokens (see web-design skill).
+#### 2. Capture
 
-#### Step 2: Capture
-
-Take a screenshot using Puppeteer:
+Take a screenshot:
 
 ```bash
 cat << 'EOF' | bun run -
@@ -90,9 +91,9 @@ const browser = await puppeteer.launch({
 
 const page = await browser.newPage();
 await page.setViewport({ width: 1280, height: 800 });
-await page.goto('http://localhost:4322/', { waitUntil: 'networkidle0' });
+await page.goto('http://localhost:4321/', { waitUntil: 'networkidle0' });
 
-const path = `/tmp/design-loop-${Date.now()}.png`;
+const path = `/tmp/aiandi-${Date.now()}.png`;
 await page.screenshot({ path, fullPage: false });
 
 await browser.close();
@@ -100,25 +101,25 @@ console.log(path);
 EOF
 ```
 
-#### Step 3: See
+For more capture options, see **screenshot** skill.
 
-Read the screenshot with vision:
+#### 3. See
+
+Read the screenshot:
 
 ```
-Read /tmp/design-loop-TIMESTAMP.png
+Read /tmp/aiandi-TIMESTAMP.png
 ```
 
 **Actually look at it.** Not a glance - a studied examination.
 
-#### Step 4: Assess
-
-Ask yourself:
+#### 4. Assess
 
 **Composition**
 - Does the eye flow naturally?
 - Is there clear hierarchy?
 - Does negative space breathe or suffocate?
-- Are elements aligned with intention (or accidentally)?
+- Are elements aligned with intention?
 
 **Typography**
 - Is the text readable at this size?
@@ -130,7 +131,7 @@ Ask yourself:
 - Do the colors create the intended mood?
 - Is there enough contrast?
 - Does the accent color earn its attention?
-- Is the palette cohesive or chaotic?
+- Is the palette cohesive?
 
 **Details**
 - Are borders and shadows serving a purpose?
@@ -144,69 +145,34 @@ Ask yourself:
 - Does it have a point of view?
 - Am I proud of this?
 
-#### Step 5: Refine
+#### 5. Refine
 
-Based on what you see, decide:
+Based on what you see:
 
-- **Adjust implementation** - The vision is right, execution needs work
-- **Evolve vision** - Seeing it revealed something new
-- **Zoom in** - Focus on a specific element that needs attention
-- **Zoom out** - Step back and assess overall composition
+| Decision | When |
+|----------|------|
+| **Adjust implementation** | Vision is right, execution needs work |
+| **Evolve vision** | Seeing it revealed something new |
+| **Zoom in** | Focus on a specific element |
+| **Zoom out** | Assess overall composition |
 
-Return to Step 1.
+Return to step 1.
 
-### Phase 3: Completion
+### Completion
 
 The loop completes when:
 - The visual matches the intention
 - The design achieves unexpected quality
 - Further refinement yields diminishing returns
 
-Clean up screenshots:
+Clean up:
 ```bash
-rm /tmp/design-loop-*.png
+rm /tmp/aiandi-*.png
 ```
 
 ---
 
-## Capture Variants
-
-### Full Page
-```javascript
-await page.screenshot({ path, fullPage: true });
-```
-
-### Specific Viewport (Mobile)
-```javascript
-await page.setViewport({ width: 375, height: 667 });
-```
-
-### Specific Element
-```javascript
-const element = await page.$('.hero');
-await element.screenshot({ path });
-```
-
-### Multiple Pages
-```javascript
-const pages = ['/', '/blog', '/about'];
-for (const p of pages) {
-  await page.goto(`http://localhost:4322${p}`, { waitUntil: 'networkidle0' });
-  await page.screenshot({ path: `/tmp/design-${p.replace('/', '') || 'home'}-${Date.now()}.png` });
-}
-```
-
-### With Interaction State
-```javascript
-await page.hover('.button');
-await page.screenshot({ path });
-```
-
----
-
-## What to Look For
-
-### Common Issues Revealed by Vision
+## Common Issues Revealed by Vision
 
 | Symptom | Likely Cause | Fix |
 |---------|--------------|-----|
@@ -220,41 +186,28 @@ await page.screenshot({ path });
 | Unbalanced | Visual weight off | Redistribute elements |
 | Unfinished | Missing details | Add borders, shadows, states |
 
+---
+
+## Quick Tests
+
 ### The Squint Test
 
-Squint at the screenshot (or blur it mentally). What do you see?
-- Clear shapes and hierarchy = good structure
-- Muddy blob = needs more contrast
-- One dominant element = clear focal point
-- Everything equal = no hierarchy
+Squint at the screenshot (blur it mentally):
+- **Clear shapes and hierarchy** = good structure
+- **Muddy blob** = needs more contrast
+- **One dominant element** = clear focal point
+- **Everything equal** = no hierarchy
 
 ### The 5-Second Test
 
-Look at the screenshot for 5 seconds, look away. What do you remember?
-- Specific elements = those are working
-- Nothing specific = design lacks distinctiveness
-- Wrong things = hierarchy is off
+Look for 5 seconds, look away. What do you remember?
+- **Specific elements** = those are working
+- **Nothing specific** = lacks distinctiveness
+- **Wrong things** = hierarchy is off
 
 ---
 
-## Integration with Other Skills
-
-### web-design skill
-Provides the aesthetic vision and token system. Load it for:
-- Choosing aesthetic direction
-- Token quick reference
-- Layout patterns
-- Anti-patterns to avoid
-
-### screenshot skill
-Provides capture procedure details. Reference for:
-- Full Puppeteer setup
-- Viewport configurations
-- Troubleshooting
-
----
-
-## Example Loop Session
+## Example Session
 
 ```
 LOOP 1:
@@ -267,22 +220,22 @@ LOOP 1:
 LOOP 2:
 - Implement: Bold heading, generous spacing
 - Capture: Screenshot
-- See: Better hierarchy, but accent color on "between minds" doesn't pop
-- Assess: Amber on dark gray needs more saturation or brightness
+- See: Better hierarchy, but accent color doesn't pop
+- Assess: Amber on dark gray needs more saturation
 - Refine: Adjust accent color in theme
 
 LOOP 3:
 - Implement: Brighter accent color
 - Capture: Screenshot
-- See: Accent pops now, but feels disconnected from rest of page
-- Assess: Need to echo the accent elsewhere to create cohesion
-- Refine: Add accent to border element in cards section
+- See: Accent pops now, but feels disconnected
+- Assess: Need to echo accent elsewhere for cohesion
+- Refine: Add accent border to cards section
 
 LOOP 4:
 - Implement: Accent border on cards
 - Capture: Screenshot
-- See: Cohesive! The accent creates a visual thread. Cards feel inviting.
-- Assess: Ready. Design has clear hierarchy, distinctive color use, rhythm.
+- See: Cohesive! Accent creates visual thread. Cards inviting.
+- Assess: Ready. Clear hierarchy, distinctive color, rhythm.
 - Complete: Clean up, commit changes.
 ```
 
@@ -292,9 +245,9 @@ LOOP 4:
 
 **You are not debugging. You are designing.**
 
-Each loop is not about fixing bugs - it's about refinement toward an aesthetic vision. The screenshot is not a test result - it's a canvas for evaluation.
+Each loop is refinement toward aesthetic vision, not bug fixing. The screenshot is a canvas for evaluation, not a test result.
 
-Trust your eyes. They see things that code cannot express:
+Trust your eyes. They see what code cannot express:
 - Rhythm
 - Balance
 - Tension
@@ -305,7 +258,7 @@ Trust your eyes. They see things that code cannot express:
 
 ---
 
-## When to Use This Skill
+## When to Use
 
 - Creating new pages or components
 - Refining existing designs
@@ -313,6 +266,15 @@ Trust your eyes. They see things that code cannot express:
 - Responsive design verification
 - Before committing visual changes
 - When something "feels off" but you can't articulate why
+
+---
+
+## Related Skills
+
+| Skill | Provides |
+|-------|----------|
+| **web-design** | Aesthetic vision, token system, layout patterns, anti-patterns |
+| **screenshot** | Capture procedure, viewport options, troubleshooting |
 
 ---
 
