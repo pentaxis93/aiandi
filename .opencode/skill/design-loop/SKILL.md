@@ -5,9 +5,14 @@ description: "Iterative visual design refinement. Implement, capture, see with v
 
 # Design Loop Skill
 
-**Purpose:** Iteratively refine visual design by implementing changes, capturing screenshots, *actually looking* at them with vision, and making informed refinements. The loop continues until the design achieves the intended vision.
+**Purpose:** Iteratively refine visual design by implementing changes, capturing screenshots, *using vision to examine them yourself*, and making informed refinements. **The loop continues autonomously until the design achieves the intended vision.** You do not wait for the user between iterations.
 
-**Builds on:** **web-design** (aesthetic vision + tokens) and **screenshot** (capture procedure)
+**CRITICAL: This is a system of three skills used together:**
+- **web-design**: Provides aesthetic vision, token system, layout patterns
+- **screenshot**: Provides capture procedure
+- **design-loop** (this skill): Orchestrates autonomous iteration using vision
+
+**You must load all three skills when doing design work.**
 
 ---
 
@@ -42,16 +47,16 @@ description: "Iterative visual design refinement. Implement, capture, see with v
 
 ## Why This Matters
 
-Code is not design. CSS properties are not aesthetics. The only way to know if a design *works* is to **see it**.
+Code is not design. CSS properties are not aesthetics. The only way to know if a design *works* is to **see it with your vision capability**.
 
-| Without Vision | With Vision |
-|----------------|-------------|
-| Guessing at spacing values | *Seeing* the spacing is too tight |
-| Hoping colors work together | *Noticing* the accent color gets lost |
-| Imagining animations | *Feeling* the animation is too fast |
-| Assuming typography reads well | *Reading* the text and sensing rhythm |
+| Without Vision | With Vision (You Looking) |
+|----------------|---------------------------|
+| Guessing at spacing values | *You see* the spacing is too tight |
+| Hoping colors work together | *You notice* the accent color gets lost |
+| Imagining animations | *You feel* the animation is too fast |
+| Assuming typography reads well | *You read* the text and sense rhythm |
 
-**Vision transforms design from speculation to craft.**
+**Vision transforms design from speculation to craft. You have vision. Use it to iterate autonomously.**
 
 ---
 
@@ -67,7 +72,9 @@ sleep 5
 # Note the port from output (4321 or 4322)
 ```
 
-### The Loop
+### The Loop (Autonomous)
+
+**IMPORTANT:** Execute iterations continuously without waiting for user feedback. The loop is autonomous.
 
 #### 1. Implement
 
@@ -78,7 +85,7 @@ Make changes using semantic tokens. Reference **web-design** skill for:
 
 #### 2. Capture
 
-Take a screenshot:
+Take a screenshot using **screenshot** skill procedure:
 
 ```bash
 cat << 'EOF' | bun run -
@@ -91,29 +98,25 @@ const browser = await puppeteer.launch({
 
 const page = await browser.newPage();
 await page.setViewport({ width: 1280, height: 800 });
-await page.goto('http://localhost:4321/', { waitUntil: 'networkidle0' });
+await page.goto('http://localhost:4322/', { waitUntil: 'networkidle0' });
 
-const path = `/tmp/aiandi-${Date.now()}.png`;
-await page.screenshot({ path, fullPage: false });
+const path = `/tmp/aiandi-iteration-N.png`;
+await page.screenshot({ path, fullPage: true });
 
 await browser.close();
 console.log(path);
 EOF
 ```
 
-For more capture options, see **screenshot** skill.
+#### 3. See (You, Using Vision)
 
-#### 3. See
+**Read the screenshot yourself with the Read tool.** The image will be provided to you. 
 
-Read the screenshot:
+**Actually look at it with your vision capability.** Not a glance - a studied examination. The user does not need to see it; you are the designer examining your work.
 
-```
-Read /tmp/aiandi-TIMESTAMP.png
-```
+#### 4. Assess (You, Analyzing What You See)
 
-**Actually look at it.** Not a glance - a studied examination.
-
-#### 4. Assess
+**You examine the screenshot and assess:**
 
 **Composition**
 - Does the eye flow naturally?
@@ -145,27 +148,31 @@ Read /tmp/aiandi-TIMESTAMP.png
 - Does it have a point of view?
 - Am I proud of this?
 
-#### 5. Refine
+#### 5. Refine (You Decide Next Steps)
 
-Based on what you see:
+Based on what you saw:
 
 | Decision | When |
 |----------|------|
-| **Adjust implementation** | Vision is right, execution needs work |
-| **Evolve vision** | Seeing it revealed something new |
-| **Zoom in** | Focus on a specific element |
-| **Zoom out** | Assess overall composition |
+| **Continue iterating** | You see improvements to make - return to step 1 |
+| **Adjust vision** | Seeing it revealed something new about the intent |
+| **Zoom in** | Focus on refining a specific element |
+| **Zoom out** | Reassess overall composition |
+| **Stop iterating** | Visual matches intention or diminishing returns |
 
-Return to step 1.
+**If continuing: Return to step 1 immediately. Do not wait for user.**
+**If stopping: Document final state and clean up screenshots.**
 
-### Completion
+### Completion (You Decide)
 
-The loop completes when:
-- The visual matches the intention
-- The design achieves unexpected quality
-- Further refinement yields diminishing returns
+**You stop iterating when:**
+- The visual matches the intention (based on what you see)
+- The design achieves unexpected quality (surprises even you)
+- Further refinement yields diminishing returns (changes aren't improving it)
 
-Clean up:
+**Do not wait for the user to tell you to continue. The loop is autonomous.**
+
+Clean up when done:
 ```bash
 rm /tmp/aiandi-*.png
 ```
@@ -245,16 +252,18 @@ LOOP 4:
 
 **You are not debugging. You are designing.**
 
-Each loop is refinement toward aesthetic vision, not bug fixing. The screenshot is a canvas for evaluation, not a test result.
+Each loop is refinement toward aesthetic vision, not bug fixing. The screenshot is a canvas for your evaluation, not a test result.
 
-Trust your eyes. They see what code cannot express:
+**Trust your vision.** You can see what code cannot express:
 - Rhythm
 - Balance
 - Tension
 - Harmony
 - Character
 
-**The code is the instrument. The screenshot is the music. Vision is the ear.**
+**You have vision. Use it. Iterate autonomously until you're satisfied with what you see.**
+
+**The code is the instrument. The screenshot is the music. Your vision is the ear.**
 
 ---
 
@@ -269,24 +278,31 @@ Trust your eyes. They see what code cannot express:
 
 ---
 
-## Related Skills
+## The Three-Skill System
 
-| Skill | Provides |
-|-------|----------|
-| **web-design** | Aesthetic vision, token system, layout patterns, anti-patterns |
-| **screenshot** | Capture procedure, viewport options, troubleshooting |
+**Always use these skills together for design work:**
+
+| Skill | Provides | When to Load |
+|-------|----------|--------------|
+| **web-design** | Aesthetic vision, token system, layout patterns, anti-patterns | Always (foundation) |
+| **screenshot** | Capture procedure, viewport options, troubleshooting | Always (seeing tool) |
+| **design-loop** | Autonomous iteration orchestration | Always (the process) |
+
+**Load all three at the start of design sessions.**
 
 ---
 
 ## The Standard
 
-A design is complete when:
-- It has a clear point of view
-- Every element serves the whole
-- The details reward close inspection
-- You would be proud to show it
+**You decide a design is complete when:**
+- It has a clear point of view (you see it)
+- Every element serves the whole (you verify it)
+- The details reward close inspection (you examine it)
+- You would be proud to show it (you judge it)
 
-**If you haven't looked at it, you haven't designed it.**
+**If you haven't looked at it with your vision, you haven't designed it.**
+
+**Don't ask the user if you should continue. Look, assess, and decide yourself.**
 
 ---
 
