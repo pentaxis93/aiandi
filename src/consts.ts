@@ -8,6 +8,8 @@ export const SITE_DESCRIPTION = "Exploring what emerges when you stop prompting 
 // These are real values, not theme-specific labels
 export const SITE_META = {
 	status: 'Active',
-	tagline: 'Beginner, figuring it out in public',
+	tagline: 'Systems all the way down',
 	established: 2026,
 };
+
+export const DEDICATION = 'May this work serve all beings everywhere, without exception.';
