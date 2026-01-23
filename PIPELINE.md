@@ -84,7 +84,7 @@ If you're spending 80% drafting, the outline isn't good enough.
 
 | # | Slug | Title | Stage | Notes |
 |---|------|-------|-------|-------|
-| 003 | `three-builds` | Building the Same Project Three Times | WALK | Walk guide ready, awaiting recording |
+| 003 | `three-builds` | Discovering the Real Problem | DRAFT | Ready for VOICE review |
 
 ---
 
