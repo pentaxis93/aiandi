@@ -1,58 +1,46 @@
-# Discovering the Real Problem
-
-*Working title - may evolve*
+# Building the Same Project Three Times (and Why That Wasn't Failure)
 
 ## One-Sentence Teaching
 
-Discovering the real problem is 80% of problem-solving - and iteration is how you discover it.
+Learning through iteration—rebuilding the same project in different frameworks—teaches what each tool is actually good at, not what the marketing says.
 
 ## Why It Matters
 
-Developers often see framework changes or project rebuilds as indecision or wasted work. But iteration isn't starting over - it's problem discovery. Each rebuild reveals what you're actually trying to solve.
+Most beginners feel shame when they restart projects. They see each rebuild as evidence of failure or indecision, not recognizing that this is how experienced developers actually learn to evaluate tools.
 
 ## The Story
 
-5th Ave. Gallery - a domain bought from E.J. Gold (his former art site) - rebuilt across multiple frameworks:
-- Next.js (loved it, but web-only)
-- RedwoodJS (brief - but testing opened eyes to quality)
-- Svelte (simpler state, but still web-only)
-- Flutter/Dart (solved the real problem: mobile+web)
+Building the same gallery project multiple times:
+- First attempt: Next.js
+- Second attempt: React
+- Third attempt: RedwoodJS
+- Fourth attempt: Svelte
+- Final decision: Flutter/Dart
 
-The framework journey wasn't about finding the "best" framework. It was about discovering the real problem: multi-platform development with maintainable architecture.
+Each iteration revealed what the framework was truly good at versus what the marketing promised.
 
 ## What You Learned
 
-- Iteration is methodology, not failure (McKinsey training: complete story at each checkpoint, then iterate)
-- Framework changes revealed the actual requirement (mobile+web, not just web)
-- Maintainability matters: build so the maintenance burden doesn't scale with complexity
-- Each iteration was a complete attempt, not partial work abandoned
+- How to evaluate tools through use, not hype
+- What each framework excelled at (and where it fell short)
+- Why Flutter/Dart ultimately won for this particular use case
+- That "wasted work" is actually the tuition for real learning
+- How to recognize when framework marketing diverges from reality
 
 ## Story Type
 
 **Evolution** - "X changed from A to B"
 
-The arc: Professional iteration practice → Applied to framework selection → Discovered the real problem → Built for sustainability
+The arc: Starting naive → Pressure from reality → Multiple transitions → New understanding → Reflection on the journey
 
 ## Target Audience
 
-Developers who:
-- Feel their project restarts indicate failure
-- Are evaluating frameworks without knowing what problem they're solving
-- Want to build something maintainable long-term
-- Could benefit from seeing iteration as professional practice, not indecision
+Self-taught developers who:
+- Feel guilty about abandoned projects
+- Struggle with "analysis paralysis" in framework selection
+- Don't trust their ability to evaluate tools
+- Think reading docs should be enough (without hands-on experience)
 
 ## Core Message
 
-The frameworks weren't the point. Discovering that you needed mobile+web was the point. Discovering that maintainability mattered was the point. Iteration is how you get there.
-
-## Context
-
-- 5th Ave. Gallery: domain from E.J. Gold, intended as online ashram, still becoming what it wants to be
-- McKinsey background: trained in iteration as the path from good to great
-- Maintainability lesson: learned from years of projects that fell apart
-
-## Threads to Weave
-
-1. **Iteration as methodology** - not starting over, complete stories each time
-2. **Problem discovery** - 80% of solving is finding the real problem
-3. **Sustainable building** - maintenance burden that doesn't scale with complexity
+The "wasted work" phase isn't failure—it's how you develop taste. Every abandoned rebuild taught you something the documentation never could. This is normal. This is the path.
