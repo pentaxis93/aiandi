@@ -1,6 +1,5 @@
 ---
 title: "Code as Language, Language as Healing"
-description: "What happens when you finally follow a fascination you buried decades ago? Sometimes it doesn't care that you tried to throw it away."
 pubDate: 2026-01-19
 type: "reflection"
 status: "published"

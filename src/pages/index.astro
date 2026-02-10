@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_META } from '../consts';
+import { getExcerpt } from '../utils/excerpt';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -83,7 +84,7 @@ const totalPosts = posts.length;
 									{post.data.title}
 								</h3>
 								<p class="text-base md:text-lg leading-[1.8] text-text-secondary border-l-2 border-border pl-6">
-									{post.data.description}
+									{getExcerpt(post.body, post.data.description)}
 								</p>
 							</div>
 							
