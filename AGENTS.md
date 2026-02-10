@@ -14,14 +14,13 @@
 ```
 src/
   content/blog/         # Blog posts (Markdown/MDX)
-  content/transcripts/  # Session transcripts
   pages/                # Astro pages
   layouts/              # Page layouts
   components/           # Reusable components
   styles/               # Global styles
 design-system/          # Semantic token architecture
 public/                 # Static assets
-pipeline/               # Content pipeline stages
+scripts/                # Build scripts
 ```
 
 ## Commands
@@ -35,33 +34,11 @@ bun run preview          # Preview production build
 
 ## Content Pipeline
 
-Articles progress through stages defined in `PIPELINE.md`:
+**The content creation workflow lives in a separate private repository:**
 
-1. **IDEA** - Seed captured
-2. **RESEARCH** - Evidence gathered
-3. **WALK** - Insight elicitation via walking guide
-4. **SYNTHESIS-PREP** - Thematic guidance created
-5. **DRAFT** - Article written
-6. **TECHNICAL** - Technical review
-7. **EDITORS-TABLE** - Voice review
-8. **PUBLISH** - Live on site
+[pentaxis93/aiandi-pipeline](https://github.com/pentaxis93/aiandi-pipeline)
 
-## Skills
-
-Blog-specific skills in `.opencode/skill/`:
-
-- **voice** - Robbie's authentic writing voice
-- **the-art** - Synthesis of research into unified teaching
-- **editors-table** - Voice review and slop detection
-- **publish-article** - Publication workflow
-- **research-gather** - Source material collection
-- **synthesis-prep** - Thematic guidance creation
-- **walk-and-talk** - Walking guide generation
-- **question-design** - Interview question craft
-- **questions-*** - Story arc templates (journey, evolution, insight, methodology)
-- **technical-review** - Fact-checking and verification
-- **strangers-eye** - Documentation review from multiple personas
-- **transcribe-walk** - Walk recording processing
+This public repository contains only the published site. Pipeline artifacts, skills, and workflow documentation are maintained separately to keep work-in-progress content private.
 
 ## Design System
 

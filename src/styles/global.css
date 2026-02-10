@@ -2,11 +2,11 @@
  * Global Styles for AI and I Blog
  * 
  * This file imports:
- * 1. Theme definition (workbench - default and only theme)
+ * 1. Theme definition (lab - default and only theme)
  * 2. Base design system tokens (structure that references themes)
  */
 
-/* Import theme (workbench) */
+/* Import theme (lab) */
 @import "../../design-system/all-themes.css";
 
 /* Import design system structure (semantic tokens) */

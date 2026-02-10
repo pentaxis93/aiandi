@@ -22,7 +22,9 @@ bun run dev
 
 ## Content Pipeline
 
-Articles progress through a structured pipeline from idea to publication. See `PIPELINE.md` for the full workflow.
+The content creation workflow lives in a separate private repository: [pentaxis93/aiandi-pipeline](https://github.com/pentaxis93/aiandi-pipeline)
+
+This public repository contains only the published site. See `PIPELINE.md` for details.
 
 ## License
 

@@ -97,10 +97,9 @@ Standard Tailwind scale. Themes may extend with additional values.
 design-system/
 ├── SCHEMA.md           # Token schema documentation
 ├── tokens.css          # Semantic token declarations (references theme vars)
-├── all-themes.css      # Workbench theme definition
+├── all-themes.css      # Theme aggregator (imports lab.css)
 └── themes/
-    ├── workbench.css          # Focused, clear, precise aesthetic
-    └── README.md              # Theme philosophy & documentation
+    └── lab.css         # Digital Lab theme (dark + light modes)
 ```
 
 ### Theme File Format
@@ -219,11 +218,14 @@ When reviewing design system changes:
 
 ## Current Theme
 
-### Workbench (default)
-- **Philosophy**: A clean desk with a single amber task light. Focused, clear, precise. Clarity without coldness.
-- **File**: `design-system/all-themes.css`
-- **Palette**: Deep charcoal background, near-white text, amber accent, system sans-serif
-- **Created**: 2026-01-04
+### Lab (default)
+- **Philosophy**: Digital research lab notebook. Specimen catalog aesthetic. Monospace-forward, metadata-rich, technical confidence.
+- **File**: `design-system/themes/lab.css`
+- **Palette**: 
+  - Dark mode (default): Near-black background, cyan accent, terminal/research station feel
+  - Light mode: Warm off-white background, deep red accent, lab notebook/scientific journal feel
+- **Typography**: Monospace everywhere (IBM Plex Mono, SF Mono, Consolas)
+- **Created**: 2026-01 (replaced Workbench theme)
 
 ---
 
