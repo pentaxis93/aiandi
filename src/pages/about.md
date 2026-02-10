@@ -4,10 +4,7 @@ title: About
 description: About me and this blog
 ---
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-  <img src="/profile.jpeg" alt="Profile photo" style="width: 100%; height: auto; border-radius: 0.25rem;" />
-  <img src="/family.jpeg" alt="Family photo" style="width: 100%; height: auto; border-radius: 0.25rem;" />
-</div>
+![Profile photo](/profile.jpeg)
 
 I started learning to code in February 2022. I hadn't written a line of code since college, and decided Harvard's [CS50](https://cs50.harvard.edu/x/) was the place to begin. I spent about three and a half months doing every exercise, every lecture, every lab. Then I got so absorbed in the final project that I never actually finished the course.
 
@@ -22,3 +19,5 @@ What you'll find here: the actual process of learning to build software through 
 When I'm not coding, I'm probably with family, eating, sleeping, swimming, climbing, or watching my stock positions do things I didn't expect.
 
 You can find the code on [GitHub](https://github.com/pentaxis93) or follow along here as I figure out what I'm doing.
+
+![Family photo](/family.jpeg)
