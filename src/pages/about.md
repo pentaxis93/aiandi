@@ -4,6 +4,8 @@ title: About
 description: About me and this blog
 ---
 
+![Profile photo](/profile.jpeg)
+
 I started learning to code in February 2022. I hadn't written a line of code since college, and decided Harvard's [CS50](https://cs50.harvard.edu/x/) was the place to begin. I spent about three and a half months doing every exercise, every lecture, every lab. Then I got so absorbed in the final project that I never actually finished the course.
 
 I've been building things ever since.
