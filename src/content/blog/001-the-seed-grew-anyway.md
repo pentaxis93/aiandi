@@ -5,13 +5,13 @@ type: "reflection"
 status: "published"
 ---
 
-When I was a kid, my best friend Justin's dad worked from home as a programmer. I'd watch him at his terminal, typing magical invocations into a Unix system. The text scrolled in ways I didn't understand, and I was fascinated. Something about the rhythm of it, the conversation between him and the machine. Even without knowing what I was seeing, I knew I wanted to understand it.
+When I was a kid, my best friend Justin's dad Jerry worked from home as a programmer. I'd watch him at his terminal, typing magical invocations into a Unix system. The text scrolled in ways I didn't understand, and I was fascinated. Something about the rhythm of it, the conversation between him and the machine. Even without knowing what I was seeing, I knew I wanted to understand it.
 
-Somewhere around college, I buried that fascination. I simply didn't want to be a "geek", and I figured there was no money in technology anyway. All the money was in the world of business — which felt separate from the world of technology back then.
+Somewhere around college, I buried that fascination. I simply didn't want to be a "geek", and I figured there was no money in technology anyway.
 
 ## How I Disappeared
 
-I joined McKinsey in 1996, between the two years I spent in the Kellogg MBA program. I loved the work because of the intellectual intensity, the problem-solving, and the caliber of the people. But it put me so much in my head that I stopped noticing what I was feeling in my body. The long flights started to become unbearable, and I was so busy rushing around that I never paused to ask why.
+I joined McKinsey in 1996, between the two years I spent in the Kellogg MBA program. I loved the work because of the intellectual intensity, the problem-solving, and the smart people. But it put me so much in my head that I stopped noticing what I was feeling in my body. The long flights started to become unbearable, and I was so busy rushing around that I never paused to ask why.
 
 The first real signs of illness came around 2002, though in retrospect the erosion had started earlier. What I loved became something I endured. The same thing happened at home, where I had a wife, two young children, and a third on the way. During the years when I was losing myself — not knowing I was sick, just knowing something was wrong — my wife and I separated. I left them, and that's still my deepest regret.
 
@@ -35,8 +35,8 @@ CS50 kicked off a new habit: always having a project going, writing a little cod
 
 Working with code was medicinal for me because code is language. For years, the brain fog had made it very hard for me to express myself. So learning to code didn't just teach me a skill. It gave me a different door into language. A syntax that I could still parse even when my brain felt a little fuzzy. Variables and functions and loops.
 
-After CS50, I learned TypeScript for Next.js. Then Dart for a mobile project. Now I'm building CLI tools in Rust. The specific language doesn't matter. What matters is the patterns, the ways of thinking, the habit of expression through code. Now I sit at my computer (much smaller and faster than the one Justin's dad used to use) and type magical invocations. Still learning new stuff and building things. Still finding my way back to language and expression, one function at a time.
+After CS50, I learned TypeScript for Next.js. Then Dart for a mobile project. Now I'm building CLI tools in Rust. The specific language doesn't matter. What matters is the patterns, the ways of thinking, the habit of expression through code. Now I sit at my computer and type my own magical invocations. Still learning new stuff and building things. Still finding my way back to language and expression, one function at a time.
 
-The seed Justin's dad planted took more than 30 years and a chronic illness to germinate. I tried to throw it away, thinking I was choosing something better.
+The seed Jerry planted took more than 30 years and a chronic illness to germinate. I tried to throw it away, thinking I was choosing something better.
 
 That seed grew anyway.
