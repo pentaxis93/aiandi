@@ -19,8 +19,7 @@ All pipeline stages, artifacts, and content skills are maintained in:
 
 | # | Slug | Title | Published |
 |---|------|-------|-----------|
-| 001 | `56-beginner` | 56, Beginner | 2026-01-19 |
-| 002 | `the-seed-grew-anyway` | The Seed Grew Anyway | 2026-01-19 |
+| 001 | `the-seed-grew-anyway` | The Seed Grew Anyway | 2026-01-19 |
 
 ## For Writers
 
