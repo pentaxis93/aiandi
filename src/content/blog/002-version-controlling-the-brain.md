@@ -1,5 +1,5 @@
 ---
-title: "Version-Controlling the Brain"
+title: "Where Did I Put That Skill?"
 description: "Skills are where AI agent intelligence lives. So why was I treating them like scratch paper? A skill management problem that turned into a lesson about how you talk to models."
 pubDate: 2026-02-10
 source_session: "ses_3b8df902affenL4q6QjMCOF4EP"
