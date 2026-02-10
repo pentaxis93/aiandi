@@ -26,28 +26,16 @@ The shame of it was isolating. I let all my friendships lapse and lost touch wit
 
 In my mid-40s I experimented with a lot of so-called "healing diets" and detoxification methods, some of which seemed to help. When I had more energy, I started building my own computers, installing Linux and learning the command line. That childhood fascination surfaced again, like something green pushing through concrete. I didn't frame it as therapy at the time, but it was definitely therapeutic. Reaching back toward the thing I'd seen and liked and turned my back on as a kid, hoping it might still be there.
 
-It was.
+It was. So, in April 2022, I signed up for [Harvard's CS50 course](https://cs50.harvard.edu/x/), which is available online free for anyone who wants to participate. [David Malan](https://cs.harvard.edu/malan/) starts the course with C before moving to Python. He explains why: higher-level languages make programming comfortable by hiding the dirty work of memory management. You need to learn what's happening underneath so you can understand what the abstraction is hiding from you.
+
+That philosophy resonated with something in me. Foundations first. It's the way I prefer to approach everything in my life. I wasn't trying to get a credential; I was trying to find out if I could still learn new things and do intellectually challenging work.
 
 ## Code as Medicine
 
-So, in April 2022, 53 years old, I signed up for [Harvard's CS50 course](https://cs50.harvard.edu/x/), which is available online free for anyone who wants to participate. It's awesome.
+CS50 kicked off a new habit: always having a project going, writing a little code every day. The final project was open-ended: just build something. I built BloopTwang, a chatbot that was just a UI plugged in to an LLM. Then I made "The Bible; TLDR," an experiment comparing different translations of the Bible. Then Fifth Avenue Gallery, a more complex site that I built several times over using different frameworks. These were all projects where I could practice, where I could fail without consequence.
 
-[David Malan](https://cs.harvard.edu/malan/) starts the course with C before moving to Python. He explains why: higher-level languages make programming comfortable by hiding the dirty work of memory management. You need to learn what's happening underneath so you can understand what the abstraction is hiding from you.
+I think working with code was medicinal for me because code is language. For years, the brain fog had made it very hard for me to express myself. So learning to code didn't just teach me a skill. It gave me a different door into language. A syntax that I could still parse even when my brain felt a little fuzzy. Variables and functions and loops.
 
-That philosophy resonated with something in me. Foundations first. It's the way I prefer to approach everything in my life. But I wanted to rebuild my self, and doing that online course felt a lot like being a college student again. College seemed like a strange choice at 53. But I wasn't trying to get a credential; I was trying to find out if I could still learn new things and do intellectually challenging work.
+After CS50, I learned TypeScript for Next.js. Then Dart for a mobile project. Now I'm building CLI tools in Rust. The specific language doesn't matter. What matters is the patterns, the ways of thinking, the habit of expression through code. Now I sit at my computer (much smaller and faster than the one Justin's dad used to use) and type magical invocations. Still learning new stuff and building things. Still finding my way back to language and expression, one function at a time.
 
-That course actually kicked off a new habit for me: always having a project going, writing a little code every day. At the end of CS50, the final project was open-ended: just build something. I built BloopTwang, a chatbot that was just a ui plugged in to an LLM. Then I made "The Bible; TLDR," an experiment comparing different translations of the Bible. Then Fifth Avenue Gallery, a more complex site that I built several times over using different frameworks. These were all projects where I could practice, where I could fail without consequence.
-
-I think working with code was medicinal for me because code is language.
-
-For years, the brain fog had made it very hard for me to express myself. So learning to code didn't just teach me a skill. It gave me a different door into language. A syntax that I could still parse even when my brain felt a little fuzzy. Variables and functions and loops.
-
-After CS50, I learned TypeScript for Next.js. Then Dart for a mobile project. Now I'm building CLI tools in Rust. The specific language doesn't matter. What matters is the patterns, the ways of thinking, the habit of expression throught code. Sometimes people tell me they never use what they learned in college. But I use all of what I learned, all the time. Not the specifics; the patterns.
-
----
-
-Now I'm 56. My life has a lot of broken relationships, people I should never have left behind, years that slipped away while I was just trying to survive. But every day, I sit at my computer (much smaller and faster than the one Justin's dad used to use) and type magical invocations. I build tools in Rust. I mess around with agentic AI. Still learning new stuff and building things. Still finding my way back to language and expression, one function at a time.
-
-The seed Justin's dad planted took more than 30 years and a chronic illness to germinate. I tried to throw it away, thinking I was choosing something better. Turns out the thing I tried to abandon was part of what my healing process needed.
-
-The seed grew anyway.
+The seed Justin's dad planted took more than 30 years and a chronic illness to germinate. I tried to throw it away, thinking I was choosing something better. Turns out the thing I tried to abandon was part of what my healing process needed. The seed grew anyway.
