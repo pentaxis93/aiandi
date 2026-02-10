@@ -1,5 +1,5 @@
 ---
-title: "The Seed Grew Anyway"
+title: "Code as Language, Language as Healing"
 description: "What happens when you finally follow a fascination you buried decades ago? Sometimes it doesn't care that you tried to throw it away."
 pubDate: 2026-01-19
 type: "reflection"
@@ -8,45 +8,45 @@ status: "published"
 
 When I was a kid, my best friend Justin's dad worked from home as a programmer. I'd watch him at his terminal, typing magical invocations into a Unix system. The text scrolled in ways I didn't understand, and I was fascinated. Something about the rhythm of it, the conversation between him and the machine. Even without knowing what I was seeing, I knew I wanted to understand it.
 
-Somewhere around college, I buried that fascination. Somewhere along the way, I decided I didn't want to be a geek. There was more money in business, more success. Technology and business felt like separate worlds back then, and I chose the one that seemed to lead somewhere. Whatever I thought that meant at the time.
+Somewhere around college, I buried that fascination. I simply didn't want to be a "geek", and I figured there was no money in technology anyway. All the money was in the world of business — which felt separate from the world of technology back then. This was one of several terrible early life decisions I made.
 
-## Falling
+## How I Disappeared
 
-I joined McKinsey in 1996, between the two years I spent in the Kellogg MBA program. I loved the work. The intellectual intensity, the problem-solving, the caliber of the people. But it put me so much in my head that I stopped noticing what I was feeling in my body. The long flights started to become unbearable, and I didn't pause to understand why. I just pushed through. That's what you do.
+I joined McKinsey in 1996, between the two years I spent in the Kellogg MBA program. I loved the work because of the intellectual intensity, the problem-solving, and the caliber of the people. But it put me so much in my head that I stopped noticing what I was feeling in my body. The long flights started to become unbearable, and I was so busy rushing around that I never paused to ask why.
 
-The first real signs of illness came around 2002, though in retrospect the erosion had started earlier. What I loved became something I endured. The same thing happened at home, where I had a wife, two young children, and a third on the way. During the years when I was losing myself — not knowing I was sick, just knowing something was wrong — my wife and I separated. I left them. That remains my deepest regret.
+The first real signs of illness came around 2002, though in retrospect the erosion had started earlier. What I loved became something I endured. The same thing happened at home, where I had a wife, two young children, and a third on the way. During the years when I was losing myself — not knowing I was sick, just knowing something was wrong — my wife and I separated. I left them, and that's still my deepest regret.
 
-The illness deepened after that. I moved through two more jobs: director of strategy for Hungary's incumbent telecom, then Cisco, where I consulted with governments on technology infrastructure investment. I was working from home by then, which made it easier to conceal how bad things had gotten. I was able to manage expectations skillfully enough that nobody noticed. Until 2010, when I couldn't sustain the illusion any longer. I left on medical disability. I've never been able to return to full-time work since.
+The illness got a lot worse after that. I moved through two more jobs: director of strategy for Hungary's incumbent telecom, then Cisco Systems, where I consulted with governments on technology infrastructure investment. I was working mostly from home by then, which made it easier to conceal how bad my health had gotten. I was able to manage expectations skillfully enough that nobody noticed, even though I was eventually only managing to work around 4 hours a day. Until 2010, when I couldn't sustain the illusion any longer. I left on medical disability, and I've never been able to return to full-time work since.
 
-The brain fog was the cruelest part. It seemed to paralyze my language capabilities specifically, so that I felt everything but could express almost nothing. Couldn't share what was happening to me. Couldn't explain. My thoughts felt clear while they were in my head, but collapsed into incoherency when I tried to share them.
+The brain fog was the worst symptom because It seemed to paralyze my language capabilities specifically, so that I couldn't explain what was happening to me. My thoughts felt clear while they were in my head, but collapsed into incoherency when I tried to share them.
 
-The shame of it was isolating. I let all my friendships lapse. Lost touch with family. I was living in Hungary, which made it easier to disappear. I turned off social media because watching other people's lives — the connections, the normalcy — was too painful. It's been 24 years now. I'm still isolated.
+The shame of it was isolating. I let all my friendships lapse and lost touch with my family. I was living in Hungary, which made it easier to disappear. I turned off social media because watching other people's lives — the connections, the normalcy — was too painful. It's been 24 years now, and I'm still isolated.
 
-## Reaching
+## Building Computers, Finding Myself
 
-In my mid-40s, as I started to emerge from the worst of it, I started building my own computers. Installing Linux, learning the command line. That childhood fascination surfaced again, like something green pushing through concrete. I didn't frame it as therapy at the time, but it was therapeutic. An act of sovereignty. Reaching back toward the thing I'd abandoned as a young man, hoping it might still be there.
+In my mid-40s I experimented with a lot of so-called "healing diets" and detoxification methods, some of which seemed to help. When I had more energy, I started building my own computers, installing Linux and learning the command line. That childhood fascination surfaced again, like something green pushing through concrete. I didn't frame it as therapy at the time, but it was definitely therapeutic. Reaching back toward the thing I'd seen and liked and turned my back on as a kid, hoping it might still be there.
 
 It was.
 
-## Foundations
+## Code as Medicine
 
-So, in April 2022, 53 years old, I signed up for [Harvard's CS50 course](https://cs50.harvard.edu/x/), which is available online free for anyone who wants to participate.
+So, in April 2022, 53 years old, I signed up for [Harvard's CS50 course](https://cs50.harvard.edu/x/), which is available online free for anyone who wants to participate. It's awesome.
 
-[David Malan](https://cs.harvard.edu/malan/) starts the course with C before moving to Python. He explains why: higher-level languages make programming comfortable by hiding the dirty work of memory management. You need to learn what's happening underneath, so you understand what the abstraction is hiding from you. Because every once in a while, it matters.
+[David Malan](https://cs.harvard.edu/malan/) starts the course with C before moving to Python. He explains why: higher-level languages make programming comfortable by hiding the dirty work of memory management. You need to learn what's happening underneath so you can understand what the abstraction is hiding from you.
 
-That philosophy resonated with something in me. Foundation-first. It's the way I prefer to approach everything in my life. If I was going to rebuild my self, I felt I needed to go back to where foundations are built. College seemed like a strange choice at 53. But I wasn't trying to get a credential. I was trying to find out if I could still learn new things and do intellectually challenging work.
+That philosophy resonated with something in me. Foundations first. It's the way I prefer to approach everything in my life. But I wanted to rebuild my self, and doing that online course felt a lot like being a college student again. College seemed like a strange choice at 53. But I wasn't trying to get a credential; I was trying to find out if I could still learn new things and do intellectually challenging work.
 
-That course was the start of a new habit. It was the habit of always having a project going, writing a little code every day. At the end of CS50, the final project was open-ended: just build something. I built BloopTwang, a simple chatbot implementation. "The Bible; TLDR," an experiment in comparing different translations of the Bible. Then Fifth Avenue Gallery, a more complex site that I built several times over using different frameworks. These were all projects where I could practice, where I could fail without consequence.
+That course actually kicked off a new habit for me: always having a project going, writing a little code every day. At the end of CS50, the final project was open-ended: just build something. I built BloopTwang, a chatbot that was just a ui plugged in to an LLM. Then I made "The Bible; TLDR," an experiment comparing different translations of the Bible. Then Fifth Avenue Gallery, a more complex site that I built several times over using different frameworks. These were all projects where I could practice, where I could fail without consequence.
 
 I think working with code was medicinal for me because code is language.
 
-For years, the brain fog had severed me from expression. I could feel but not speak, not share, not explain. Learning to code didn't just teach me a skill. It gave me a different door into language. A syntax that didn't care about the fog. Variables and functions and loops; they were words I could use when my own words had abandoned me.
+For years, the brain fog had made it very hard for me to express myself. So learning to code didn't just teach me a skill. It gave me a different door into language. A syntax that I could still parse even when my brain felt a little fuzzy. Variables and functions and loops.
 
-After CS50, I learned TypeScript for Next.js. Then Dart for a mobile project. Now I'm building CLI tools in Rust. The specific language doesn't matter. What matters is the patterns, the ways of thinking, the habit of expression that formed. I sometimes hear people say they never use what they learned in college. But I feel like I use all of it all the time. Not the specifics, of course. The patterns.
+After CS50, I learned TypeScript for Next.js. Then Dart for a mobile project. Now I'm building CLI tools in Rust. The specific language doesn't matter. What matters is the patterns, the ways of thinking, the habit of expression throught code. Sometimes people tell me they never use what they learned in college. But I use all of what I learned, all the time. Not the specifics; the patterns.
 
 ---
 
-Now I'm 56. My life has a lot of broken relationships, people I should have held onto, years that slipped away while I was just surviving. But every day, I sit at my computer (much smaller and faster than the one Justin's dad used to use) and type magical invocations. I build tools in Rust. I mess around with agentic AI. Still learning. Still building. Still finding my way back to language and expression, one function at a time.
+Now I'm 56. My life has a lot of broken relationships, people I should never have left behind, years that slipped away while I was just trying to survive. But every day, I sit at my computer (much smaller and faster than the one Justin's dad used to use) and type magical invocations. I build tools in Rust. I mess around with agentic AI. Still learning new stuff and building things. Still finding my way back to language and expression, one function at a time.
 
 The seed Justin's dad planted took more than 30 years and a chronic illness to germinate. I tried to throw it away, thinking I was choosing something better. Turns out the thing I tried to abandon was part of what my healing process needed.
 
