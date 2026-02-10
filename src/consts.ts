@@ -8,7 +8,7 @@ export const SITE_DESCRIPTION = "Exploring what emerges when you stop prompting 
 // These are real values, not theme-specific labels
 export const SITE_META = {
 	status: 'Active',
-	tagline: 'Systems all the way down',
+	tagline: 'Before enlightenment: write code. After enlightenment: write code.',
 	established: 2026,
 };
 
