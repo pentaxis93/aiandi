@@ -9,17 +9,7 @@ tags: ["skills", "agents", "prompting", "tooling"]
 
 I kept losing skills. Not forgetting how to do things. Losing the files that told my AI agents how to do things.
 
-Skills are markdown documents. Each one encodes a specific capability: how to write a commit message, how to review code, how to compile a blog post from raw session transcripts. When an agent loads a skill, that skill becomes its intelligence for the task at hand. The agent follows the skill exactly, and that precision is the whole point.
-
-For months, making skills felt like a special occasion. I'd write one when I noticed myself repeating the same instructions to Claude, and it would live in whichever directory seemed right at the time. Global config, project folder, a symlink to somewhere else. The system worked because there were five skills and I remembered where they all were.
-
-Then agents entered the picture, and skills went from "occasional convenience" to "literally everything." Every workflow I wanted an agent to execute needed a skill. The count climbed past ten, past twenty. And the filing system that had been "fine" quietly became a disaster.
-
-## The Mess
-
-The problem wasn't that skills were hard to write. The problem was finding them again.
-
-Both OpenCode and Claude Code discover skills by scanning specific directories. Global skills live under `~/.claude/skills/` or `~/.config/opencode/skills/`. Project skills live in `.claude/skills/` inside the project root. Each skill is a folder containing a `SKILL.md` with YAML frontmatter and markdown instructions:
+Skills are markdown documents. Each one encodes a specific capability: how to write a commit message, how to review a pull request, how to design a page layout. Each skill is a folder containing a `SKILL.md` with YAML frontmatter and markdown instructions:
 
 ```yaml
 ---
@@ -31,7 +21,19 @@ description: >-
 Instructions the agent receives when it loads this skill.
 ```
 
-Simple enough. But "simple" becomes "chaotic" when you're managing skills across two tools, at two scopes, in a dozen projects. I had skills spattered across global directories, project directories, and symlinks connecting them in ways I'd forget within a week. Some were duplicated. Some were orphaned. Some I knew existed but couldn't find.
+When an agent loads a skill, that skill becomes its intelligence for the task at hand. The agent follows the skill exactly, and that precision is the whole point.
+
+When skills first came out, I thought they were just a way to avoid repeating myself. I'd write one when I noticed the same instructions going to Claude for the third time, and it would live in whichever directory seemed right at the time. Global config, project folder, a symlink to somewhere else. The system worked because there were five skills and I remembered where they all were.
+
+Then agents entered the picture, and skills went from "occasional convenience" to "literally everything." Every workflow I wanted an agent to execute needed a skill. The count climbed past ten, past twenty. And the filing system that had been "fine" quietly became a disaster.
+
+## The Mess
+
+The problem wasn't that skills were hard to write. The problem was finding them again.
+
+Both OpenCode and Claude Code discover skills by scanning specific directories. Claude Code looks in `~/.claude/skills/` for personal skills and `.claude/skills/` inside each project. OpenCode scans all of those plus `~/.config/opencode/skills/`, `~/.agents/skills/`, `.opencode/skills/`, and `.agents/skills/` at both global and project level. Six directories, two scopes, and that's before you add enterprise policies or plugins.
+
+I had skills spattered across global directories, project directories, and symlinks connecting them in ways I'd forget within a week. Some were duplicated. Some were orphaned. Some I knew existed but couldn't find.
 
 The feeling was specific and infuriating: "I have a problem, and I know I built a terrific skill for it at some point in the past." Then twenty minutes of searching through directories, `find` commands, and half-remembered symlinks.
 
@@ -94,7 +96,7 @@ The TOML config file. It never occurred to me. I'd been thinking about directory
 
 ## What It Looks Like
 
-The whole system landed as a small repo called Loadout:
+The whole system landed as a small repo called [Loadout](https://github.com/pentaxis93/loadout):
 
 ```
 ~/.config/loadout/              YOUR CONFIG
@@ -145,7 +147,7 @@ $EDITOR ~/.config/loadout/skills/git-commit/SKILL.md
 ./scripts/install.sh
 ```
 
-Four commands. No thinking about paths.
+Four steps. No thinking about paths.
 
 ## The Actual Lesson
 
