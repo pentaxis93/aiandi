@@ -19,7 +19,7 @@ The illness got a lot worse after that. I moved through two more jobs, each furt
 
 The brain fog was the worst symptom because it seemed to paralyze my language capabilities specifically, so that I couldn't explain what was happening to me. My thoughts felt clear while they were in my head, but collapsed into incoherency when I tried to share them.
 
-The shame of it was isolating. I let all my friendships lapse and lost touch with my family. I was living in Hungary, which made it easier to disappear. I turned off social media because watching other people's lives — the connections, the normalcy — was too painful. It's been 24 years now. Some of it has healed: I'm remarried, I have a fourth child, and two of my older kids are back in my life. But I think a lot about the people I left behind.
+The shame of it was isolating. I let all my friendships lapse and lost touch with my family. I was living in Hungary, which made it easier to disappear. I turned off social media because watching other people's lives — the connections, the normalcy — was too painful. It's been 24 years now. Some of it has healed: I'm remarried, I have a fourth child, two of my older kids are back in my life, I have one actual friend, my brother and I talk sometimes, I was there for Mom and the guy she married during the last two years of her life. But I think a lot about the people I left behind.
 
 ## Building Computers, Finding Myself
 
