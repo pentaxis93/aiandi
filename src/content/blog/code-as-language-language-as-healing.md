@@ -1,5 +1,6 @@
 ---
 title: "Code as Language, Language as Healing"
+description: "Chronic illness stole my words. Learning to code gave me a different door back into language."
 pubDate: 2026-01-19
 type: "reflection"
 status: "published"

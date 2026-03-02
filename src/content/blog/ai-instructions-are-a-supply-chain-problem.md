@@ -1,5 +1,6 @@
 ---
 title: "AI Instructions Are a Supply Chain Problem"
+description: "Your AI skills are scattered across six directories with no manifest. The fix looks a lot like the package manager pattern we've used for decades."
 pubDate: 2026-02-12
 type: "essay"
 status: "published"
