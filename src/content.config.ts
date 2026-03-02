@@ -16,6 +16,7 @@ const blog = defineCollection({
 			// Post metadata
 			type: z.enum(['essay', 'note', 'tutorial', 'reflection']).default('essay'),
 			status: z.enum(['draft', 'published']).default('published'),
+			tags: z.array(z.string()).optional(),
 		}),
 });
 
