@@ -9,9 +9,9 @@ tags: [ai-tools, architecture, developer-experience]
 
 I had 23 skills and no idea which ones were active.
 
-Skills, if you haven't encountered them yet, are markdown files that shape how AI coding assistants behave. You write instructions in a `SKILL.md` file, drop it in the right folder, and your AI assistant picks it up automatically. One skill might enforce conventional commits. Another might encode your team's API design conventions. A third might contain your personal writing voice.
+Skills, if you haven't encountered them yet, are markdown files that shape how AI tools behave. You write instructions in a `SKILL.md` file, drop it in the right folder, and your tool picks it up automatically. One skill might enforce conventional commits. Another might encode your team's API design conventions. A third might enforce your PR review checklist before approving a merge.
 
-The format is simple. A YAML frontmatter block with a name and description, then markdown instructions that the agent reads when it loads the skill:
+The format is simple. A YAML frontmatter block with a name and description, then markdown instructions that the tool reads when it loads the skill:
 
 ```yaml
 ---
@@ -22,39 +22,40 @@ description: Create conventional commits with scope and body
 When creating commits, use the conventional commit format...
 ```
 
-For three skills, this works fine. You know where they are, what they do, and which tool reads them. But I'm using two AI coding assistants (OpenCode and Claude Code), I have skills that should be available everywhere, skills that only apply to specific projects, and a growing collection that I keep tweaking. The question stopped being "how do I write a skill?" and became something I recognized from a completely different part of the stack.
+For three skills, this works fine. You know where they are, what they do, and which tool reads them. But things get more complex with multiple AI tools — OpenCode, Claude Code, Codex — each scanning its own directories. Some skills should be available everywhere, some only apply to specific projects, and the collection keeps growing. The question stops being "how do I write a skill?" and becomes something recognizable from a completely different part of the stack.
 
 ## The Folder Problem
 
-My first instinct was the obvious one. Organize the skills into directories and copy them where each tool expects to find them. OpenCode looks in `.opencode/skills/`. Claude Code looks in `.claude/skills/`. Both check a few more places. How hard could it be?
+The obvious first instinct: organize the skills into directories and copy them where each tool expects to find them. OpenCode looks in `.opencode/skills/`. Claude Code looks in `.claude/skills/`. Codex looks in `.agents/skills/`. They all check a few more places. How hard could it be?
 
-Here is how hard it could be. There are six discovery paths:
+Here is how hard it could be. There are six discovery paths across three tools:
 
 | Path | Scope | Tool |
 |------|-------|------|
-| `~/.claude/skills/` | Global | Both |
+| `~/.claude/skills/` | Global | Claude Code, OpenCode |
 | `~/.config/opencode/skills/` | Global | OpenCode |
-| `~/.agents/skills/` | Global | Both |
-| `.claude/skills/` | Project | Both |
+| `~/.agents/skills/` | Global | All three |
+| `.claude/skills/` | Project | Claude Code, OpenCode |
 | `.opencode/skills/` | Project | OpenCode |
-| `.agents/skills/` | Project | Both |
+| `.agents/skills/` | Project | All three |
 
-Six paths across two tools, two scopes. Copy a skill into one path and it works in Claude Code but not OpenCode. Copy it into three paths and now you have three copies to keep in sync. Update the original, forget to update a copy, and you're running stale instructions without knowing it. There's no manifest, no audit trail, and no way to ask "what's active right now?"
+Six paths across three tools, two scopes. Copy a skill into one path and it works in Claude Code but not OpenCode or Codex. Copy it into four paths and now you have four copies to keep in sync. Update the original, forget to update a copy, and you're running stale instructions without knowing it. There's no manifest, no audit trail, and no way to ask "what's active right now?"
 
 This feels like a files-in-folders problem until you try to solve it as one. You end up maintaining a mental map of what's where, which is another way of saying you don't maintain it at all.
 
 ## A Compatibility Surprise
 
-Before designing anything, I did something that saved me a wrong turn. I read the documentation for both tools. Not the getting-started pages. The actual skill discovery specifications.
+Before designing anything, there was a step that saved a wrong turn: reading the documentation for all three tools. Not the getting-started pages. The actual skill discovery specifications.
 
-What I found: both OpenCode and Claude Code discover skills at `.claude/skills/<name>/SKILL.md`. The path was shared. More interesting: both tools parse YAML frontmatter for `name` and `description`, and both silently ignore fields they don't recognize.
+What emerged: all three tools discover skills at `.agents/skills/<name>/SKILL.md`. The path was shared. More interesting: all three parse YAML frontmatter for `name` and `description`, and all three silently ignore fields they don't recognize.
 
-Claude Code supports extension fields like `disable-model-invocation`, `allowed-tools`, and `context`. OpenCode has its own extensions: `license`, `compatibility`, `metadata`. Neither tool chokes on the other's fields. They just skip what they don't understand.
+Claude Code supports extension fields like `disable-model-invocation`, `allowed-tools`, and `context`. OpenCode has its own extensions: `license`, `compatibility`, `metadata`. Codex keeps its extensions in a separate config file (`agents/openai.yaml`) rather than frontmatter, so it only reads the core fields from SKILL.md. No tool chokes on another's fields. They just skip what they don't understand.
 
-This means you can write one skill with the union of all frontmatter fields and both tools will happily load it:
+This means you can write one skill with the union of all frontmatter fields and every tool will happily load it:
 
 ```rust
 /// SKILL.md frontmatter — union of all supported fields
+/// (Codex extensions live in agents/openai.yaml, not frontmatter)
 pub struct Frontmatter {
     pub name: String,
     pub description: String,
@@ -71,13 +72,13 @@ pub struct Frontmatter {
 }
 ```
 
-The compatibility was already there. Hidden behind separate documentation that nobody reads side by side. Two engineering teams had, independently, made the same good decision: ignore what you don't understand. That one property made everything else possible.
+The compatibility was already there. Hidden behind separate documentation that nobody reads side by side. Three engineering teams had, independently, made the same good decision: ignore what you don't understand. That one property made everything else possible.
 
 ## What Fell Out
 
 With write-once compatibility established, the actual design problem became clear: not "how do I store skills" but "how do I manage what's active where?"
 
-I kept coming back to three separate concerns that were tangled together in the folder-copying approach.
+Three separate concerns kept surfacing, tangled together in the folder-copying approach.
 
 There's a storage question. Where do the skill definitions actually live, as a version-controlled source of truth?
 
@@ -87,7 +88,7 @@ And there's a delivery question. How do enabled skills end up in the paths that 
 
 Three questions, each with different change frequencies. Skill content changes when you refine instructions. Activation changes when you start a new project or experiment with a new skill. Delivery only needs to run after an activation change. Tangling them together (by manually copying files into discovery paths) means every change to any concern forces you to touch all three.
 
-Once I saw them as separate concerns, the architecture stopped being a decision and started being inevitable. That's a feeling I've learned to trust: when the design seems to assemble itself, you've probably found the right decomposition.
+Once they're separate concerns, the architecture stops being a decision and starts being inevitable. When the design seems to assemble itself, you've probably found the right decomposition.
 
 ```toml
 # Storage: skills live in source directories
@@ -124,7 +125,7 @@ One source, multiple targets, all symlinks. Change the source and every tool see
 
 ## The Marker File Detail
 
-There is a subtlety I didn't anticipate. What happens when loadout tries to clean up symlinks in a target directory that it didn't create? You don't want to delete someone's manually placed skills just because they're in a directory loadout happens to manage.
+There's a subtlety that isn't obvious up front. What happens when loadout tries to clean up symlinks in a target directory that it didn't create? You don't want to delete someone's manually placed skills just because they're in a directory loadout happens to manage.
 
 The solution was a marker file. When loadout creates symlinks in a target directory, it also drops a `.managed-by-loadout` file. Before cleaning up, it checks for this marker. If it's not there, it leaves the directory alone:
 
@@ -183,9 +184,9 @@ I started this project because I had too many skills and no way to manage them. 
 
 But the interesting part isn't the tool. The interesting part is what the problem reveals.
 
-AI instructions are becoming operational knowledge. They're behavioral contracts that shape how agents work on your behalf. Right now, the ecosystem treats them as throwaway prompt fragments. Drop a file in a folder. Maybe version control it, maybe not. No dependency resolution, no activation layers, no way to compose, override, or audit.
+AI instructions are becoming operational knowledge. They're behavioral contracts that shape how your tools work on your behalf. Right now, the ecosystem treats them as throwaway prompt fragments. Drop a file in a folder. Maybe version control it, maybe not. No dependency resolution, no activation layers, no way to compose, override, or audit.
 
-This is where code was before package managers. Source files scattered across directories, manually copied between projects, no manifest, no lockfile, no supply chain. We've already solved this problem for code, for dependencies, for configuration. Operational knowledge for AI tools is next in line.
+The pattern is familiar. Source files scattered across directories, manually copied between projects, no manifest, no lockfile, no supply chain. We've already solved this problem for code, for dependencies, for configuration. Skill files are next in line.
 
 It turns out that `SKILL.md` files aren't just instructions. They're a supply chain. And supply chains, once you see them, demand the same lifecycle rigor as everything else you ship.
 
