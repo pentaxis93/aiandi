@@ -34,24 +34,24 @@ Here is how hard it could be. There are six discovery paths across three tools:
 |------|-------|------|
 | `~/.claude/skills/` | Global | Claude Code, OpenCode |
 | `~/.config/opencode/skills/` | Global | OpenCode |
-| `~/.agents/skills/` | Global | All three |
+| `~/.agents/skills/` | Global | OpenCode, Codex |
 | `.claude/skills/` | Project | Claude Code, OpenCode |
 | `.opencode/skills/` | Project | OpenCode |
-| `.agents/skills/` | Project | All three |
+| `.agents/skills/` | Project | OpenCode, Codex |
 
-Six paths across three tools, two scopes. Copy a skill into one path and it works in Claude Code but not OpenCode or Codex. Copy it into four paths and now you have four copies to keep in sync. Update the original, forget to update a copy, and you're running stale instructions without knowing it. There's no manifest, no audit trail, and no way to ask "what's active right now?"
+Six paths across three tools, two scopes. Copy a skill into `.claude/skills/` and it works in Claude Code and OpenCode but not Codex. Copy it into `.agents/skills/` and it reaches OpenCode and Codex but not Claude Code. There's no single path that covers all three. Copy it into four paths and now you have four copies to keep in sync. Update the original, forget to update a copy, and you're running stale instructions without knowing it. There's no manifest, no audit trail, and no way to ask "what's active right now?"
 
 This feels like a files-in-folders problem until you try to solve it as one. You end up maintaining a mental map of what's where, which is another way of saying you don't maintain it at all.
 
 ## A Compatibility Surprise
 
-Before designing anything, there was a step that saved a wrong turn: reading the documentation for all three tools. Not the getting-started pages. The actual skill discovery specifications.
+Before designing anything, I read the documentation for all three tools. Not the getting-started pages. The skill format specifications.
 
-What emerged: all three tools discover skills at `.agents/skills/<name>/SKILL.md`. The path was shared. More interesting: all three parse YAML frontmatter for `name` and `description`, and all three silently ignore fields they don't recognize.
+The paths were a dead end — no single directory reaches all three tools. But the format told a different story. All three parse the same YAML frontmatter for `name` and `description`, and all three silently ignore fields they don't recognize.
 
-Claude Code supports extension fields like `disable-model-invocation`, `allowed-tools`, and `context`. OpenCode has its own extensions: `license`, `compatibility`, `metadata`. Codex keeps its extensions in a separate config file (`agents/openai.yaml`) rather than frontmatter, so it only reads the core fields from SKILL.md. No tool chokes on another's fields. They just skip what they don't understand.
+Claude Code supports extension fields like `disable-model-invocation`, `allowed-tools`, and `context`. The Agent Skills spec adds `license`, `compatibility`, and `metadata`, which OpenCode supports. Codex keeps its extensions in a separate config file (`agents/openai.yaml`) rather than frontmatter, so it only reads the core fields from SKILL.md. No tool chokes on another's fields. They just skip what they don't understand.
 
-This means you can write one skill with the union of all frontmatter fields and every tool will happily load it:
+The discovery paths are fragmented. The format is not. You can write one skill with the union of all frontmatter fields and every tool will happily load it:
 
 ```rust
 /// SKILL.md frontmatter — union of all supported fields
@@ -60,19 +60,19 @@ pub struct Frontmatter {
     pub name: String,
     pub description: String,
 
-    // Claude Code fields (ignored by OpenCode)
+    // Claude Code extensions (ignored by others)
     pub disable_model_invocation: Option<bool>,
     pub allowed_tools: Option<String>,
     pub context: Option<String>,
 
-    // OpenCode fields (ignored by Claude Code)
+    // Agent Skills spec fields (supported by OpenCode, ignored by Claude Code)
     pub license: Option<String>,
     pub compatibility: Option<String>,
     pub metadata: Option<HashMap<String, String>>,
 }
 ```
 
-The compatibility was already there. Hidden behind separate documentation that nobody reads side by side. Three engineering teams had, independently, made the same good decision: ignore what you don't understand. That one property made everything else possible.
+The compatibility was hiding in plain sight. Three engineering teams had, independently, made the same good decision: ignore what you don't understand. The discovery paths diverge, but the format converges — and that made everything else possible.
 
 ## What Fell Out
 
