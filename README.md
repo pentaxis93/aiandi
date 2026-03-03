@@ -20,6 +20,19 @@ bun install
 bun run dev
 ```
 
+## Mermaid In Posts
+
+Use fenced code blocks with the `mermaid` language in blog markdown/MDX:
+
+~~~md
+```mermaid
+graph TD
+  A --> B
+```
+~~~
+
+Diagrams are rendered client-side on blog pages.
+
 ## Content Pipeline
 
 The content creation workflow lives in a separate private repository: [pentaxis93/aiandi-pipeline](https://github.com/pentaxis93/aiandi-pipeline)

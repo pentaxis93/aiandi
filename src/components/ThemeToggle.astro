@@ -36,6 +36,9 @@ import { defaultTheme, defaultMode } from '../themes';
 		document.documentElement.setAttribute('data-theme', themeKey);
 		localStorage.setItem('themeMode', mode);
 		updateUI(mode);
+		window.dispatchEvent(new CustomEvent('aiandi:theme-mode-changed', {
+			detail: { mode, themeId, themeKey }
+		}));
 	}
 
 	function updateUI(mode) {

@@ -326,6 +326,26 @@
 	padding: 0;
 }
 
+.prose .mermaid-diagram {
+	background-color: var(--color-surface-alt);
+	padding: 1.5rem;
+	border-radius: var(--radius-md);
+	overflow-x: auto;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.prose .mermaid-diagram svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-inline: auto;
+}
+
+.prose .mermaid-diagram[data-mermaid-error='true'] {
+	border: 1px solid var(--color-border);
+}
+
 .prose blockquote {
 	border-left: 3px solid var(--color-accent);
 	padding-left: 2rem;
