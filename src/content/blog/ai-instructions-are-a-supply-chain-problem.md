@@ -194,4 +194,4 @@ The tool is called [loadout](https://github.com/pentaxis93/loadout). But the pat
 
 ---
 
-*Update, March 2026: loadout is no longer actively maintained. The ideas here — separation of storage, activation, and delivery — found a more direct expression in [sk](https://www.npmjs.com/package/@skills-supply/sk), which installs skills straight from git repos, cutting out the local directory layer entirely. The architecture evolved; the pattern holds.*
+*Update, March 2026: loadout is no longer actively maintained. I've switched to [sk](https://github.com/803/skills-supply), which covers the same ground — symlinks, multi-agent fan-out, declarative manifests — and adds remote installation from git repos, state reconciliation, and broader agent support on top. It doesn't do the analysis loadout does, but I never found a real-world use for that anyway. Had I known about sk when I started, I probably wouldn't have built loadout in the first place. The supply chain framing still stands. The three-layer separation still matters. The tool that taught me that just isn't the one I use anymore.*
