@@ -191,3 +191,7 @@ The pattern is familiar. Source files scattered across directories, manually cop
 It turns out that `SKILL.md` files aren't just instructions. They're a supply chain. And supply chains, once you see them, demand the same lifecycle rigor as everything else you ship.
 
 The tool is called [loadout](https://github.com/pentaxis93/loadout). But the pattern is bigger than any one tool. Wherever you're storing AI instructions right now, ask yourself whether they're getting the lifecycle treatment they deserve. If the answer involves the phrase "I just copy the file," you already know what happens next.
+
+---
+
+*Update, March 2026: loadout is no longer actively maintained. The ideas here — separation of storage, activation, and delivery — found a more direct expression in [sk](https://www.npmjs.com/package/@skills-supply/sk), which installs skills straight from git repos, cutting out the local directory layer entirely. The architecture evolved; the pattern holds.*
