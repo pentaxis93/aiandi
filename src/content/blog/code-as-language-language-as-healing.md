@@ -16,11 +16,11 @@ I joined McKinsey in 1996, between the two years I spent in the Kellogg MBA prog
 
 The first real signs came around 2002, though in retrospect the erosion had started earlier. Everything hurt, but I wasn't consciously aware of it. The work I loved became something I endured. The same thing happened at home, where I had a wife and three kids. During the years when I was losing myself, I left them.
 
-The illness got a lot worse after that. I moved through two more jobs, each further from the thing I actually cared about. I was working mostly from home by then, which made it easier to conceal how bad my health had gotten.
+The illness got a lot worse after that. I moved through two more jobs, each further from the thing I actually cared about. I was working mostly from home by then, which made it easier to conceal how bad my health had gotten. I started sick leave from my job in April of 2010, and never went back to work.
 
 The brain fog was the worst symptom because it seemed to paralyze my language specifically, so that I couldn't explain what was happening to me. My thoughts felt clear while they were in my head, but collapsed into incoherency when I tried to share them.
 
-The shame of it was isolating. I let all my friendships lapse and lost touch with family. I was living in Hungary, which made it easier to disappear. I turned off social media because watching other people's lives — the connections, the normalcy — was too painful. It's been 24 years now. There's been some healing: I have a new family, two of my older kids are back in my life, I have an actual friend, my brother and I talk sometimes, I was there for Mom and the guy she married during her last few years. But I think a lot about the people I left.
+The shame of it was isolating. I let all my friendships lapse and lost touch with family. I was living in a different country, which made it easier to disappear. I turned off social media because watching other people's lives — the connections, the normalcy — was too painful. It's been 24 years now. There's been some healing: I have a new family, two of my older kids are back in my life, I have a friend, my brother and I talk sometimes, I was there for Mom and the guy she married during her last few years. But I think a lot about the people I left.
 
 ## Building Computers, Finding Myself
 
@@ -28,7 +28,7 @@ In my mid-40s, desperate to recover, I experimented with a lot of healing diets 
 
 In April 2022, I signed up for [Harvard's CS50 course](https://cs50.harvard.edu/x/). [David Malan](https://cs.harvard.edu/malan/) starts the course with C before moving to Python. He explains why: you need to learn what's underneath so you know what higher-level languages hide from you.
 
-I liked that. It's the way I prefer to approach everything. I didn't want a credential; I was trying to find out if I could still learn new things and do intellectually challenging work.
+I liked that. I didn't want a credential; I was finding out if I could still learn new things and do intellectually challenging work.
 
 ## Code as Medicine
 
@@ -36,4 +36,4 @@ CS50 kicked off a new habit: always having a project going, writing a little cod
 
 Working with code was medicinal because code is language. For years, the brain fog had made it hard to express myself. So learning to code didn't just teach me a skill. It gave me a different door into language. A syntax that I could still parse even when my brain felt a little fuzzy. Variables and functions and loops.
 
-After CS50, I learned TypeScript for Next.js. Then Python to play around with AI. Dart for a mobile project. Rust for CLI tools. The language doesn't matter. What matters is patterns, ways of thinking, the habit of expression through code. Now I sit at my computer and type my own magical invocations. Learning new stuff and building things. Trying to find my way back, one function at a time.
+After CS50, I learned TypeScript for Next.js. Then Python to play around with AI. Dart for a mobile project. Rust for CLI tools. The language doesn't matter. What matters is patterns, ways of thinking, the habit of expression through code. Now I sit at my computer and type my own magical invocations. Learning new stuff and building things. Finding my way back, one function at a time.
