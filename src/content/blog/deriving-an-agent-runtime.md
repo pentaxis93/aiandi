@@ -1,5 +1,5 @@
 ---
-title: "Deriving an Agent Runtime from First Principles"
+title: "Deriving an Agent Runtime"
 description: "Seven capability needs, five Rust crates, every boundary traceable to a requirement. How agentd's architecture derived itself from asking what agents actually need."
 pubDate: 2026-03-03
 status: "published"
