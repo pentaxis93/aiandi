@@ -9,7 +9,7 @@ tags: [ai-agents, architecture, rust, first-principles]
 
 `agentd` is a daemon I'm working on to run autonomous AI agents on self-hosted infrastructure. It will schedule agent sessions, construct isolated execution environments, wire tools via MCP, and manage credentials.
 
-The project is early and experimental. Five Rust crates, all stubs. The architecture is only an intent. I needed a document that captured that intent from three perspectives: developers who need to know where code goes, plugin authors who need the MCP server contract, and AI agents that will contribute code. I filed an issue with a detailed spec and handed it to Claude Opus 4.6.
+The project is early and experimental. Five Rust crates, all stubs. The architecture is only an intent. I needed a document that captured that intent from three perspectives: developers who need to know where code goes, plugin authors who need the MCP server contract, and AI agents that will contribute code. I filed [an issue with a detailed spec](https://github.com/pentaxis93/agentd/issues/3) and handed it to Claude Opus 4.6.
 
 Opus produced ARCHITECTURE.md in a single pass. The document was solid. But the thing I was most interested in wasn't the output. It was the method that produced it.
 
